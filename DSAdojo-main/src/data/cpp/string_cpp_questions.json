@@ -1,0 +1,348 @@
+[
+  {
+    "id": "string-cpp-easy-q1",
+    "type": "multiple-choice",
+    "question": "What is the index of the first character in a C++ string?",
+    "options": [
+      "0",
+      "1",
+      "-1",
+      "undefined"
+    ],
+    "correctAnswer": 0,
+    "explanation": "C++ strings are zero-indexed like arrays."
+  },
+  {
+    "id": "string-cpp-easy-q2",
+    "type": "fill-blank",
+    "question": "The method _____ returns the length of a string in C++.",
+    "correctAnswer": "length",
+    "explanation": "The length() or size() method returns string length."
+  },
+  {
+    "id": "string-cpp-easy-q3",
+    "type": "multiple-choice",
+    "question": "How do you access the last character of string 's' in C++?",
+    "options": [
+      "s[s.length()-1]",
+      "s[0]",
+      "s.back()",
+      "Both A and C"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Both s[s.length()-1] and s.back() access last character."
+  },
+  {
+    "id": "string-cpp-easy-q4",
+    "type": "code-completion",
+    "question": "Complete the code to convert string to uppercase:",
+    "code": "#include <algorithm>\n#include <string>\nstring text = \"hello world\";\ntransform(text.begin(), text.end(), text.begin(), _____);\n",
+    "blanks": [
+      "::toupper"
+    ],
+    "explanation": "transform with ::toupper converts string to uppercase."
+  },
+  {
+    "id": "string-cpp-easy-q5",
+    "type": "multiple-choice",
+    "question": "Which header is needed for string manipulation in C++?",
+    "options": [
+      "<string>",
+      "<cstring>",
+      "<iostream>",
+      "<algorithm>"
+    ],
+    "correctAnswer": 0,
+    "explanation": "<string> header provides std::string class."
+  },
+  {
+    "id": "string-cpp-easy-q6",
+    "type": "drag-drop",
+    "question": "Arrange the steps to reverse a string using STL:",
+    "items": [
+      "Include algorithm header",
+      "Use reverse function",
+      "Pass begin() and end()",
+      "String is reversed"
+    ],
+    "correctOrder": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Use reverse(s.begin(), s.end()) to reverse string."
+  },
+  {
+    "id": "string-cpp-easy-q7",
+    "type": "fill-blank",
+    "question": "The method _____ removes characters from the end of a string.",
+    "correctAnswer": "pop_back",
+    "explanation": "pop_back() removes the last character from string."
+  },
+  {
+    "id": "string-cpp-easy-q8",
+    "type": "multiple-choice",
+    "question": "What does \"Hello\" + \"World\" return in C++?",
+    "options": [
+      "Compilation error",
+      "HelloWorld",
+      "Hello World",
+      "Runtime error"
+    ],
+    "correctAnswer": 0,
+    "explanation": "C-style string literals cannot be concatenated with +."
+  },
+  {
+    "id": "string-cpp-easy-q9",
+    "type": "code-completion",
+    "question": "Complete the code to check if string contains a substring:",
+    "code": "#include <string>\nstring text = \"C++ Programming\";\nif (text._____(\"gram\") != string::npos) {\n    cout << \"Found\";\n}",
+    "blanks": [
+      "find"
+    ],
+    "explanation": "find() method returns position or string::npos if not found."
+  },
+  {
+    "id": "string-cpp-easy-q10",
+    "type": "multiple-choice",
+    "question": "Which method appends a string to another string?",
+    "options": [
+      "append()",
+      "concat()",
+      "add()",
+      "join()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "append() method or += operator appends strings."
+  },
+  {
+    "id": "string-cpp-medium-q1",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of string concatenation using + operator?",
+    "options": [
+      "O(n)",
+      "O(1)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "String concatenation creates new string, taking O(n) time."
+  },
+  {
+    "id": "string-cpp-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the function to check if string is palindrome:",
+    "code": "bool isPalindrome(string s) {\n    transform(s.begin(), s.end(), s.begin(), ::tolower);\n    s.erase(remove_if(s.begin(), s.end(), [](char c) {\n        return !isalnum(c);\n    }), s.end());\n    \n    int left = 0, right = s.length() - 1;\n    while (left < right) {\n        if (s[left] != s[_____]) {\n            return false;\n        }\n        left++;\n        right--;\n    }\n    return true;\n}",
+    "blanks": [
+      "right"
+    ],
+    "explanation": "Compare characters from both ends moving inward."
+  },
+  {
+    "id": "string-cpp-medium-q3",
+    "type": "fill-blank",
+    "question": "The _____ class in C++ STL is used for efficient string building.",
+    "correctAnswer": "stringstream",
+    "explanation": "stringstream is efficient for building strings from parts."
+  },
+  {
+    "id": "string-cpp-medium-q4",
+    "type": "multiple-choice",
+    "question": "Which is the most efficient way to build a string from multiple parts?",
+    "options": [
+      "stringstream",
+      "+ operator",
+      "append() method",
+      "reserve() then append()"
+    ],
+    "correctAnswer": 3,
+    "explanation": "reserve() then append() avoids multiple reallocations."
+  },
+  {
+    "id": "string-cpp-medium-q5",
+    "type": "drag-drop",
+    "question": "Arrange steps to count character frequency in string:",
+    "items": [
+      "Include unordered_map",
+      "Create frequency map",
+      "Iterate through string",
+      "Update character count"
+    ],
+    "correctOrder": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Use unordered_map for character frequency counting."
+  },
+  {
+    "id": "string-cpp-medium-q6",
+    "type": "code-completion",
+    "question": "Complete function to remove duplicates from string:",
+    "code": "string removeDuplicates(string s) {\n    unordered_set<char> seen;\n    string result;\n    for (char c : s) {\n        if (seen._____(c) == seen.end()) {\n            seen._____(c);\n            result += c;\n        }\n    }\n    return result;\n}",
+    "blanks": [
+      "find",
+      "insert"
+    ],
+    "explanation": "Use unordered_set to track seen characters."
+  },
+  {
+    "id": "string-cpp-medium-q7",
+    "type": "multiple-choice",
+    "question": "What does s.substr(1, 3) return for s = \"C++Programming\"?",
+    "options": [
+      "++P",
+      "++Pr",
+      "C++",
+      "+Pr"
+    ],
+    "correctAnswer": 0,
+    "explanation": "substr(1, 3) returns 3 characters starting from index 1."
+  },
+  {
+    "id": "string-cpp-medium-q8",
+    "type": "fill-blank",
+    "question": "The _____ header provides regular expression functionality in C++.",
+    "correctAnswer": "regex",
+    "explanation": "<regex> header provides regular expression support."
+  },
+  {
+    "id": "string-cpp-medium-q9",
+    "type": "multiple-choice",
+    "question": "Which approach checks if two strings are anagrams?",
+    "options": [
+      "Sort both strings",
+      "Count character frequency",
+      "Use unordered_map",
+      "All of these"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Multiple valid approaches exist for anagram checking."
+  },
+  {
+    "id": "string-cpp-medium-q10",
+    "type": "code-completion",
+    "question": "Complete function to find longest common prefix:",
+    "code": "string longestCommonPrefix(vector<string>& strs) {\n    if (strs.empty()) return \"\";\n    string prefix = strs[0];\n    for (int i = 1; i < strs.size(); i++) {\n        while (strs[i].find(prefix) != 0) {\n            prefix = prefix._____(0, prefix.length() - 1);\n            if (prefix.empty()) return \"\";\n        }\n    }\n    return prefix;\n}",
+    "blanks": [
+      "substr"
+    ],
+    "explanation": "Reduce prefix until all strings start with it."
+  },
+  {
+    "id": "string-cpp-hard-q1",
+    "type": "code-completion",
+    "question": "Complete the KMP pattern matching algorithm:",
+    "code": "vector<int> kmpSearch(string text, string pattern) {\n    vector<int> computeLPS(string pattern) {\n        vector<int> lps(pattern.length(), 0);\n        int len = 0;\n        int i = 1;\n        while (i < pattern.length()) {\n            if (pattern[i] == pattern[len]) {\n                len++;\n                lps[i] = len;\n                i++;\n            } else {\n                if (len != 0) {\n                    len = lps[_____ - 1];\n                } else {\n                    lps[i] = 0;\n                    i++;\n                }\n            }\n        }\n        return lps;\n    }\n}",
+    "blanks": [
+      "len"
+    ],
+    "explanation": "LPS array helps in pattern matching efficiency."
+  },
+  {
+    "id": "string-cpp-hard-q2",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of Z-algorithm for pattern matching?",
+    "options": [
+      "O(n+m)",
+      "O(nm)",
+      "O(n log m)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Z-algorithm processes text and pattern in linear time."
+  },
+  {
+    "id": "string-cpp-hard-q3",
+    "type": "fill-blank",
+    "question": "The _____ data structure efficiently stores and searches multiple string patterns.",
+    "correctAnswer": "trie",
+    "explanation": "Trie (prefix tree) efficiently handles multiple patterns."
+  },
+  {
+    "id": "string-cpp-hard-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps for string compression using run-length encoding:",
+    "items": [
+      "Initialize result string",
+      "Count consecutive characters",
+      "Append count and character",
+      "Return compressed string"
+    ],
+    "correctOrder": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Run-length encoding compresses consecutive characters."
+  },
+  {
+    "id": "string-cpp-hard-q5",
+    "type": "multiple-choice",
+    "question": "Which algorithm finds the longest palindromic substring optimally?",
+    "options": [
+      "Manacher's algorithm",
+      "Dynamic programming",
+      "Expand around centers",
+      "Brute force"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Manacher's algorithm achieves O(n) time complexity."
+  },
+  {
+    "id": "string-cpp-hard-q6",
+    "type": "code-completion",
+    "question": "Complete function for minimum window substring:",
+    "code": "string minWindow(string s, string t) {\n    unordered_map<char, int> need;\n    for (char c : t) need[c]++;\n    \n    int missing = t.length();\n    int left = 0, start = 0;\n    int minLen = INT_MAX;\n    \n    for (int right = 0; right < s.length(); right++) {\n        if (need[s[right]] > 0) missing--;\n        need[s[right]]--;\n        \n        while (missing == 0) {\n            if (right - left + 1 < minLen) {\n                minLen = right - left + 1;\n                start = _____;\n            }\n            if (need[s[left]] == 0) missing++;\n            need[s[left]]++;\n            left++;\n        }\n    }\n    return minLen == INT_MAX ? \"\" : s.substr(start, minLen);\n}",
+    "blanks": [
+      "left"
+    ],
+    "explanation": "Sliding window technique for minimum window substring."
+  },
+  {
+    "id": "string-cpp-hard-q7",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of suffix array construction?",
+    "options": [
+      "O(n)",
+      "O(n²)",
+      "O(n log n)",
+      "O(1)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Suffix array requires O(n) space for n suffixes."
+  },
+  {
+    "id": "string-cpp-hard-q8",
+    "type": "fill-blank",
+    "question": "The _____ algorithm uses polynomial rolling hash for string matching.",
+    "correctAnswer": "Rabin-Karp",
+    "explanation": "Rabin-Karp uses polynomial rolling hash technique."
+  },
+  {
+    "id": "string-cpp-hard-q9",
+    "type": "multiple-choice",
+    "question": "Which algorithm solves edit distance between strings efficiently?",
+    "options": [
+      "Wagner-Fischer algorithm",
+      "Greedy approach",
+      "Divide and conquer",
+      "Backtracking"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Wagner-Fischer uses dynamic programming for edit distance."
+  },
+  {
+    "id": "string-cpp-hard-q10",
+    "type": "code-completion",
+    "question": "Complete function to generate all permutations of string:",
+    "code": "void permutations(string s, int start, vector<string>& result) {\n    if (start == s.length()) {\n        result.push_back(s);\n        return;\n    }\n    for (int i = start; i < s.length(); i++) {\n        swap(s[start], s[i]);\n        permutations(s, start + 1, result);\n        swap(s[start], s[i]);  // backtrack\n    }\n}",
+    "blanks": [
+      "permutations"
+    ],
+    "explanation": "This function uses backtracking to generate all permutations by swapping characters."
+  }
+]

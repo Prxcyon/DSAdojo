@@ -1,0 +1,311 @@
+[
+  {
+    "id": "stack-easy-q1",
+    "type": "multiple-choice",
+    "question": "What principle does a stack follow?",
+    "options": [
+      "LIFO (Last In, First Out)",
+      "FIFO (First In, First Out)",
+      "Random Access",
+      "Priority Based"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Stack follows Last In, First Out principle."
+  },
+  {
+    "id": "stack-easy-q2",
+    "type": "multiple-choice",
+    "question": "Which method adds an element to the top of a Java Stack?",
+    "options": [
+      "push()",
+      "pop()",
+      "peek()",
+      "top()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "push() method adds elements to the top of stack."
+  },
+  {
+    "id": "stack-easy-q3",
+    "type": "fill-blank",
+    "question": "The _____ method removes and returns the top element from a Java Stack.",
+    "correctAnswer": "pop",
+    "explanation": "pop() removes and returns the top element."
+  },
+  {
+    "id": "stack-easy-q4",
+    "type": "multiple-choice",
+    "question": "What exception is thrown when you try to pop from an empty Stack in Java?",
+    "options": [
+      "EmptyStackException",
+      "StackOverflowError",
+      "NullPointerException",
+      "IndexOutOfBoundsException"
+    ],
+    "correctAnswer": 0,
+    "explanation": "EmptyStackException is thrown when popping from empty stack."
+  },
+  {
+    "id": "stack-easy-q5",
+    "type": "drag-drop",
+    "question": "Arrange the stack operations in the order they would be called to add three elements (1, 2, 3) and then remove one:",
+    "items": ["stack.push(1)", "stack.push(2)", "stack.push(3)", "stack.pop()"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "First push all elements, then pop the last one."
+  },
+  {
+    "id": "stack-easy-q6",
+    "type": "multiple-choice",
+    "question": "Which method looks at the top element without removing it in Java Stack?",
+    "options": [
+      "peek()",
+      "pop()",
+      "push()",
+      "empty()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "peek() returns top element without removal."
+  },
+  {
+    "id": "stack-easy-q7",
+    "type": "fill-blank",
+    "question": "If we push 5, 10, 15 onto an empty Stack, the peek() method will return _____.",
+    "correctAnswer": "15",
+    "explanation": "Last pushed element (15) becomes the top."
+  },
+  {
+    "id": "stack-easy-q8",
+    "type": "multiple-choice",
+    "question": "How do you check if a Stack is empty in Java?",
+    "options": [
+      "empty()",
+      "size() == 0",
+      "isEmpty()",
+      "Both a and c"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Both empty() and isEmpty() methods check if stack is empty."
+  },
+  {
+    "id": "stack-easy-q9",
+    "type": "code-completion",
+    "question": "Complete the code to create a stack using Java:",
+    "code": "import java.util.Stack;\n\nStack<Integer> stack = new Stack<>();\nstack._____(5);\nstack._____(10);",
+    "blanks": ["push", "push"],
+    "explanation": "push() method adds elements to the stack."
+  },
+  {
+    "id": "stack-easy-q10",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of push operation in Java Stack?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Push operation takes constant time O(1)."
+  },
+  {
+    "id": "stack-medium-q1",
+    "type": "multiple-choice",
+    "question": "Which application commonly uses stacks?",
+    "options": [
+      "Method call management (JVM stack)",
+      "Browser back button",
+      "Undo operations",
+      "All of these"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Stacks are used in all these Java applications."
+  },
+  {
+    "id": "stack-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the method to check balanced parentheses in Java:",
+    "code": "public boolean isBalanced(String s) {\n    Stack<Character> stack = new Stack<>();\n    for (char c : s.toCharArray()) {\n        if (c == '(' || c == '[' || c == '{') {\n            stack._____(c);\n        } else if (c == ')' || c == ']' || c == '}') {\n            if (stack.empty()) return false;\n            stack._____();\n        }\n    }\n    return stack.empty();\n}",
+    "blanks": ["push", "pop"],
+    "explanation": "Push opening brackets, pop for closing ones."
+  },
+  {
+    "id": "stack-medium-q3",
+    "type": "fill-blank",
+    "question": "In postfix evaluation, operands are pushed onto the stack and when an operator is encountered, _____ operands are popped.",
+    "correctAnswer": "two",
+    "explanation": "Binary operators need two operands from stack."
+  },
+  {
+    "id": "stack-medium-q4",
+    "type": "multiple-choice",
+    "question": "What will be the size after these operations: push(1), push(2), pop(), push(3), pop()?",
+    "options": [
+      "Stack size is 1",
+      "Stack size is 2",
+      "Stack size is 0",
+      "Stack throws exception"
+    ],
+    "correctAnswer": 0,
+    "explanation": "After operations: push(1) → [1], push(2) → [1,2], pop() → [1], push(3) → [1,3], pop() → [1]. Size = 1."
+  },
+  {
+    "id": "stack-medium-q5",
+    "type": "drag-drop",
+    "question": "Arrange the steps to convert infix '2+3*4' to postfix using Stack:",
+    "items": ["Scan left to right", "Push operands to output", "Use stack for operators", "Pop remaining operators"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard algorithm for infix to postfix conversion."
+  },
+  {
+    "id": "stack-medium-q6",
+    "type": "multiple-choice",
+    "question": "Which Java collection can implement a stack?",
+    "options": [
+      "ArrayList",
+      "LinkedList", 
+      "ArrayDeque",
+      "All of these"
+    ],
+    "correctAnswer": 3,
+    "explanation": "All these collections can implement stack operations."
+  },
+  {
+    "id": "stack-medium-q7",
+    "type": "fill-blank",
+    "question": "The maximum number of elements a stack can hold is called its _____.",
+    "correctAnswer": "capacity",
+    "explanation": "Capacity defines the maximum size of stack."
+  },
+  {
+    "id": "stack-medium-q8",
+    "type": "code-completion",
+    "question": "Implement a stack class to get minimum element:",
+    "code": "class MinStack {\n    private Stack<Integer> stack;\n    private Stack<Integer> minStack;\n    \n    public MinStack() {\n        stack = new Stack<>();\n        minStack = new Stack<>();\n    }\n    \n    public void push(int x) {\n        stack.push(x);\n        if (minStack.empty() || x <= minStack.peek()) {\n            minStack._____(x);\n        }\n    }\n}",
+    "blanks": ["push"],
+    "explanation": "Maintain auxiliary stack for minimum elements."
+  },
+  {
+    "id": "stack-medium-q9",
+    "type": "multiple-choice",
+    "question": "What happens when you push to a stack that has reached its capacity?",
+    "options": [
+      "StackOverflowError (if using array)",
+      "EmptyStackException",
+      "OutOfMemoryError",
+      "IndexOutOfBoundsException"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Array-based stacks throw StackOverflowError when capacity exceeded."
+  },
+  {
+    "id": "stack-medium-q10",
+    "type": "multiple-choice",
+    "question": "Which expression notation uses stacks for evaluation in Java?",
+    "options": [
+      "Postfix",
+      "Prefix",
+      "Infix (with operator precedence)",
+      "All of these"
+    ],
+    "correctAnswer": 3,
+    "explanation": "All expression types can use stacks for evaluation."
+  },
+  {
+    "id": "stack-hard-q1",
+    "type": "code-completion",
+    "question": "Complete the method to find next greater element using stack:",
+    "code": "public int[] nextGreaterElement(int[] nums) {\n    int[] result = new int[nums.length];\n    Arrays.fill(result, -1);\n    Stack<Integer> stack = new Stack<>();\n    \n    for (int i = 0; i < nums.length; i++) {\n        while (!stack.empty() && nums[i] > nums[stack._____()]) {\n            result[stack.pop()] = nums[i];\n        }\n        stack._____(i);\n    }\n    return result;\n}",
+    "blanks": ["peek", "push"],
+    "explanation": "Use stack to store indices and find next greater elements."
+  },
+  {
+    "id": "stack-hard-q2",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of implementing two stacks in one array?",
+    "options": [
+      "O(n)",
+      "O(2n)",
+      "O(n²)",
+      "O(log n)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Two stacks in one array still need O(n) space total."
+  },
+  {
+    "id": "stack-hard-q3",
+    "type": "fill-blank",
+    "question": "The _____ algorithm uses stack to find the largest rectangular area in a histogram.",
+    "correctAnswer": "monotonic stack",
+    "explanation": "Monotonic stack algorithm efficiently finds largest rectangle."
+  },
+  {
+    "id": "stack-hard-q4",
+    "type": "drag-drop",
+    "question": "Arrange the steps for stock span problem using stack:",
+    "items": ["Iterate through prices", "Pop smaller/equal elements", "Calculate span", "Push current index"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard approach for stock span problem using monotonic stack."
+  },
+  {
+    "id": "stack-hard-q5",
+    "type": "multiple-choice",
+    "question": "Which problem can be solved using stack in O(n) time?",
+    "options": [
+      "Trapping rainwater",
+      "Largest rectangle in histogram",
+      "Valid parentheses",
+      "All of these"
+    ],
+    "correctAnswer": 3,
+    "explanation": "All these problems have O(n) stack-based solutions."
+  },
+  {
+    "id": "stack-hard-q6",
+    "type": "code-completion",
+    "question": "Implement stack using two queues - complete the pop operation:",
+    "code": "public int pop() {\n    if (q1.isEmpty()) return -1;\n    \n    while (q1.size() > 1) {\n        q2._____(q1.poll());\n    }\n    int result = q1._____();\n    Queue<Integer> temp = q1;\n    q1 = q2;\n    q2 = temp;\n    return result;\n}",
+    "blanks": ["offer", "poll"],
+    "explanation": "Transfer elements between queues to simulate stack behavior."
+  },
+  {
+    "id": "stack-hard-q7",
+    "type": "multiple-choice",
+    "question": "What is the minimum number of additional stacks needed to sort a stack?",
+    "options": [
+      "1 additional stack",
+      "2 additional stacks", 
+      "3 additional stacks",
+      "No additional stack needed"
+    ],
+    "correctAnswer": 0,
+    "explanation": "One additional stack is sufficient to sort using temporary storage."
+  },
+  {
+    "id": "stack-hard-q8",
+    "type": "fill-blank",
+    "question": "In the _____ problem, we use stack to find the nearest smaller element to the left of each array element.",
+    "correctAnswer": "nearest smaller element",
+    "explanation": "Stack efficiently finds nearest smaller elements using monotonic property."
+  },
+  {
+    "id": "stack-hard-q9",
+    "type": "multiple-choice",
+    "question": "Which approach is used to implement stack with getMin() in O(1) time?",
+    "options": [
+      "Auxiliary stack",
+      "Modified push/pop with formula",
+      "Storing min with each element",
+      "All of these"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Multiple approaches exist for O(1) getMin() operation."
+  },
+  {
+    "id": "stack-hard-q10",
+    "type": "code-completion",
+    "question": "Complete the method to reverse a stack using recursion:",
+    "code": "public void reverseStack(Stack<Integer> stack) {\n    if (stack.empty()) return;\n    \n    int temp = stack._____();\n    reverseStack(stack);\n    insertAtBottom(stack, temp);\n}\n\nprivate void insertAtBottom(Stack<Integer> stack, int item) {\n    if (stack.empty()) {\n        stack._____(item);\n        return;\n    }\n    int temp = stack.pop();\n    insertAtBottom(stack, item);\n    stack.push(temp);\n}",
+    "blanks": ["pop", "push"],
+    "explanation": "Use recursion and helper method to reverse stack without extra space."
+  }
+]

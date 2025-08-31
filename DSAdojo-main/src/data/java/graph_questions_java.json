@@ -1,0 +1,311 @@
+[
+  {
+    "id": "graph-easy-q1",
+    "type": "multiple-choice",
+    "question": "What is a graph in data structures?",
+    "options": [
+      "A collection of nodes connected by edges",
+      "A linear data structure",
+      "A tree with cycles",
+      "An array of elements"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A graph is a collection of vertices (nodes) connected by edges."
+  },
+  {
+    "id": "graph-easy-q2",
+    "type": "multiple-choice",
+    "question": "In Java, which data structure is commonly used to represent a graph's adjacency list?",
+    "options": [
+      "ArrayList<ArrayList<Integer>>",
+      "int[][]",
+      "LinkedList",
+      "Stack"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ArrayList of ArrayLists is commonly used for adjacency list representation."
+  },
+  {
+    "id": "graph-easy-q3",
+    "type": "fill-blank",
+    "question": "In an undirected graph, if there's an edge between vertex A and B, then there's also an edge between vertex _____ and _____.",
+    "correctAnswer": "B and A",
+    "explanation": "In undirected graphs, edges are bidirectional."
+  },
+  {
+    "id": "graph-easy-q4",
+    "type": "multiple-choice",
+    "question": "What is the degree of a vertex in an undirected graph?",
+    "options": [
+      "Number of edges connected to it",
+      "Number of vertices in the graph",
+      "Distance from root",
+      "Height of the vertex"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Degree is the number of edges incident to a vertex."
+  },
+  {
+    "id": "graph-easy-q5",
+    "type": "drag-drop",
+    "question": "Arrange the steps to add an edge in adjacency list representation:",
+    "items": ["Check if vertices exist", "Add edge to source's list", "For undirected: add to destination's list", "Update edge count"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard steps for adding edges in adjacency list."
+  },
+  {
+    "id": "graph-easy-q6",
+    "type": "multiple-choice",
+    "question": "Which traversal visits all vertices at the same level before moving to the next level?",
+    "options": [
+      "Breadth-First Search (BFS)",
+      "Depth-First Search (DFS)",
+      "Preorder traversal",
+      "Inorder traversal"
+    ],
+    "correctAnswer": 0,
+    "explanation": "BFS visits vertices level by level using a queue."
+  },
+  {
+    "id": "graph-easy-q7",
+    "type": "fill-blank",
+    "question": "BFS uses a _____ data structure while DFS can use a _____ or recursion.",
+    "correctAnswer": "Queue, Stack",
+    "explanation": "BFS uses queue for level-order, DFS uses stack or recursion."
+  },
+  {
+    "id": "graph-easy-q8",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of adjacency matrix representation?",
+    "options": [
+      "O(V²)",
+      "O(V + E)",
+      "O(V)",
+      "O(E)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Adjacency matrix requires V² space for V vertices."
+  },
+  {
+    "id": "graph-easy-q9",
+    "type": "code-completion",
+    "question": "Complete the code to create an adjacency list in Java:",
+    "code": "import java.util.*;\n\nclass Graph {\n    private int vertices;\n    private ArrayList<ArrayList<Integer>> adjList;\n    \n    public Graph(int v) {\n        this.vertices = v;\n        adjList = new ArrayList<>(v);\n        for(int i = 0; i < v; i++) {\n            adjList.add(new _____<>());\n        }\n    }\n}",
+    "blanks": ["ArrayList"],
+    "explanation": "Each vertex needs its own ArrayList to store adjacent vertices."
+  },
+  {
+    "id": "graph-easy-q10",
+    "type": "multiple-choice",
+    "question": "Which of these is NOT a type of graph?",
+    "options": [
+      "Binary graph",
+      "Directed graph",
+      "Weighted graph",
+      "Undirected graph"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Binary graph is not a standard graph type. Others are valid graph types."
+  },
+  {
+    "id": "graph-medium-q1",
+    "type": "multiple-choice",
+    "question": "Which algorithm is used to find the shortest path in an unweighted graph?",
+    "options": [
+      "BFS",
+      "DFS",
+      "Dijkstra's algorithm",
+      "Floyd-Warshall"
+    ],
+    "correctAnswer": 0,
+    "explanation": "BFS finds shortest path in unweighted graphs."
+  },
+  {
+    "id": "graph-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the BFS implementation in Java:",
+    "code": "public void BFS(int startVertex) {\n    boolean[] visited = new boolean[vertices];\n    Queue<Integer> queue = new _____<>();\n    \n    visited[startVertex] = true;\n    queue._____( startVertex);\n    \n    while(!queue.isEmpty()) {\n        int vertex = queue._____();\n        System.out.print(vertex + \" \");\n        \n        for(int adj : adjList.get(vertex)) {\n            if(!visited[adj]) {\n                visited[adj] = true;\n                queue._____(adj);\n            }\n        }\n    }\n}",
+    "blanks": ["LinkedList", "offer", "poll", "offer"],
+    "explanation": "BFS uses queue operations: offer to add, poll to remove."
+  },
+  {
+    "id": "graph-medium-q3",
+    "type": "fill-blank",
+    "question": "To detect a cycle in an undirected graph using DFS, we check if we visit a vertex that is already visited and is not the _____ of the current vertex.",
+    "correctAnswer": "parent",
+    "explanation": "In undirected graphs, we ignore the parent to avoid false cycle detection."
+  },
+  {
+    "id": "graph-medium-q4",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of DFS traversal?",
+    "options": [
+      "O(V + E)",
+      "O(V²)",
+      "O(V log V)",
+      "O(E log V)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "DFS visits each vertex once and each edge once."
+  },
+  {
+    "id": "graph-medium-q5",
+    "type": "drag-drop",
+    "question": "Arrange the steps for topological sorting using DFS:",
+    "items": ["Perform DFS", "Mark vertex as visited", "Visit all adjacent vertices", "Add to stack after processing"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Topological sort uses DFS with post-order stack insertion."
+  },
+  {
+    "id": "graph-medium-q6",
+    "type": "multiple-choice",
+    "question": "Which data structure is used in adjacency list representation?",
+    "options": [
+      "Array of LinkedLists",
+      "2D Array",
+      "Single LinkedList",
+      "Priority Queue"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Adjacency list uses array of lists for each vertex."
+  },
+  {
+    "id": "graph-medium-q7",
+    "type": "fill-blank",
+    "question": "A graph with no cycles is called a _____.",
+    "correctAnswer": "tree",
+    "explanation": "A connected acyclic graph is a tree."
+  },
+  {
+    "id": "graph-medium-q8",
+    "type": "code-completion",
+    "question": "Complete the DFS recursive implementation:",
+    "code": "private void DFSUtil(int vertex, boolean[] visited) {\n    visited[vertex] = _____;\n    System.out.print(vertex + \" \");\n    \n    for(int adj : adjList.get(vertex)) {\n        if(!visited[adj]) {\n            _____(adj, visited);\n        }\n    }\n}",
+    "blanks": ["true", "DFSUtil"],
+    "explanation": "Mark as visited and recursively call DFSUtil for unvisited neighbors."
+  },
+  {
+    "id": "graph-medium-q9",
+    "type": "multiple-choice",
+    "question": "What is a strongly connected component?",
+    "options": [
+      "Maximal set of vertices with path between any two",
+      "Vertices with same degree",
+      "Vertices at same level",
+      "Vertices with same color"
+    ],
+    "correctAnswer": 0,
+    "explanation": "SCC is a maximal set where every vertex is reachable from every other."
+  },
+  {
+    "id": "graph-medium-q10",
+    "type": "multiple-choice",
+    "question": "Which algorithm is used for finding strongly connected components?",
+    "options": [
+      "Kosaraju's algorithm",
+      "Kruskal's algorithm",
+      "Prim's algorithm",
+      "Bellman-Ford algorithm"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Kosaraju's algorithm finds SCCs using two DFS passes."
+  },
+  {
+    "id": "graph-hard-q1",
+    "type": "code-completion",
+    "question": "Complete Dijkstra's algorithm implementation:",
+    "code": "public int[] dijkstra(int src) {\n    int[] dist = new int[vertices];\n    Arrays.fill(dist, Integer.MAX_VALUE);\n    PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[1] - b[1]);\n    \n    dist[src] = 0;\n    pq.offer(new int[]{src, 0});\n    \n    while(!pq.isEmpty()) {\n        int[] current = pq._____();\n        int u = current[0];\n        \n        for(int[] edge : adjList.get(u)) {\n            int v = edge[0], weight = edge[1];\n            if(dist[u] + weight < dist[v]) {\n                dist[v] = dist[u] + weight;\n                pq._____(new int[]{v, dist[v]});\n            }\n        }\n    }\n    return dist;\n}",
+    "blanks": ["poll", "offer"],
+    "explanation": "Dijkstra uses priority queue to get minimum distance vertex."
+  },
+  {
+    "id": "graph-hard-q2",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of Dijkstra's algorithm using binary heap?",
+    "options": [
+      "O((V + E) log V)",
+      "O(V²)",
+      "O(V + E)",
+      "O(E log E)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "With binary heap, Dijkstra runs in O((V + E) log V) time."
+  },
+  {
+    "id": "graph-hard-q3",
+    "type": "fill-blank",
+    "question": "The _____ algorithm can detect negative weight cycles in a graph.",
+    "correctAnswer": "Bellman-Ford",
+    "explanation": "Bellman-Ford algorithm can detect negative cycles."
+  },
+  {
+    "id": "graph-hard-q4",
+    "type": "drag-drop",
+    "question": "Arrange the steps for Kruskal's MST algorithm:",
+    "items": ["Sort edges by weight", "Use Union-Find", "Pick minimum edge", "Check for cycle"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Kruskal's algorithm sorts edges and uses Union-Find to avoid cycles."
+  },
+  {
+    "id": "graph-hard-q5",
+    "type": "multiple-choice",
+    "question": "Which problem can be solved using graph coloring?",
+    "options": [
+      "Map coloring",
+      "Sudoku solving",
+      "Register allocation",
+      "All of these"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Graph coloring has applications in all these areas."
+  },
+  {
+    "id": "graph-hard-q6",
+    "type": "code-completion",
+    "question": "Complete the Union-Find implementation for cycle detection:",
+    "code": "class UnionFind {\n    private int[] parent, rank;\n    \n    public int find(int x) {\n        if(parent[x] != x) {\n            parent[x] = _____(parent[x]);\n        }\n        return parent[x];\n    }\n    \n    public boolean union(int x, int y) {\n        int px = find(x), py = find(y);\n        if(px == py) return false;\n        \n        if(rank[px] < rank[py]) {\n            parent[px] = py;\n        } else if(rank[px] > rank[py]) {\n            parent[py] = px;\n        } else {\n            parent[py] = px;\n            rank[px]++;\n        }\n        return true;\n    }\n}",
+    "blanks": ["find"],
+    "explanation": "Path compression in find operation improves efficiency."
+  },
+  {
+    "id": "graph-hard-q7",
+    "type": "multiple-choice",
+    "question": "What is the chromatic number of a complete graph with n vertices?",
+    "options": [
+      "n",
+      "n-1",
+      "2",
+      "1"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Complete graph needs n colors as every vertex is connected to every other."
+  },
+  {
+    "id": "graph-hard-q8",
+    "type": "fill-blank",
+    "question": "The _____ algorithm finds all-pairs shortest paths in O(V³) time.",
+    "correctAnswer": "Floyd-Warshall",
+    "explanation": "Floyd-Warshall uses dynamic programming for all-pairs shortest paths."
+  },
+  {
+    "id": "graph-hard-q9",
+    "type": "multiple-choice",
+    "question": "Which algorithm is used to find articulation points in a graph?",
+    "options": [
+      "Tarjan's algorithm",
+      "Dijkstra's algorithm",
+      "Kruskal's algorithm",
+      "Ford-Fulkerson algorithm"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Tarjan's algorithm finds articulation points using DFS and low values."
+  },
+  {
+    "id": "graph-hard-q10",
+    "type": "code-completion",
+    "question": "Complete the implementation for finding bridges in a graph:",
+    "code": "private void bridgeUtil(int u, boolean[] visited, int[] disc, int[] low, int[] parent, List<int[]> bridges) {\n    visited[u] = true;\n    disc[u] = low[u] = ++time;\n    \n    for(int v : adjList.get(u)) {\n        if(!visited[v]) {\n            parent[v] = u;\n            bridgeUtil(v, visited, disc, low, parent, bridges);\n            \n            low[u] = Math._____(low[u], low[v]);\n            \n            if(low[v] > disc[u]) {\n                bridges.add(new int[]{u, v});\n            }\n        } else if(v != parent[u]) {\n            low[u] = Math.min(low[u], _____[v]);\n        }\n    }\n}",
+    "blanks": ["min", "disc"],
+    "explanation": "Bridge finding uses discovery and low values in DFS traversal."
+  }
+]

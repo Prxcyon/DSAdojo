@@ -1,0 +1,335 @@
+[
+  {
+    "id": "dp-easy-q1",
+    "type": "multiple-choice",
+    "question": "What does Dynamic Programming break down?",
+    "options": [
+      "Complex problems into simpler subproblems",
+      "Arrays into smaller arrays",
+      "Methods into variables",
+      "Loops into conditions"
+    ],
+    "correctAnswer": 0,
+    "explanation": "DP breaks complex problems into overlapping subproblems."
+  },
+  {
+    "id": "dp-easy-q2",
+    "type": "fill-blank",
+    "question": "Dynamic Programming avoids redundant calculations by storing results in a _____.",
+    "correctAnswer": "array",
+    "explanation": "DP uses memoization array to store computed results."
+  },
+  {
+    "id": "dp-easy-q3",
+    "type": "multiple-choice",
+    "question": "Which property must a problem have to use Dynamic Programming?",
+    "options": [
+      "Overlapping subproblems",
+      "Optimal substructure",
+      "Both a and b",
+      "Neither a nor b"
+    ],
+    "correctAnswer": 2,
+    "explanation": "DP requires both overlapping subproblems and optimal substructure."
+  },
+  {
+    "id": "dp-easy-q4",
+    "type": "code-completion",
+    "question": "Complete the basic Fibonacci using DP:",
+    "code": "public static int fibonacci(int n) {\n    if (n <= 1) return n;\n    int[] dp = new int[n + 1];\n    dp[1] = 1;\n    for (int i = 2; i <= n; i++) {\n        dp[i] = dp[i-1] + dp[_____];\n    }\n    return dp[n];\n}",
+    "blanks": [
+      "i-2"
+    ],
+    "explanation": "Fibonacci: F(n) = F(n-1) + F(n-2)."
+  },
+  {
+    "id": "dp-easy-q5",
+    "type": "fill-blank",
+    "question": "The two main approaches in DP are top-down (memoization) and _____ (tabulation).",
+    "correctAnswer": "bottom-up",
+    "explanation": "Bottom-up approach builds solution from smaller subproblems."
+  },
+  {
+    "id": "dp-easy-q6",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of DP Fibonacci solution?",
+    "options": [
+      "O(n)",
+      "O(2^n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "DP Fibonacci computes each value once, so O(n)."
+  },
+  {
+    "id": "dp-easy-q7",
+    "type": "drag-drop",
+    "question": "Arrange the steps of DP approach:",
+    "items": [
+      "Identify subproblems",
+      "Find recurrence relation",
+      "Solve base cases",
+      "Build solution"
+    ],
+    "correctOrder": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Standard DP problem-solving methodology."
+  },
+  {
+    "id": "dp-easy-q8",
+    "type": "fill-blank",
+    "question": "In the climbing stairs problem, to reach step n, you can come from step _____ or step _____.",
+    "correctAnswer": "n-1, n-2",
+    "explanation": "You can climb 1 or 2 steps at a time."
+  },
+  {
+    "id": "dp-easy-q9",
+    "type": "multiple-choice",
+    "question": "What is memoization in DP?",
+    "options": [
+      "Storing computed results to avoid recomputation",
+      "Breaking problem into parts",
+      "Using recursion",
+      "Optimizing space"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Memoization caches results to prevent redundant calculations."
+  },
+  {
+    "id": "dp-easy-q10",
+    "type": "code-completion",
+    "question": "Complete the climbing stairs DP solution:",
+    "code": "public static int climbStairs(int n) {\n    if (n <= 2) return n;\n    int[] dp = new int[n + 1];\n    dp[1] = 1;\n    dp[2] = 2;\n    for (int i = 3; i <= n; i++) {\n        dp[i] = dp[i-1] + dp[_____];\n    }\n    return dp[n];\n}",
+    "blanks": [
+      "i-2"
+    ],
+    "explanation": "Ways to reach step i = ways to reach (i-1) + ways to reach (i-2)."
+  },
+  {
+    "id": "dp-medium-q1",
+    "type": "multiple-choice",
+    "question": "In the 0/1 Knapsack problem, what does dp[i][w] represent?",
+    "options": [
+      "Maximum value using first i items with weight limit w",
+      "Weight of first i items",
+      "Number of items with weight w",
+      "Minimum weight needed"
+    ],
+    "correctAnswer": 0,
+    "explanation": "dp[i][w] stores maximum value achievable with first i items and weight limit w."
+  },
+  {
+    "id": "dp-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the Longest Common Subsequence DP solution:",
+    "code": "public static int lcs(String text1, String text2) {\n    int m = text1.length(), n = text2.length();\n    int[][] dp = new int[m + 1][n + 1];\n    for (int i = 1; i <= m; i++) {\n        for (int j = 1; j <= n; j++) {\n            if (text1.charAt(i-1) == text2.charAt(j-1)) {\n                dp[i][j] = dp[i-1][j-1] + _____;\n            } else {\n                dp[i][j] = Math.max(dp[i-1][j], dp[i][_____]);\n            }\n        }\n    }\n    return dp[m][n];\n}",
+    "blanks": [
+      "1",
+      "j-1"
+    ],
+    "explanation": "If characters match, add 1 to diagonal. Otherwise, take maximum."
+  },
+  {
+    "id": "dp-medium-q3",
+    "type": "fill-blank",
+    "question": "The _____ problem asks for the minimum number of coins needed to make a given amount.",
+    "correctAnswer": "coin change",
+    "explanation": "Coin change is a classic DP optimization problem."
+  },
+  {
+    "id": "dp-medium-q4",
+    "type": "drag-drop",
+    "question": "Arrange the steps to solve House Robber problem:",
+    "items": [
+      "Consider current house",
+      "Skip current house",
+      "Take maximum",
+      "Update DP state"
+    ],
+    "correctOrder": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "At each house, choose between robbing or skipping."
+  },
+  {
+    "id": "dp-medium-q5",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of optimized Fibonacci DP in Java?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Only need two variables to store last two values, so O(1) space."
+  },
+  {
+    "id": "dp-medium-q6",
+    "type": "fill-blank",
+    "question": "In the edit distance problem, we can perform three operations: insert, delete, and _____.",
+    "correctAnswer": "replace",
+    "explanation": "Edit distance allows insert, delete, and replace operations."
+  },
+  {
+    "id": "dp-medium-q7",
+    "type": "code-completion",
+    "question": "Complete the minimum path sum in grid:",
+    "code": "public static int minPathSum(int[][] grid) {\n    int m = grid.length, n = grid[0].length;\n    for (int i = 0; i < m; i++) {\n        for (int j = 0; j < n; j++) {\n            if (i == 0 && j == 0) continue;\n            else if (i == 0) {\n                grid[i][j] += grid[i][j-_____];\n            } else if (j == 0) {\n                grid[i][j] += grid[_____][j];\n            } else {\n                grid[i][j] += Math.min(grid[i-1][j], grid[i][j-1]);\n            }\n        }\n    }\n    return grid[m-1][n-1];\n}",
+    "blanks": [
+      "1",
+      "i-1"
+    ],
+    "explanation": "Add minimum of top or left cell to current cell."
+  },
+  {
+    "id": "dp-medium-q8",
+    "type": "multiple-choice",
+    "question": "Which DP problem has the recurrence: dp[i] = Math.max(dp[i-1], dp[i-2] + arr[i])?",
+    "options": [
+      "House Robber",
+      "Climbing Stairs",
+      "Fibonacci",
+      "Coin Change"
+    ],
+    "correctAnswer": 0,
+    "explanation": "House Robber: either skip current or rob current + previous non-adjacent."
+  },
+  {
+    "id": "dp-medium-q9",
+    "type": "fill-blank",
+    "question": "The longest _____ subsequence problem finds the longest strictly increasing subsequence.",
+    "correctAnswer": "increasing",
+    "explanation": "LIS finds longest increasing subsequence in array."
+  },
+  {
+    "id": "dp-medium-q10",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of 2D DP solution for LCS?",
+    "options": [
+      "O(m × n)",
+      "O(m + n)",
+      "O(max(m, n))",
+      "O(m × n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "LCS DP fills m×n table, so O(m×n) time complexity."
+  },
+  {
+    "id": "dp-hard-q1",
+    "type": "code-completion",
+    "question": "Complete the palindrome partitioning DP solution:",
+    "code": "public static int minCut(String s) {\n    int n = s.length();\n    int[] dp = new int[n];\n    Arrays.fill(dp, Integer.MAX_VALUE);\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j <= i; j++) {\n            String sub = s.substring(j, i + 1);\n            if (isPalindrome(sub)) {\n                if (j == 0) {\n                    dp[i] = 0;\n                } else {\n                    dp[i] = Math.min(dp[i], dp[_____] + 1);\n                }\n            }\n        }\n    }\n    return dp[n-1];\n}",
+    "blanks": [
+      "j-1"
+    ],
+    "explanation": "If substring is palindrome, add 1 to cuts needed before it."
+  },
+  {
+    "id": "dp-hard-q2",
+    "type": "multiple-choice",
+    "question": "In matrix chain multiplication, what do we optimize?",
+    "options": [
+      "Number of scalar multiplications",
+      "Memory usage",
+      "Number of matrices",
+      "Matrix dimensions"
+    ],
+    "correctAnswer": 0,
+    "explanation": "We minimize the number of scalar multiplications needed."
+  },
+  {
+    "id": "dp-hard-q3",
+    "type": "fill-blank",
+    "question": "The _____ problem uses DP to find optimal strategy for picking coins from ends of array.",
+    "correctAnswer": "optimal game",
+    "explanation": "Optimal game strategy maximizes player's score."
+  },
+  {
+    "id": "dp-hard-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps for solving subset sum problem:",
+    "items": [
+      "Create DP table",
+      "Fill base cases",
+      "Check inclusion/exclusion",
+      "Return final result"
+    ],
+    "correctOrder": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Standard approach for subset sum DP solution."
+  },
+  {
+    "id": "dp-hard-q5",
+    "type": "code-completion",
+    "question": "Complete the longest palindromic subsequence:",
+    "code": "public static int longestPalindromeSubseq(String s) {\n    int n = s.length();\n    int[][] dp = new int[n][n];\n    for (int i = 0; i < n; i++) {\n        dp[i][i] = 1;\n    }\n    for (int len = 2; len <= n; len++) {\n        for (int i = 0; i <= n - len; i++) {\n            int j = i + len - 1;\n            if (s.charAt(i) == s.charAt(j)) {\n                dp[i][j] = dp[i+1][j-1] + _____;\n            } else {\n                dp[i][j] = Math.max(dp[i+1][j], dp[i][_____]);\n            }\n        }\n    }\n    return dp[0][n-1];\n}",
+    "blanks": [
+      "2",
+      "j-1"
+    ],
+    "explanation": "If characters match, add 2. Otherwise, take maximum of adjacent cells."
+  },
+  {
+    "id": "dp-hard-q6",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of egg dropping problem with k eggs and n floors?",
+    "options": [
+      "O(k × n²)",
+      "O(k × n)",
+      "O(n²)",
+      "O(k²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "For each state (k,n), we try all n floors, giving O(k×n²)."
+  },
+  {
+    "id": "dp-hard-q7",
+    "type": "fill-blank",
+    "question": "In the _____ problem, we arrange numbers to form the largest possible number.",
+    "correctAnswer": "largest number",
+    "explanation": "Largest number problem uses custom sorting with DP concepts."
+  },
+  {
+    "id": "dp-hard-q8",
+    "type": "code-completion",
+    "question": "Complete the word break DP solution:",
+    "code": "public static boolean wordBreak(String s, List<String> wordDict) {\n    Set<String> dict = new HashSet<>(wordDict);\n    boolean[] dp = new boolean[s.length() + 1];\n    dp[0] = true;\n    for (int i = 1; i <= s.length(); i++) {\n        for (int j = 0; j < i; j++) {\n            if (dp[j] && dict.contains(s.substring(j, i))) {\n                dp[i] = true;\n                break;\n            }\n        }\n    }\n    return dp[s.length()];\n}",
+    "blanks": [
+      "dp[j] && dict.contains(s.substring(j, i))"
+    ],
+    "explanation": "Word break uses DP to check if string can be segmented using dictionary words."
+  },
+  {
+    "id": "dp-hard-q9",
+    "type": "multiple-choice",
+    "question": "Which problem is solved by printing all paths from top-left to bottom-right in a matrix with only right and down moves?",
+    "options": [
+      "Unique Paths",
+      "Word Break",
+      "Longest Palindromic Subsequence",
+      "Egg Dropping"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Unique Paths problem finds number of ways to reach bottom-right from top-left using right and down moves."
+  },
+  {
+    "id": "dp-hard-q10",
+    "type": "fill-blank",
+    "question": "In DP, overlapping subproblems and _____ substructure are essential properties.",
+    "correctAnswer": "optimal",
+    "explanation": "Optimal substructure ensures a problem can be broken down into optimal subproblems."
+  }
+]

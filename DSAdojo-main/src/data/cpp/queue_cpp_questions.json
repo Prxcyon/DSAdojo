@@ -1,0 +1,305 @@
+[
+  {
+    "id": "queue-cpp-easy-q1",
+    "type": "multiple-choice",
+    "question": "What principle does a queue follow?",
+    "options": [
+      "FIFO (First In, First Out)",
+      "LIFO (Last In, First Out)",
+      "Random Access",
+      "Priority Based"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Queue follows First In, First Out principle."
+  },
+  {
+    "id": "queue-cpp-easy-q2",
+    "type": "fill-blank",
+    "question": "The _____ function adds an element to the rear of std::queue.",
+    "correctAnswer": "push",
+    "explanation": "push() adds elements to the rear of queue."
+  },
+  {
+    "id": "queue-cpp-easy-q3",
+    "type": "multiple-choice",
+    "question": "Which function removes an element from front of std::queue?",
+    "options": [
+      "pop()",
+      "push()",
+      "front()",
+      "back()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "pop() removes elements from the front of queue."
+  },
+  {
+    "id": "queue-cpp-easy-q4",
+    "type": "drag-drop",
+    "question": "Arrange queue operations to add 1, 2, 3 and remove one:",
+    "items": ["q.push(1)", "q.push(2)", "q.push(3)", "q.pop()"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Push all elements first, then pop removes the first added."
+  },
+  {
+    "id": "queue-cpp-easy-q5",
+    "type": "multiple-choice",
+    "question": "What happens when you call pop() on empty std::queue?",
+    "options": [
+      "Undefined behavior",
+      "Returns 0",
+      "Throws exception",
+      "Returns NULL"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Calling pop() on empty queue results in undefined behavior."
+  },
+  {
+    "id": "queue-cpp-easy-q6",
+    "type": "fill-blank",
+    "question": "If we push 5, 10, 15 to empty queue, q.front() will return _____.",
+    "correctAnswer": "5",
+    "explanation": "First pushed element (5) is at the front."
+  },
+  {
+    "id": "queue-cpp-easy-q7",
+    "type": "code-completion",
+    "question": "Complete the code to implement queue:",
+    "code": "#include <queue>\nusing namespace std;\n\nqueue<int> q;\nq._____(5);  // Add to rear\nq._____(10);\nint front_val = q._____;  // Get front",
+    "blanks": ["push", "push", "front()"],
+    "explanation": "push() adds to rear, front() gets front element."
+  },
+  {
+    "id": "queue-cpp-easy-q8",
+    "type": "multiple-choice",
+    "question": "Which function returns front element without removing it?",
+    "options": [
+      "front()",
+      "pop()",
+      "push()",
+      "empty()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "front() returns reference to front element."
+  },
+  {
+    "id": "queue-cpp-easy-q9",
+    "type": "multiple-choice",
+    "question": "Time complexity of push operation in std::queue?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "push() operation is O(1) constant time."
+  },
+  {
+    "id": "queue-cpp-easy-q10",
+    "type": "fill-blank",
+    "question": "A queue has _____ for insertion and _____ for deletion.",
+    "correctAnswer": "rear, front",
+    "explanation": "Elements inserted at rear, deleted from front."
+  },
+  {
+    "id": "queue-cpp-medium-q1",
+    "type": "multiple-choice",
+    "question": "What is the default underlying container for std::queue?",
+    "options": [
+      "std::deque",
+      "std::vector",
+      "std::list",
+      "std::array"
+    ],
+    "correctAnswer": 0,
+    "explanation": "std::deque is default container for std::queue."
+  },
+  {
+    "id": "queue-cpp-medium-q2",
+    "type": "code-completion",
+    "question": "Implement circular queue class:",
+    "code": "class CircularQueue {\n    int* arr;\n    int front, rear, size, capacity;\npublic:\n    CircularQueue(int k) : arr(new int[k]), front(0), rear(0), size(0), capacity(k) {}\n    \n    bool enQueue(int value) {\n        if (size == capacity) return false;\n        arr[rear] = value;\n        rear = (rear + 1) % _____;\n        size++;\n        return true;\n    }\n    \n    bool deQueue() {\n        if (size == 0) return false;\n        front = (front + 1) % capacity;\n        _____--;\n        return true;\n    }\n};",
+    "blanks": ["capacity", "size"],
+    "explanation": "Use modular arithmetic for circular behavior."
+  },
+  {
+    "id": "queue-cpp-medium-q3",
+    "type": "multiple-choice",
+    "question": "Main advantage of circular queue over linear queue?",
+    "options": [
+      "Better space utilization",
+      "Faster operations",
+      "Less memory usage",
+      "Simpler code"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Circular queue efficiently reuses space."
+  },
+  {
+    "id": "queue-cpp-medium-q4",
+    "type": "fill-blank",
+    "question": "BFS algorithm uses _____ to traverse graph level by level.",
+    "correctAnswer": "queue",
+    "explanation": "BFS uses queue for level-order traversal."
+  },
+  {
+    "id": "queue-cpp-medium-q5",
+    "type": "drag-drop",
+    "question": "Arrange steps for queue using two stacks:",
+    "items": ["Use stack1 for enqueue", "Transfer to stack2 for dequeue", "Pop from stack2", "Handle empty cases"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Two stacks simulate queue operations."
+  },
+  {
+    "id": "queue-cpp-medium-q6",
+    "type": "multiple-choice",
+    "question": "Which header is needed for std::queue?",
+    "options": [
+      "#include <queue>",
+      "#include <iostream>",
+      "#include <vector>",
+      "#include <stack>"
+    ],
+    "correctAnswer": 0,
+    "explanation": "std::queue is declared in <queue> header."
+  },
+  {
+    "id": "queue-cpp-medium-q7",
+    "type": "code-completion",
+    "question": "Complete queue implementation using two stacks:",
+    "code": "class QueueUsingStacks {\n    stack<int> s1, s2;\npublic:\n    void enqueue(int x) {\n        s1._____(x);\n    }\n    \n    int dequeue() {\n        if (s2.empty()) {\n            while (!s1.empty()) {\n                s2.push(s1._____());\n                s1.pop();\n            }\n        }\n        int result = s2.top();\n        s2._____();\n        return result;\n    }\n};",
+    "blanks": ["push", "top", "pop"],
+    "explanation": "Transfer elements from s1 to s2 for dequeue."
+  },
+  {
+    "id": "queue-cpp-medium-q8",
+    "type": "multiple-choice",
+    "question": "How does priority queue work?",
+    "options": [
+      "Elements served based on priority",
+      "Elements served in FIFO order",
+      "Elements served in LIFO order",
+      "Elements served randomly"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Priority queue serves highest priority elements first."
+  },
+  {
+    "id": "queue-cpp-medium-q9",
+    "type": "fill-blank",
+    "question": "The _____ allows insertion and deletion at both ends.",
+    "correctAnswer": "deque",
+    "explanation": "deque (double-ended queue) supports both-end operations."
+  },
+  {
+    "id": "queue-cpp-medium-q10",
+    "type": "multiple-choice",
+    "question": "Which algorithm primarily uses queue?",
+    "options": [
+      "Breadth-First Search",
+      "Depth-First Search", 
+      "Binary Search",
+      "Quick Sort"
+    ],
+    "correctAnswer": 0,
+    "explanation": "BFS algorithm uses queue for traversal."
+  },
+  {
+    "id": "queue-cpp-hard-q1",
+    "type": "code-completion",
+    "question": "Implement sliding window maximum using deque:",
+    "code": "vector<int> maxSlidingWindow(vector<int>& nums, int k) {\n    deque<int> dq;\n    vector<int> result;\n    \n    for (int i = 0; i < nums.size(); i++) {\n        // Remove indices outside window\n        while (!dq.empty() && dq.front() <= i - k) {\n            dq._____();\n        }\n        \n        // Remove smaller elements\n        while (!dq.empty() && nums[dq.back()] <= nums[i]) {\n            dq._____();\n        }\n        \n        dq._____(i);\n        \n        if (i >= k - 1) {\n            result.push_back(nums[dq.front()]);\n        }\n    }\n    return result;\n}",
+    "blanks": ["pop_front", "pop_back", "push_back"],
+    "explanation": "Use deque to maintain window maximum efficiently."
+  },
+  {
+    "id": "queue-cpp-hard-q2",
+    "type": "multiple-choice",
+    "question": "Time complexity to find minimum in queue of size n?",
+    "options": [
+      "O(n)",
+      "O(1)",
+      "O(log n)",
+      "O(n log n)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Must examine all n elements to find minimum."
+  },
+  {
+    "id": "queue-cpp-hard-q3",
+    "type": "fill-blank",
+    "question": "The _____ traversal uses queue for level-by-level tree processing.",
+    "correctAnswer": "level-order",
+    "explanation": "Level-order traversal processes tree using queue."
+  },
+  {
+    "id": "queue-cpp-hard-q4",
+    "type": "drag-drop",
+    "question": "Steps to reverse first K elements of queue:",
+    "items": ["Dequeue K elements to stack", "Pop stack to auxiliary queue", "Dequeue remaining elements", "Transfer back to original"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Use stack to reverse first K elements."
+  },
+  {
+    "id": "queue-cpp-hard-q5",
+    "type": "multiple-choice",
+    "question": "Best data structure for LRU cache?",
+    "options": [
+      "Doubly linked list + unordered_map",
+      "Queue + Stack",
+      "Vector + Queue",
+      "Set + Queue"
+    ],
+    "correctAnswer": 0,
+    "explanation": "LRU cache uses doubly linked list with hash map."
+  },
+  {
+    "id": "queue-cpp-hard-q6",
+    "type": "code-completion",
+    "question": "Generate binary numbers from 1 to n using queue:",
+    "code": "vector<string> generateBinary(int n) {\n    queue<string> q;\n    vector<string> result;\n    q._____(\"1\");\n    \n    for (int i = 0; i < n; i++) {\n        string binary = q._____();\n        q.pop();\n        result.push_back(binary);\n        \n        q.push(binary + \"0\");\n        q._____(binary + \"1\");\n    }\n    return result;\n}",
+    "blanks": ["push", "front", "push"],
+    "explanation": "Generate binary numbers by appending 0 and 1."
+  },
+  {
+    "id": "queue-cpp-hard-q7",
+    "type": "multiple-choice",
+    "question": "Space complexity of queue using linked list?",
+    "options": [
+      "O(n)",
+      "O(1)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Linked list queue needs O(n) space for n elements."
+  },
+  {
+    "id": "queue-cpp-hard-q8",
+    "type": "fill-blank",
+    "question": "BFS uses queue to find _____ path in unweighted graphs.",
+    "correctAnswer": "shortest",
+    "explanation": "BFS finds shortest path using queue traversal."
+  },
+  {
+    "id": "queue-cpp-hard-q9",
+    "type": "multiple-choice",
+    "question": "Efficient approach for queue with O(1) getMin()?",
+    "options": [
+      "Auxiliary min queue",
+      "Sorting the queue",
+      "Using priority_queue",
+      "Linear search"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Auxiliary queue tracks minimum elements."
+  },
+  {
+    "id": "queue-cpp-hard-q10",
+    "type": "code-completion",
+    "question": "Implement queue using single stack with recursion:",
+    "code": "class QueueUsingSingleStack {\n    stack<int> s;\npublic:\n    void enqueue(int x) {\n        s._____(x);\n    }\n    \n    int dequeue() {\n        if (s.size() == 1) {\n            int result = s.top();\n            s._____();\n            return result;\n        }\n        \n        int item = s.top();\n        s.pop();\n        int result = _____();\n        s.push(item);\n        return result;\n    }\n};",
+    "blanks": ["push", "pop", "dequeue"],
+    "explanation": "Use recursion with single stack for queue."
+  }
+]

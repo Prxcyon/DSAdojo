@@ -1,0 +1,311 @@
+[
+  {
+    "id": "stack-cpp-easy-q1",
+    "type": "multiple-choice",
+    "question": "What principle does a stack follow?",
+    "options": [
+      "LIFO (Last In, First Out)",
+      "FIFO (First In, First Out)",
+      "Random Access",
+      "Priority Based"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Stack follows Last In, First Out principle."
+  },
+  {
+    "id": "stack-cpp-easy-q2",
+    "type": "multiple-choice",
+    "question": "Which STL container is commonly used to implement stack in C++?",
+    "options": [
+      "std::stack",
+      "std::queue",
+      "std::vector",
+      "std::list"
+    ],
+    "correctAnswer": 0,
+    "explanation": "std::stack is the STL container adapter for stack."
+  },
+  {
+    "id": "stack-cpp-easy-q3",
+    "type": "fill-blank",
+    "question": "The _____ function removes and returns the top element from std::stack.",
+    "correctAnswer": "pop",
+    "explanation": "pop() removes the top element (but doesn't return it in STL)."
+  },
+  {
+    "id": "stack-cpp-easy-q4",
+    "type": "multiple-choice",
+    "question": "What happens when you call pop() on an empty std::stack?",
+    "options": [
+      "Undefined behavior",
+      "Returns 0",
+      "Returns NULL",
+      "Throws exception"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Calling pop() on empty stack results in undefined behavior."
+  },
+  {
+    "id": "stack-cpp-easy-q5",
+    "type": "drag-drop",
+    "question": "Arrange the stack operations to add elements 1, 2, 3 and remove one:",
+    "items": ["s.push(1)", "s.push(2)", "s.push(3)", "s.pop()"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Push all elements first, then pop removes the last one."
+  },
+  {
+    "id": "stack-cpp-easy-q6",
+    "type": "multiple-choice",
+    "question": "Which function returns the top element without removing it?",
+    "options": [
+      "top()",
+      "pop()",
+      "push()",
+      "empty()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "top() returns reference to top element without removal."
+  },
+  {
+    "id": "stack-cpp-easy-q7",
+    "type": "fill-blank",
+    "question": "If we push 5, 10, 15 onto empty stack, s.top() will return _____.",
+    "correctAnswer": "15",
+    "explanation": "Last pushed element (15) is at the top."
+  },
+  {
+    "id": "stack-cpp-easy-q8",
+    "type": "multiple-choice",
+    "question": "How do you check if std::stack is empty?",
+    "options": [
+      "s.empty()",
+      "s.size() == 0",
+      "s == NULL",
+      "Both a and b"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Both empty() and size() == 0 check for empty stack."
+  },
+  {
+    "id": "stack-cpp-easy-q9",
+    "type": "code-completion",
+    "question": "Complete the code to create and use a stack:",
+    "code": "#include <stack>\nusing namespace std;\n\nstack<int> s;\ns._____(5);\ns._____(10);\nint top_val = s._____;",
+    "blanks": ["push", "push", "top()"],
+    "explanation": "Use push() to add elements and top() to access top."
+  },
+  {
+    "id": "stack-cpp-easy-q10",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of push operation in std::stack?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Push operation is O(1) constant time."
+  },
+  {
+    "id": "stack-cpp-medium-q1",
+    "type": "multiple-choice",
+    "question": "Which is the underlying container for std::stack by default?",
+    "options": [
+      "std::deque",
+      "std::vector",
+      "std::list",
+      "std::array"
+    ],
+    "correctAnswer": 0,
+    "explanation": "std::deque is the default underlying container for std::stack."
+  },
+  {
+    "id": "stack-cpp-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the balanced parentheses function:",
+    "code": "bool isBalanced(string s) {\n    stack<char> st;\n    for (char c : s) {\n        if (c == '(' || c == '[' || c == '{') {\n            st._____(c);\n        } else {\n            if (st._____()) return false;\n            char top = st.top();\n            st._____();\n            if ((c == ')' && top != '(') || \n                (c == ']' && top != '[') || \n                (c == '}' && top != '{')) {\n                return false;\n            }\n        }\n    }\n    return st.empty();\n}",
+    "blanks": ["push", "empty", "pop"],
+    "explanation": "Push opening brackets, check and pop for closing ones."
+  },
+  {
+    "id": "stack-cpp-medium-q3",
+    "type": "fill-blank",
+    "question": "In postfix evaluation, when we encounter an operator, we pop _____ operands from stack.",
+    "correctAnswer": "two",
+    "explanation": "Binary operators require two operands from stack."
+  },
+  {
+    "id": "stack-cpp-medium-q4",
+    "type": "multiple-choice",
+    "question": "After push(1), push(2), pop(), push(3), pop(), what remains?",
+    "options": [
+      "Stack with element 1",
+      "Stack with elements 1,3",
+      "Empty stack",
+      "Stack with element 3"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Only the first pushed element remains."
+  },
+  {
+    "id": "stack-cpp-medium-q5",
+    "type": "drag-drop",
+    "question": "Arrange steps for infix to postfix conversion using stack:",
+    "items": ["Scan expression left to right", "Output operands directly", "Use stack for operators", "Pop remaining operators"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard shunting yard algorithm steps."
+  },
+  {
+    "id": "stack-cpp-medium-q6",
+    "type": "multiple-choice",
+    "question": "Which header file is needed for std::stack?",
+    "options": [
+      "#include <stack>",
+      "#include <iostream>",
+      "#include <vector>",
+      "#include <algorithm>"
+    ],
+    "correctAnswer": 0,
+    "explanation": "std::stack is declared in <stack> header."
+  },
+  {
+    "id": "stack-cpp-medium-q7",
+    "type": "fill-blank",
+    "question": "To create a stack with vector as underlying container: stack<int, vector<int>> s; uses _____ as base.",
+    "correctAnswer": "vector",
+    "explanation": "Template parameter specifies underlying container."
+  },
+  {
+    "id": "stack-cpp-medium-q8",
+    "type": "code-completion",
+    "question": "Implement MinStack class:",
+    "code": "class MinStack {\n    stack<int> s;\n    stack<int> minStack;\npublic:\n    void push(int val) {\n        s.push(val);\n        if (minStack.empty() || val <= minStack.top()) {\n            minStack._____(val);\n        }\n    }\n    \n    int getMin() {\n        return minStack._____;\n    }\n    \n    void pop() {\n        if (s.top() == minStack.top()) {\n            minStack._____;\n        }\n        s.pop();\n    }\n};",
+    "blanks": ["push", "top()", "pop()"],
+    "explanation": "Maintain auxiliary stack for minimum tracking."
+  },
+  {
+    "id": "stack-cpp-medium-q9",
+    "type": "multiple-choice",
+    "question": "What causes stack overflow in C++?",
+    "options": [
+      "Excessive recursion",
+      "Large local variables",
+      "Infinite loops",
+      "Both a and b"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Both excessive recursion and large local variables can cause stack overflow."
+  },
+  {
+    "id": "stack-cpp-medium-q10",
+    "type": "multiple-choice",
+    "question": "Which algorithm uses stack for expression evaluation?",
+    "options": [
+      "Postfix evaluation",
+      "Prefix evaluation",
+      "Infix to postfix conversion",
+      "All of these"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Stack is used in all expression evaluation algorithms."
+  },
+  {
+    "id": "stack-cpp-hard-q1",
+    "type": "code-completion",
+    "question": "Complete next greater element function:",
+    "code": "vector<int> nextGreater(vector<int>& arr) {\n    int n = arr.size();\n    vector<int> result(n, -1);\n    stack<int> st;\n    \n    for (int i = 0; i < n; i++) {\n        while (!st.empty() && arr[i] > arr[st._____]) {\n            result[st.top()] = arr[i];\n            st._____;\n        }\n        st._____(i);\n    }\n    return result;\n}",
+    "blanks": ["top()", "pop()", "push"],
+    "explanation": "Use monotonic stack to find next greater elements."
+  },
+  {
+    "id": "stack-cpp-hard-q2",
+    "type": "multiple-choice",
+    "question": "Space complexity of implementing two stacks in one array?",
+    "options": [
+      "O(n)",
+      "O(2n)",
+      "O(n²)",
+      "O(1)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Total space remains O(n) for n elements."
+  },
+  {
+    "id": "stack-cpp-hard-q3",
+    "type": "fill-blank",
+    "question": "The _____ algorithm uses stack to find maximum rectangle area in histogram.",
+    "correctAnswer": "stack-based",
+    "explanation": "Classic stack-based algorithm for histogram problem."
+  },
+  {
+    "id": "stack-cpp-hard-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps for stock span problem:",
+    "items": ["Iterate through prices", "Pop while stack top price ≤ current", "Calculate span", "Push current index"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Monotonic stack approach for stock span."
+  },
+  {
+    "id": "stack-cpp-hard-q5",
+    "type": "multiple-choice",
+    "question": "Which problems use monotonic stack pattern?",
+    "options": [
+      "Trapping rainwater",
+      "Largest rectangle in histogram",
+      "Next greater/smaller element",
+      "All of these"
+    ],
+    "correctAnswer": 3,
+    "explanation": "All these problems use monotonic stack efficiently."
+  },
+  {
+    "id": "stack-cpp-hard-q6",
+    "type": "code-completion",
+    "question": "Implement stack using two queues:",
+    "code": "class StackUsingQueues {\n    queue<int> q1, q2;\npublic:\n    void push(int val) {\n        q2._____(val);\n        while (!q1.empty()) {\n            q2.push(q1._____());\n            q1.pop();\n        }\n        swap(q1, q2);\n    }\n    \n    void pop() {\n        q1._____();\n    }\n    \n    int top() {\n        return q1._____();\n    }\n};",
+    "blanks": ["push", "front", "pop", "front"],
+    "explanation": "Transfer elements between queues to maintain stack order."
+  },
+  {
+    "id": "stack-cpp-hard-q7",
+    "type": "multiple-choice",
+    "question": "Minimum stacks needed to sort a stack?",
+    "options": [
+      "1 additional stack",
+      "2 additional stacks", 
+      "3 additional stacks",
+      "No additional stack"
+    ],
+    "correctAnswer": 0,
+    "explanation": "One auxiliary stack is sufficient for sorting."
+  },
+  {
+    "id": "stack-cpp-hard-q8",
+    "type": "fill-blank",
+    "question": "To find nearest _____ elements, we maintain a monotonic increasing stack.",
+    "correctAnswer": "smaller",
+    "explanation": "Monotonic increasing stack finds nearest smaller elements."
+  },
+  {
+    "id": "stack-cpp-hard-q9",
+    "type": "multiple-choice",
+    "question": "Which technique implements O(1) getMin() in stack?",
+    "options": [
+      "Auxiliary min stack",
+      "Encoding with differences",
+      "Storing min with each element",
+      "All of these"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Multiple approaches exist for O(1) getMin."
+  },
+  {
+    "id": "stack-cpp-hard-q10",
+    "type": "code-completion",
+    "question": "Complete recursive stack reversal:",
+    "code": "void reverseStack(stack<int>& s) {\n    if (s.empty()) return;\n    \n    int temp = s.top();\n    s._____;\n    reverseStack(s);\n    insertAtBottom(s, temp);\n}\n\nvoid insertAtBottom(stack<int>& s, int item) {\n    if (s.empty()) {\n        s._____(item);\n        return;\n    }\n    int temp = s.top();\n    s.pop();\n    insertAtBottom(s, item);\n    s.push(temp);\n}",
+    "blanks": ["pop()", "push"],
+    "explanation": "Use recursion to reverse stack in-place."
+  }
+]

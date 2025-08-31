@@ -1,0 +1,318 @@
+[
+  {
+    "id": "array-cpp-easy-q1",
+    "type": "multiple-choice",
+    "question": "What is the index of the first element in a C++ array?",
+    "options": [
+      "0",
+      "1",
+      "-1",
+      "Depends on declaration"
+    ],
+    "correctAnswer": 0,
+    "explanation": "C++ arrays are zero-indexed, so the first element is at index 0."
+  },
+  {
+    "id": "array-cpp-easy-q2",
+    "type": "fill-in-the-blank",
+    "question": "How do you find the size of a vector `vec`? vec.______()",
+    "answer": "size",
+    "explanation": "Use vec.size() to get the number of elements in a C++ vector."
+  },
+  {
+    "id": "array-cpp-easy-q3",
+    "type": "multiple-choice",
+    "question": "Which method adds an element to the end of a C++ vector?",
+    "options": [
+      "push_back()",
+      "append()",
+      "add()",
+      "insert_end()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "push_back() adds an element to the end of a vector."
+  },
+  {
+    "id": "array-cpp-easy-q4",
+    "type": "multiple-choice",
+    "question": "What happens when accessing arr[5] in array of size 3?",
+    "options": [
+      "Undefined behavior",
+      "Returns 0",
+      "Compilation error",
+      "Runtime exception"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Accessing out-of-bounds elements leads to undefined behavior in C++."
+  },
+  {
+    "id": "array-cpp-easy-q5",
+    "type": "code-completion",
+    "question": "Complete the code to access the first element of array `arr`:",
+    "code": "int first = arr[___];",
+    "answer": "0",
+    "explanation": "Index 0 gives the first element in C++ arrays."
+  },
+  {
+    "id": "array-cpp-easy-q6",
+    "type": "multiple-choice",
+    "question": "Which header is needed for vector operations?",
+    "options": [
+      "#include <vector>",
+      "#include <array>",
+      "#include <iostream>",
+      "#include <algorithm>"
+    ],
+    "correctAnswer": 0,
+    "explanation": "#include <vector> is required for std::vector operations."
+  },
+  {
+    "id": "array-cpp-easy-q7",
+    "type": "fill-in-the-blank",
+    "question": "To declare an integer array of size 10: int arr[____];",
+    "answer": "10",
+    "explanation": "Array size is specified in square brackets during declaration."
+  },
+  {
+    "id": "array-cpp-easy-q8",
+    "type": "multiple-choice",
+    "question": "How do you initialize a vector with 5 zeros?",
+    "options": [
+      "vector<int> vec(5, 0)",
+      "vector<int> vec[5] = {0}",
+      "vector<int> vec = new int[5]",
+      "vector<int> vec.resize(5, 0)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "vector<int> vec(size, value) initializes vector with given size and value."
+  },
+  {
+    "id": "array-cpp-easy-q9",
+    "type": "code-completion",
+    "question": "Complete the code to remove the last element from vector:",
+    "code": "vec.______();",
+    "answer": "pop_back",
+    "explanation": "pop_back() removes the last element from a vector."
+  },
+  {
+    "id": "array-cpp-easy-q10",
+    "type": "match-up",
+    "question": "Match the container with its characteristic:",
+    "pairs": [
+      ["array", "Fixed size"],
+      ["vector", "Dynamic size"],
+      ["deque", "Double-ended"],
+      ["list", "Linked nodes"]
+    ],
+    "explanation": "Different containers have different characteristics and use cases."
+  },
+  {
+    "id": "array-cpp-medium-q1",
+    "type": "multiple-choice",
+    "question": "Which is the correct way to iterate through a vector?",
+    "options": [
+      "for(auto& x : vec)",
+      "for(int i; i < vec.size(); i++)",
+      "for(auto it = vec.begin(); it != vec.end(); ++it)",
+      "All of these"
+    ],
+    "correctAnswer": 3,
+    "explanation": "All are valid ways to iterate through a vector in C++."
+  },
+  {
+    "id": "array-cpp-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the code to insert element 5 at position 2:",
+    "code": "vec.______(vec.begin() + 2, 5);",
+    "answer": "insert",
+    "explanation": "insert(iterator, value) inserts element at specified position."
+  },
+  {
+    "id": "array-cpp-medium-q3",
+    "type": "multiple-choice",
+    "question": "What does vec.at(i) provide over vec[i]?",
+    "options": [
+      "Bounds checking",
+      "Faster access",
+      "Reference return",
+      "Const correctness"
+    ],
+    "correctAnswer": 0,
+    "explanation": "at() performs bounds checking and throws exception if out of range."
+  },
+  {
+    "id": "array-cpp-medium-q4",
+    "type": "fill-in-the-blank",
+    "question": "To find an element in vector, use std::______(vec.begin(), vec.end(), value)",
+    "answer": "find",
+    "explanation": "std::find() searches for element in given range."
+  },
+  {
+    "id": "array-cpp-medium-q5",
+    "type": "multiple-choice",
+    "question": "Which algorithm sorts a vector in ascending order?",
+    "options": [
+      "std::sort()",
+      "std::reverse()",
+      "std::shuffle()",
+      "std::partition()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "std::sort() arranges elements in ascending order by default."
+  },
+  {
+    "id": "array-cpp-medium-q6",
+    "type": "code-completion",
+    "question": "Complete the code to resize vector to size 10:",
+    "code": "vec.______(10);",
+    "answer": "resize",
+    "explanation": "resize() changes the vector size, adding default values if needed."
+  },
+  {
+    "id": "array-cpp-medium-q7",
+    "type": "multiple-choice",
+    "question": "What header is needed for sort() function?",
+    "options": [
+      "#include <algorithm>",
+      "#include <vector>",
+      "#include <iostream>",
+      "#include <utility>"
+    ],
+    "correctAnswer": 0,
+    "explanation": "#include <algorithm> provides sorting and other algorithms."
+  },
+  {
+    "id": "array-cpp-medium-q8",
+    "type": "match-up",
+    "question": "Match the function with its purpose:",
+    "pairs": [
+      ["std::accumulate()", "Sum elements"],
+      ["std::count()", "Count occurrences"],
+      ["std::reverse()", "Reverse order"],
+      ["std::unique()", "Remove consecutive duplicates"]
+    ],
+    "explanation": "Standard library provides various algorithms for array operations."
+  },
+  {
+    "id": "array-cpp-medium-q9",
+    "type": "fill-in-the-blank",
+    "question": "To clear all elements from vector: vec.______()",
+    "answer": "clear",
+    "explanation": "clear() removes all elements from the vector."
+  },
+  {
+    "id": "array-cpp-medium-q10",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of vector element access?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Vector provides constant time random access like arrays."
+  },
+  {
+    "id": "array-cpp-hard-q1",
+    "type": "code-completion",
+    "question": "Complete the code to remove duplicates from sorted vector:",
+    "code": "vec.erase(std::______(vec.begin(), vec.end()), vec.end());",
+    "answer": "unique",
+    "explanation": "std::unique() removes consecutive duplicates, erase() removes the rest."
+  },
+  {
+    "id": "array-cpp-hard-q2",
+    "type": "multiple-choice",
+    "question": "Which container is best for frequent insertions at middle?",
+    "options": [
+      "std::list",
+      "std::vector",
+      "std::array",
+      "std::deque"
+    ],
+    "correctAnswer": 0,
+    "explanation": "std::list provides O(1) insertion/deletion at any position."
+  },
+  {
+    "id": "array-cpp-hard-q3",
+    "type": "fill-in-the-blank",
+    "question": "To rotate vector left by n positions: std::______(vec.begin(), vec.begin()+n, vec.end())",
+    "answer": "rotate",
+    "explanation": "std::rotate() rotates elements in specified range."
+  },
+  {
+    "id": "array-cpp-hard-q4",
+    "type": "multiple-choice",
+    "question": "Which technique is used for range sum queries?",
+    "options": [
+      "Prefix sum",
+      "Binary search",
+      "Two pointers",
+      "Sliding window"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Prefix sum enables O(1) range sum queries after O(n) preprocessing."
+  },
+  {
+    "id": "array-cpp-hard-q5",
+    "type": "code-completion",
+    "question": "Complete Kadane's algorithm implementation:",
+    "code": "int maxSum = arr[0], currentSum = arr[0];\nfor(int i = 1; i < n; i++) {\n    currentSum = max(arr[i], currentSum + ______);\n    maxSum = max(maxSum, currentSum);\n}",
+    "answer": "arr[i]",
+    "explanation": "Kadane's algorithm chooses between starting new or continuing subarray."
+  },
+  {
+    "id": "array-cpp-hard-q6",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of merge sort?",
+    "options": [
+      "O(n)",
+      "O(1)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Merge sort requires O(n) extra space for merging."
+  },
+  {
+    "id": "array-cpp-hard-q7",
+    "type": "fill-in-the-blank",
+    "question": "Binary search time complexity is ______",
+    "answer": "O(log n)",
+    "explanation": "Binary search halves search space each iteration."
+  },
+  {
+    "id": "array-cpp-hard-q8",
+    "type": "multiple-choice",
+    "question": "How many subsequences exist in array of size n?",
+    "options": [
+      "2ⁿ",
+      "n²",
+      "n!",
+      "n(n+1)/2"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each element can be included or excluded, giving 2ⁿ subsequences."
+  },
+  {
+    "id": "array-cpp-hard-q9",
+    "type": "code-completion",
+    "question": "Complete the code for two-pointer technique:",
+    "code": "int left = 0, right = n - 1;\nwhile(left < right) {\n    if(arr[left] + arr[right] == target) return true;\n    else if(arr[left] + arr[right] < target) ______++;\n    else right--;\n}",
+    "answer": "left",
+    "explanation": "Move left pointer right when sum is less than target."
+  },
+  {
+    "id": "array-cpp-hard-q10",
+    "type": "match-up",
+    "question": "Match the sorting algorithm with its best case complexity:",
+    "pairs": [
+      ["Quick sort", "O(n log n)"],
+      ["Bubble sort", "O(n)"],
+      ["Insertion sort", "O(n)"],
+      ["Selection sort", "O(n²)"]
+    ],
+    "explanation": "Different sorting algorithms have different best-case time complexities."
+  }
+]

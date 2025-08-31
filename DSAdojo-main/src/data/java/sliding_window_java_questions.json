@@ -1,0 +1,359 @@
+[
+  {
+    "id": "sliding-window-easy-q1",
+    "type": "multiple-choice",
+    "question": "What is the sliding window technique used for?",
+    "options": [
+      "Processing subarrays efficiently",
+      "Sorting arrays",
+      "Finding maximum element",
+      "Reversing arrays"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sliding window efficiently processes contiguous subarrays."
+  },
+  {
+    "id": "sliding-window-easy-q2",
+    "type": "fill-blank",
+    "question": "In sliding window, we maintain a _____ of fixed or variable size.",
+    "correctAnswer": "window",
+    "explanation": "The technique maintains a window that slides through the array."
+  },
+  {
+    "id": "sliding-window-easy-q3",
+    "type": "multiple-choice",
+    "question": "What are the two main types of sliding window?",
+    "options": [
+      "Fixed size and Variable size",
+      "Left and Right",
+      "Fast and Slow",
+      "Forward and Backward"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sliding window can have fixed size or variable size."
+  },
+  {
+    "id": "sliding-window-easy-q4",
+    "type": "code-completion",
+    "question": "Complete the basic sliding window template in Java:",
+    "code": "public List<Integer> slidingWindow(int[] arr, int k) {\n    int left = 0;\n    List<Integer> result = new ArrayList<>();\n    \n    for (int right = 0; right < arr.length; right++) {\n        // Add current element to window\n        \n        // Shrink window if needed\n        while (condition) {\n            left++;\n        }\n        \n        // Update result\n        result.add(windowValue);\n    }\n    return result;\n}",
+    "blanks": [
+      "left++"
+    ],
+    "explanation": "Move left pointer to shrink the window."
+  },
+  {
+    "id": "sliding-window-easy-q5",
+    "type": "fill-blank",
+    "question": "The time complexity of sliding window technique is typically _____.",
+    "correctAnswer": "O(n)",
+    "explanation": "Each element is visited at most twice (by left and right pointers)."
+  },
+  {
+    "id": "sliding-window-easy-q6",
+    "type": "multiple-choice",
+    "question": "In maximum sum subarray of size k, what do we track?",
+    "options": [
+      "Current window sum",
+      "All possible sums",
+      "Individual elements",
+      "Array indices"
+    ],
+    "correctAnswer": 0,
+    "explanation": "We maintain and update the current window sum."
+  },
+  {
+    "id": "sliding-window-easy-q7",
+    "type": "drag-drop",
+    "question": "Arrange the steps of fixed-size sliding window:",
+    "items": [
+      "Initialize window",
+      "Slide window right",
+      "Remove leftmost",
+      "Add rightmost"
+    ],
+    "correctOrder": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Standard fixed-size sliding window process."
+  },
+  {
+    "id": "sliding-window-easy-q8",
+    "type": "fill-blank",
+    "question": "In sliding window, we use _____ pointers to define the window boundaries.",
+    "correctAnswer": "two",
+    "explanation": "Left and right pointers define the window boundaries."
+  },
+  {
+    "id": "sliding-window-easy-q9",
+    "type": "multiple-choice",
+    "question": "What happens when we slide the window to the right?",
+    "options": [
+      "Add new element, remove old element",
+      "Only add new element",
+      "Only remove old element",
+      "Reset the window"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sliding right adds new element and removes leftmost element."
+  },
+  {
+    "id": "sliding-window-easy-q10",
+    "type": "code-completion",
+    "question": "Complete the maximum sum of k-size subarray in Java:",
+    "code": "public int maxSumSubarray(int[] arr, int k) {\n    if (arr.length < k) return 0;\n    \n    int windowSum = 0;\n    for (int i = 0; i < k; i++) {\n        windowSum += arr[i];\n    }\n    \n    int maxSum = windowSum;\n    for (int i = k; i < arr.length; i++) {\n        windowSum = windowSum - arr[i - k] + arr[_____];\n        maxSum = Math.max(maxSum, windowSum);\n    }\n    return maxSum;\n}",
+    "blanks": [
+      "i"
+    ],
+    "explanation": "Remove leftmost element and add current element."
+  },
+  {
+    "id": "sliding-window-medium-q1",
+    "type": "multiple-choice",
+    "question": "In variable-size sliding window, when do we shrink the window?",
+    "options": [
+      "When window violates the condition",
+      "When window size exceeds limit",
+      "After every iteration",
+      "Only at the end"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Shrink window when it violates the problem condition."
+  },
+  {
+    "id": "sliding-window-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the longest substring with k distinct characters:",
+    "code": "public int longestKDistinct(String s, int k) {\n    if (k == 0) return 0;\n    \n    int left = 0, maxLen = 0;\n    Map<Character, Integer> charCount = new HashMap<>();\n    \n    for (int right = 0; right < s.length(); right++) {\n        char c = s.charAt(right);\n        charCount.put(c, charCount.getOrDefault(c, 0) + 1);\n        \n        while (charCount.size() > k) {\n            char leftChar = s.charAt(left);\n            charCount.put(leftChar, charCount.get(leftChar) - 1);\n            if (charCount.get(leftChar) == 0) {\n                charCount._____(leftChar);\n            }\n            left++;\n        }\n        \n        maxLen = Math.max(maxLen, right - left + 1);\n    }\n    return maxLen;\n}",
+    "blanks": [
+      "remove"
+    ],
+    "explanation": "Remove character from HashMap when its count becomes 0."
+  },
+  {
+    "id": "sliding-window-medium-q3",
+    "type": "fill-blank",
+    "question": "The _____ problem finds the smallest subarray with sum greater than or equal to target.",
+    "correctAnswer": "minimum window",
+    "explanation": "Minimum window substring finds smallest valid subarray."
+  },
+  {
+    "id": "sliding-window-medium-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps for longest substring without repeating characters:",
+    "items": [
+      "Expand window right",
+      "Check for duplicates",
+      "Shrink from left",
+      "Update maximum length"
+    ],
+    "correctOrder": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Standard approach for non-repeating substring problem."
+  },
+  {
+    "id": "sliding-window-medium-q5",
+    "type": "multiple-choice",
+    "question": "What data structure is commonly used with sliding window for character frequency?",
+    "options": [
+      "HashMap",
+      "Array",
+      "Stack",
+      "Queue"
+    ],
+    "correctAnswer": 0,
+    "explanation": "HashMap tracks character frequencies in current window."
+  },
+  {
+    "id": "sliding-window-medium-q6",
+    "type": "fill-blank",
+    "question": "In the fruits into baskets problem, we can pick fruits from at most _____ different types.",
+    "correctAnswer": "two",
+    "explanation": "Fruits into baskets allows maximum 2 different fruit types."
+  },
+  {
+    "id": "sliding-window-medium-q7",
+    "type": "code-completion",
+    "question": "Complete the minimum window substring solution:",
+    "code": "public String minWindow(String s, String t) {\n    if (t.length() > s.length()) return \"\";\n    \n    Map<Character, Integer> need = new HashMap<>();\n    for (char c : t.toCharArray()) {\n        need.put(c, need.getOrDefault(c, 0) + 1);\n    }\n    \n    int left = 0, formed = 0, required = need.size();\n    Map<Character, Integer> windowCounts = new HashMap<>();\n    int minLen = Integer.MAX_VALUE, minLeft = 0;\n    \n    for (int right = 0; right < s.length(); right++) {\n        char c = s.charAt(right);\n        windowCounts.put(c, windowCounts.getOrDefault(c, 0) + 1);\n        \n        if (need.containsKey(c) && windowCounts.get(c).intValue() == need.get(c).intValue()) {\n            formed++;\n        }\n        \n        while (formed == _____ && left <= right) {\n            if (right - left + 1 < minLen) {\n                minLen = right - left + 1;\n                minLeft = left;\n            }\n            \n            char leftChar = s.charAt(left);\n            windowCounts.put(leftChar, windowCounts.get(leftChar) - 1);\n            if (need.containsKey(leftChar) && windowCounts.get(leftChar) < need.get(leftChar)) {\n                formed--;\n            }\n            left++;\n        }\n    }\n    \n    return minLen == Integer.MAX_VALUE ? \"\" : s.substring(minLeft, minLeft + minLen);\n}",
+    "blanks": [
+      "required"
+    ],
+    "explanation": "Contract window when all required characters are satisfied."
+  },
+  {
+    "id": "sliding-window-medium-q8",
+    "type": "multiple-choice",
+    "question": "What is the key insight in permutation in string problem?",
+    "options": [
+      "Character frequency must match exactly",
+      "Order of characters matters",
+      "Length must be variable",
+      "Only unique characters allowed"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Permutation requires exact character frequency match."
+  },
+  {
+    "id": "sliding-window-medium-q9",
+    "type": "fill-blank",
+    "question": "The _____ subarray problem finds the longest subarray with equal number of 0s and 1s.",
+    "correctAnswer": "contiguous",
+    "explanation": "Contiguous subarray with equal 0s and 1s uses sliding window concepts."
+  },
+  {
+    "id": "sliding-window-medium-q10",
+    "type": "multiple-choice",
+    "question": "In longest repeating character replacement, what do we track?",
+    "options": [
+      "Frequency of most frequent character in window",
+      "Total number of characters",
+      "Position of characters",
+      "ASCII values"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Track max frequency to determine how many characters need replacement."
+  },
+  {
+    "id": "sliding-window-hard-q1",
+    "type": "code-completion",
+    "question": "Complete the sliding window maximum using ArrayDeque:",
+    "code": "public int[] maxSlidingWindow(int[] nums, int k) {\n    if (nums.length == 0) return new int[0];\n    \n    ArrayDeque<Integer> deque = new ArrayDeque<>();\n    int[] result = new int[nums.length - k + 1];\n    \n    for (int i = 0; i < nums.length; i++) {\n        // Remove indices outside window\n        while (!deque.isEmpty() && deque.peekFirst() < i - k + 1) {\n            deque._____();\n        }\n        \n        // Remove smaller elements\n        while (!deque.isEmpty() && nums[deque.peekLast()] < nums[i]) {\n            deque.pollLast();\n        }\n        \n        deque._____(i);\n        \n        // Add to result when window is complete\n        if (i >= k - 1) {\n            result[i - k + 1] = nums[deque.peekFirst()];\n        }\n    }\n    \n    return result;\n}",
+    "blanks": [
+      "pollFirst",
+      "offerLast"
+    ],
+    "explanation": "Use ArrayDeque to maintain maximum element indices in current window."
+  },
+  {
+    "id": "sliding-window-hard-q2",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of sliding window maximum with deque?",
+    "options": [
+      "O(n)",
+      "O(n log k)",
+      "O(nk)",
+      "O(k)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each element is added and removed at most once, so O(n)."
+  },
+  {
+    "id": "sliding-window-hard-q3",
+    "type": "fill-blank",
+    "question": "The _____ problem finds all anagrams of a pattern in a text using sliding window.",
+    "correctAnswer": "find anagrams",
+    "explanation": "Find anagrams uses sliding window to match character frequencies."
+  },
+  {
+    "id": "sliding-window-hard-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps for substring with concatenation of all words:",
+    "items": [
+      "Create word frequency map",
+      "Use sliding window of word length",
+      "Check word matches",
+      "Move window by word length"
+    ],
+    "correctOrder": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Complex sliding window problem requiring word-level processing."
+  },
+  {
+    "id": "sliding-window-hard-q5",
+    "type": "code-completion",
+    "question": "Complete the longest substring with at most k distinct characters:",
+    "code": "public int lengthOfLongestSubstringKDistinct(String s, int k) {\n    if (k == 0) return 0;\n    \n    int left = 0, maxLength = 0;\n    Map<Character, Integer> charFreq = new HashMap<>();\n    \n    for (int right = 0; right < s.length(); right++) {\n        char c = s.charAt(right);\n        charFreq.put(c, charFreq.getOrDefault(c, 0) + 1);\n        \n        while (charFreq.size() > k) {\n            char leftChar = s.charAt(left);\n            charFreq.put(leftChar, charFreq.get(leftChar) - 1);\n            if (charFreq.get(leftChar) == 0) {\n                charFreq.remove(leftChar);\n            }\n            left++;\n        }\n        \n        maxLength = Math.max(maxLength, _____ - left + 1);\n    }\n    \n    return maxLength;\n}",
+    "blanks": [
+      "right"
+    ],
+    "explanation": "Maintain character frequency and calculate window size using right pointer."
+  },
+  {
+    "id": "sliding-window-hard-q6",
+    "type": "multiple-choice",
+    "question": "Which data structure is best for sliding window maximum problem?",
+    "options": [
+      "ArrayDeque (Double-ended queue)",
+      "Stack",
+      "PriorityQueue",
+      "ArrayList"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ArrayDeque allows efficient insertion/deletion from both ends."
+  },
+  {
+    "id": "sliding-window-hard-q6",
+    "type": "multiple-choice",
+    "question": "Which data structure is best for sliding window maximum problem?",
+    "options": [
+      "ArrayDeque (Double-ended queue)",
+      "Stack",
+      "PriorityQueue",
+      "ArrayList"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ArrayDeque allows efficient insertion/deletion from both ends."
+  },
+  {
+    "id": "sliding-window-hard-q7",
+    "type": "fill-blank",
+    "question": "The sliding window technique optimizes problems that require processing _____ subarrays.",
+    "correctAnswer": "contiguous",
+    "explanation": "Sliding window is ideal when subarrays are contiguous."
+  },
+  {
+    "id": "sliding-window-hard-q8",
+    "type": "multiple-choice",
+    "question": "Which of the following is true about a monotonic queue used in sliding window problems?",
+    "options": [
+      "It keeps elements sorted for easy maximum/minimum lookup",
+      "It stores all window elements explicitly",
+      "It uses binary search",
+      "It reduces space complexity to O(1)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A monotonic queue maintains a sorted order (monotonic increasing or decreasing) to quickly fetch max/min."
+  },
+  {
+    "id": "sliding-window-hard-q9",
+    "type": "code-completion",
+    "question": "Complete the code for counting number of subarrays with sum ≤ target:",
+    "code": "public int countSubarraysWithSumAtMost(int[] nums, int target) {\n    int left = 0, count = 0, sum = 0;\n    for (int right = 0; right < nums.length; right++) {\n        sum += nums[right];\n        while (sum > target) {\n            sum -= nums[left];\n            left++;\n        }\n        count += (____ - left + 1);\n    }\n    return count;\n}",
+    "blanks": [
+      "right"
+    ],
+    "explanation": "We count all valid subarrays ending at current right."
+  },
+  {
+    "id": "sliding-window-hard-q10",
+    "type": "drag-drop",
+    "question": "Arrange the steps to solve the sliding window maximum efficiently:",
+    "items": [
+      "Maintain deque of indices",
+      "Remove indices outside window",
+      "Remove smaller elements from deque",
+      "Append current index",
+      "Add max to result"
+    ],
+    "correctOrder": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Standard process for maintaining window maximum using deque."
+  }
+]

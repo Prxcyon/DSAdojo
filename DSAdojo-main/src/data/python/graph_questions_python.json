@@ -1,0 +1,399 @@
+[
+  {
+    "id": "graph-easy-q1",
+    "type": "multiple-choice",
+    "question": "What is the most common way to represent a graph in Python?",
+    "options": [
+      "Dictionary with lists as values",
+      "2D list",
+      "Set of tuples",
+      "Single list"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Dictionary with lists (adjacency list) is the most common representation."
+  },
+  {
+    "id": "graph-easy-q2",
+    "type": "multiple-choice",
+    "question": "Which Python collection is ideal for storing visited vertices during traversal?",
+    "options": [
+      "set",
+      "list",
+      "dict",
+      "tuple"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Set provides O(1) lookup time for checking visited vertices."
+  },
+  {
+    "id": "graph-easy-q3",
+    "type": "fill-blank",
+    "question": "In Python, the _____ module provides deque which is efficient for BFS implementation.",
+    "correctAnswer": "collections",
+    "explanation": "collections.deque provides efficient queue operations for BFS."
+  },
+  {
+    "id": "graph-easy-q4",
+    "type": "multiple-choice",
+    "question": "What does this code create: graph = defaultdict(list)?",
+    "options": [
+      "A graph using adjacency list representation",
+      "A weighted graph",
+      "A directed graph only",
+      "A binary tree"
+    ],
+    "correctAnswer": 0,
+    "explanation": "defaultdict(list) creates an adjacency list representation."
+  },
+  {
+    "id": "graph-easy-q5",
+    "type": "drag-drop",
+    "question": "Arrange the steps to add an edge to an undirected graph in Python:",
+    "items": [
+      "graph[u].append(v)",
+      "graph[v].append(u)",
+      "def add_edge(graph, u, v):",
+      "pass"
+    ],
+    "correctOrder": [
+      2,
+      0,
+      1,
+      3
+    ],
+    "explanation": "For undirected graphs, add edge in both directions."
+  },
+  {
+    "id": "graph-easy-q6",
+    "type": "multiple-choice",
+    "question": "Which data structure is used for BFS in Python?",
+    "options": [
+      "collections.deque",
+      "list",
+      "set",
+      "dict"
+    ],
+    "correctAnswer": 0,
+    "explanation": "deque provides efficient popleft() operation for BFS queue."
+  },
+  {
+    "id": "graph-easy-q7",
+    "type": "fill-blank",
+    "question": "To create an empty graph using defaultdict: from collections import _____, graph = _____(list)",
+    "correctAnswer": "defaultdict, defaultdict",
+    "explanation": "defaultdict automatically creates empty lists for new keys."
+  },
+  {
+    "id": "graph-easy-q8",
+    "type": "multiple-choice",
+    "question": "What is the advantage of using adjacency list over adjacency matrix for sparse graphs?",
+    "options": [
+      "Space efficient",
+      "Faster edge lookup",
+      "Easier to implement",
+      "Better for dense graphs"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Adjacency list uses O(V + E) space vs O(V²) for matrix."
+  },
+  {
+    "id": "graph-easy-q9",
+    "type": "code-completion",
+    "question": "Complete the code to create a simple graph in Python:",
+    "code": "from collections import defaultdict\n\nclass Graph:\n    def __init__(self):\n        self.graph = _____(list)\n    \n    def add_edge(self, u, v):\n        self.graph[u]._____(v)\n        self.graph[v]._____(u)  # for undirected graph",
+    "blanks": [
+      "defaultdict",
+      "append",
+      "append"
+    ],
+    "explanation": "defaultdict creates lists automatically, append adds edges."
+  },
+  {
+    "id": "graph-easy-q10",
+    "type": "multiple-choice",
+    "question": "In Python, which is the correct way to check if a vertex is visited?",
+    "options": [
+      "if vertex in visited:",
+      "if visited[vertex]:",
+      "if vertex == visited:",
+      "if vertex.visited:"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Using 'in' operator with set is the most Pythonic way."
+  },
+  {
+    "id": "graph-medium-q1",
+    "type": "multiple-choice",
+    "question": "Which module in Python provides graph algorithms?",
+    "options": [
+      "NetworkX",
+      "matplotlib",
+      "numpy",
+      "pandas"
+    ],
+    "correctAnswer": 0,
+    "explanation": "NetworkX is Python's primary graph library."
+  },
+  {
+    "id": "graph-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the BFS implementation in Python:",
+    "code": "from collections import deque\n\ndef bfs(graph, start):\n    visited = set()\n    queue = _____()\n    \n    visited.add(start)\n    queue._____(start)\n    \n    while queue:\n        vertex = queue._____()\n        print(vertex, end=' ')\n        \n        for neighbor in graph[vertex]:\n            if neighbor not in visited:\n                visited._____(neighbor)\n                queue.append(neighbor)",
+    "blanks": [
+      "deque",
+      "append",
+      "popleft",
+      "add"
+    ],
+    "explanation": "BFS uses deque for queue operations and set for visited tracking."
+  },
+  {
+    "id": "graph-medium-q3",
+    "type": "fill-blank",
+    "question": "In DFS, we use _____ to keep track of the recursion path and detect cycles.",
+    "correctAnswer": "recursion stack",
+    "explanation": "Recursion stack (or explicit stack) tracks the current path in DFS."
+  },
+  {
+    "id": "graph-medium-q4",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of BFS/DFS in terms of V (vertices) and E (edges)?",
+    "options": [
+      "O(V + E)",
+      "O(V * E)",
+      "O(V²)",
+      "O(E²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Both BFS and DFS visit each vertex and edge exactly once."
+  },
+  {
+    "id": "graph-medium-q5",
+    "type": "drag-drop",
+    "question": "Arrange the steps for detecting cycle in undirected graph using DFS:",
+    "items": [
+      "Start DFS from unvisited vertex",
+      "Mark current vertex as visited",
+      "Check all neighbors",
+      "If neighbor is visited and not parent, cycle found"
+    ],
+    "correctOrder": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Standard DFS-based cycle detection for undirected graphs."
+  },
+  {
+    "id": "graph-medium-q6",
+    "type": "multiple-choice",
+    "question": "Which Python data structure can be used to implement a priority queue for Dijkstra's algorithm?",
+    "options": [
+      "heapq",
+      "list",
+      "set",
+      "dict"
+    ],
+    "correctAnswer": 0,
+    "explanation": "heapq module provides min-heap implementation for priority queue."
+  },
+  {
+    "id": "graph-medium-q7",
+    "type": "fill-blank",
+    "question": "Topological sorting is only possible for _____ graphs.",
+    "correctAnswer": "directed acyclic",
+    "explanation": "Topological sort requires a DAG (Directed Acyclic Graph)."
+  },
+  {
+    "id": "graph-medium-q8",
+    "type": "code-completion",
+    "question": "Complete the DFS implementation with recursion:",
+    "code": "def dfs(graph, vertex, visited):\n    visited._____(vertex)\n    print(vertex, end=' ')\n    \n    for neighbor in graph[vertex]:\n        if neighbor not in _____:\n            _____(graph, neighbor, visited)",
+    "blanks": [
+      "add",
+      "visited",
+      "dfs"
+    ],
+    "explanation": "DFS marks vertex as visited and recursively visits unvisited neighbors."
+  },
+  {
+    "id": "graph-medium-q9",
+    "type": "multiple-choice",
+    "question": "What is the purpose of the 'parent' parameter in cycle detection?",
+    "options": [
+      "To avoid going back to the immediate parent",
+      "To store the root of the tree",
+      "To count the number of edges",
+      "To find the shortest path"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Parent parameter prevents false cycle detection in undirected graphs."
+  },
+  {
+    "id": "graph-medium-q10",
+    "type": "multiple-choice",
+    "question": "Which algorithm is used for finding connected components in an undirected graph?",
+    "options": [
+      "DFS or BFS",
+      "Dijkstra's algorithm",
+      "Bellman-Ford algorithm",
+      "Floyd-Warshall algorithm"
+    ],
+    "correctAnswer": 0,
+    "explanation": "DFS or BFS can find all connected components by starting from unvisited vertices."
+  },
+  {
+    "id": "graph-hard-q1",
+    "type": "code-completion",
+    "question": "Complete Dijkstra's algorithm implementation in Python:",
+    "code": "import heapq\n\ndef dijkstra(graph, start):\n    distances = {vertex: float('infinity') for vertex in graph}\n    distances[start] = 0\n    pq = [(0, start)]\n    \n    while pq:\n        current_distance, current_vertex = heapq._____(pq)\n        \n        if current_distance > distances[current_vertex]:\n            continue\n            \n        for neighbor, weight in graph[current_vertex]:\n            distance = current_distance + weight\n            \n            if distance < distances[neighbor]:\n                distances[neighbor] = distance\n                heapq._____(pq, (distance, neighbor))\n    \n    return distances",
+    "blanks": [
+      "heappop",
+      "heappush"
+    ],
+    "explanation": "Dijkstra uses heappop to get minimum distance and heappush to add new distances."
+  },
+  {
+    "id": "graph-hard-q2",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of Dijkstra's algorithm using a binary heap?",
+    "options": [
+      "O((V + E) log V)",
+      "O(V²)",
+      "O(V + E)",
+      "O(V log V)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "With binary heap, each edge relaxation takes O(log V) time."
+  },
+  {
+    "id": "graph-hard-q3",
+    "type": "fill-blank",
+    "question": "The _____ algorithm can handle negative edge weights but not negative cycles.",
+    "correctAnswer": "Bellman-Ford",
+    "explanation": "Bellman-Ford algorithm works with negative weights but detects negative cycles."
+  },
+  {
+    "id": "graph-hard-q4",
+    "type": "drag-drop",
+    "question": "Arrange the steps for Kruskal's MST algorithm:",
+    "items": [
+      "Sort all edges by weight",
+      "Initialize Union-Find",
+      "For each edge, check if it creates cycle",
+      "If no cycle, add to MST"
+    ],
+    "correctOrder": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Kruskal's algorithm builds MST by adding minimum weight edges that don't create cycles."
+  },
+  {
+    "id": "graph-hard-q5",
+    "type": "multiple-choice",
+    "question": "Which algorithm is used to find strongly connected components in a directed graph?",
+    "options": [
+      "Kosaraju's algorithm",
+      "Dijkstra's algorithm",
+      "Kruskal's algorithm",
+      "Prim's algorithm"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Kosaraju's algorithm uses two DFS passes to find SCCs."
+  },
+  {
+    "id": "graph-hard-q6",
+    "type": "code-completion",
+    "question": "Complete the Union-Find (Disjoint Set) implementation:",
+    "code": "class UnionFind:\n    def __init__(self, n):\n        self.parent = list(range(n))\n        self.rank = [0] * n\n    \n    def find(self, x):\n        if self.parent[x] != x:\n            self.parent[x] = self._____(self.parent[x])  # Path compression\n        return self.parent[x]\n    \n    def union(self, x, y):\n        px, py = self.find(x), self.find(y)\n        if px == py:\n            return False\n        \n        if self.rank[px] < self.rank[py]:\n            self.parent[px] = py\n        elif self.rank[px] > self.rank[py]:\n            self.parent[py] = px\n        else:\n            self.parent[py] = px\n            self.rank[px] += 1\n        return True",
+    "blanks": [
+      "find"
+    ],
+    "explanation": "Path compression recursively updates parent pointers to root."
+  },
+  {
+    "id": "graph-hard-q7",
+    "type": "multiple-choice",
+    "question": "What is the minimum number of colors needed to color any planar graph?",
+    "options": [
+      "4",
+      "3",
+      "5",
+      "2"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Four Color Theorem states that any planar graph can be colored with at most 4 colors."
+  },
+  {
+    "id": "graph-hard-q8",
+    "type": "fill-blank",
+    "question": "Floyd-Warshall algorithm uses _____ programming to find all-pairs shortest paths.",
+    "correctAnswer": "dynamic",
+    "explanation": "Floyd-Warshall uses dynamic programming to iteratively improve path estimates."
+  },
+  {
+    "id": "graph-hard-q9",
+    "type": "multiple-choice",
+    "question": "What is the key idea behind Tarjan’s algorithm for strongly connected components?",
+    "options": [
+      "Low-link values and DFS traversal",
+      "Topological sorting",
+      "Priority queues",
+      "Dynamic programming"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Tarjan's algorithm uses DFS and low-link values to identify SCCs efficiently."
+  },
+  {
+    "id": "graph-hard-q10",
+    "type": "drag-drop",
+    "question": "Arrange the steps of Floyd-Warshall algorithm:",
+    "items": [
+      "Initialize distance matrix",
+      "Set distance[i][j] = weight of edge or INF",
+      "For each vertex k",
+      "Update distance[i][j] = min(distance[i][j], distance[i][k] + distance[k][j])"
+    ],
+    "correctOrder": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Floyd-Warshall iteratively considers all paths through an intermediate vertex k."
+  },
+  {
+    "id": "graph-hard-q11",
+    "type": "fill-blank",
+    "question": "The time complexity of Floyd-Warshall algorithm is _____ for a graph with V vertices.",
+    "correctAnswer": "O(V^3)",
+    "explanation": "Triple nested loops make Floyd-Warshall run in cubic time."
+  },
+  {
+    "id": "graph-hard-q12",
+    "type": "code-completion",
+    "question": "Complete code to detect negative cycle using Bellman-Ford:",
+    "code": "def detect_negative_cycle(n, edges):\n    dist = [float('inf')] * n\n    dist[0] = 0\n    for _ in range(n - 1):\n        for u, v, w in edges:\n            if dist[u] + w < dist[v]:\n                dist[v] = dist[u] + w\n    \n    for u, v, w in edges:\n        if dist[u] + w < dist[v]:\n            return True\n    return _____",
+    "blanks": [
+      "False"
+    ],
+    "explanation": "Final pass checks for further relaxation; if possible, a negative cycle exists."
+  },
+  {
+    "id": "graph-hard-q13",
+    "type": "multiple-choice",
+    "question": "Which algorithm is best suited for solving the All Pairs Shortest Path problem in dense graphs?",
+    "options": [
+      "Floyd-Warshall",
+      "Dijkstra",
+      "Prim's",
+      "Kruskal's"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Floyd-Warshall is efficient for dense graphs and handles all pairs."
+  }
+]

@@ -1,0 +1,288 @@
+[
+  {
+    "id": "dp-easy-q1",
+    "type": "multiple-choice",
+    "question": "What does Dynamic Programming break down?",
+    "options": [
+      "Complex problems into simpler subproblems",
+      "Arrays into smaller arrays",
+      "Functions into variables",
+      "Loops into conditions"
+    ],
+    "correctAnswer": 0,
+    "explanation": "DP breaks complex problems into overlapping subproblems."
+  },
+  {
+    "id": "dp-easy-q2",
+    "type": "fill-blank",
+    "question": "Dynamic Programming avoids redundant calculations by storing results in a _____.",
+    "correctAnswer": "table",
+    "explanation": "DP uses memoization table to store computed results."
+  },
+  {
+    "id": "dp-easy-q3",
+    "type": "multiple-choice",
+    "question": "Which property must a problem have to use Dynamic Programming?",
+    "options": [
+      "Overlapping subproblems",
+      "Optimal substructure",
+      "Both a and b",
+      "Neither a nor b"
+    ],
+    "correctAnswer": 2,
+    "explanation": "DP requires both overlapping subproblems and optimal substructure."
+  },
+  {
+    "id": "dp-easy-q4",
+    "type": "code-completion",
+    "question": "Complete the basic Fibonacci using DP:",
+    "code": "def fibonacci(n):\n    if n <= 1:\n        return n\n    dp = [0] * (n + 1)\n    dp[1] = 1\n    for i in range(2, n + 1):\n        dp[i] = dp[i-1] + dp[_____]\n    return dp[n]",
+    "blanks": ["i-2"],
+    "explanation": "Fibonacci: F(n) = F(n-1) + F(n-2)."
+  },
+  {
+    "id": "dp-easy-q5",
+    "type": "fill-blank",
+    "question": "The two main approaches in DP are top-down (memoization) and _____ (tabulation).",
+    "correctAnswer": "bottom-up",
+    "explanation": "Bottom-up approach builds solution from smaller subproblems."
+  },
+  {
+    "id": "dp-easy-q6",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of DP Fibonacci solution?",
+    "options": [
+      "O(n)",
+      "O(2^n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "DP Fibonacci computes each value once, so O(n)."
+  },
+  {
+    "id": "dp-easy-q7",
+    "type": "drag-drop",
+    "question": "Arrange the steps of DP approach:",
+    "items": ["Identify subproblems", "Find recurrence relation", "Solve base cases", "Build solution"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard DP problem-solving methodology."
+  },
+  {
+    "id": "dp-easy-q8",
+    "type": "fill-blank",
+    "question": "In the climbing stairs problem, to reach step n, you can come from step _____ or step _____.",
+    "correctAnswer": "n-1, n-2",
+    "explanation": "You can climb 1 or 2 steps at a time."
+  },
+  {
+    "id": "dp-easy-q9",
+    "type": "multiple-choice",
+    "question": "What is memoization in DP?",
+    "options": [
+      "Storing computed results to avoid recomputation",
+      "Breaking problem into parts",
+      "Using recursion",
+      "Optimizing space"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Memoization caches results to prevent redundant calculations."
+  },
+  {
+    "id": "dp-easy-q10",
+    "type": "code-completion",
+    "question": "Complete the climbing stairs DP solution:",
+    "code": "def climb_stairs(n):\n    if n <= 2:\n        return n\n    dp = [0] * (n + 1)\n    dp[1], dp[2] = 1, 2\n    for i in range(3, n + 1):\n        dp[i] = dp[i-1] + dp[_____]\n    return dp[n]",
+    "blanks": ["i-2"],
+    "explanation": "Ways to reach step i = ways to reach (i-1) + ways to reach (i-2)."
+  },
+  {
+    "id": "dp-medium-q1",
+    "type": "multiple-choice",
+    "question": "In the 0/1 Knapsack problem, what does dp[i][w] represent?",
+    "options": [
+      "Maximum value using first i items with weight limit w",
+      "Weight of first i items",
+      "Number of items with weight w",
+      "Minimum weight needed"
+    ],
+    "correctAnswer": 0,
+    "explanation": "dp[i][w] stores maximum value achievable with first i items and weight limit w."
+  },
+  {
+    "id": "dp-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the Longest Common Subsequence DP solution:",
+    "code": "def lcs(text1, text2):\n    m, n = len(text1), len(text2)\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if text1[i-1] == text2[j-1]:\n                dp[i][j] = dp[i-1][j-1] + _____\n            else:\n                dp[i][j] = max(dp[i-1][j], dp[i][_____])",
+    "blanks": ["1", "j-1"],
+    "explanation": "If characters match, add 1 to diagonal. Otherwise, take maximum."
+  },
+  {
+    "id": "dp-medium-q3",
+    "type": "fill-blank",
+    "question": "The _____ problem asks for the minimum number of coins needed to make a given amount.",
+    "correctAnswer": "coin change",
+    "explanation": "Coin change is a classic DP optimization problem."
+  },
+  {
+    "id": "dp-medium-q4",
+    "type": "drag-drop",
+    "question": "Arrange the steps to solve House Robber problem:",
+    "items": ["Consider current house", "Skip current house", "Take maximum", "Update DP state"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "At each house, choose between robbing or skipping."
+  },
+  {
+    "id": "dp-medium-q5",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of optimized Fibonacci DP?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Only need to store last two values, so O(1) space."
+  },
+  {
+    "id": "dp-medium-q6",
+    "type": "fill-blank",
+    "question": "In the edit distance problem, we can perform three operations: insert, delete, and _____.",
+    "correctAnswer": "replace",
+    "explanation": "Edit distance allows insert, delete, and replace operations."
+  },
+  {
+    "id": "dp-medium-q7",
+    "type": "code-completion",
+    "question": "Complete the minimum path sum in grid:",
+    "code": "def min_path_sum(grid):\n    m, n = len(grid), len(grid[0])\n    for i in range(m):\n        for j in range(n):\n            if i == 0 and j == 0:\n                continue\n            elif i == 0:\n                grid[i][j] += grid[i][j-_____]\n            elif j == 0:\n                grid[i][j] += grid[_____][j]\n            else:\n                grid[i][j] += min(grid[i-1][j], grid[i][j-1])",
+    "blanks": ["1", "i-1"],
+    "explanation": "Add minimum of top or left cell to current cell."
+  },
+  {
+    "id": "dp-medium-q8",
+    "type": "multiple-choice",
+    "question": "Which DP problem has the recurrence: dp[i] = max(dp[i-1], dp[i-2] + arr[i])?",
+    "options": [
+      "House Robber",
+      "Climbing Stairs",
+      "Fibonacci",
+      "Coin Change"
+    ],
+    "correctAnswer": 0,
+    "explanation": "House Robber: either skip current or rob current + previous non-adjacent."
+  },
+  {
+    "id": "dp-medium-q9",
+    "type": "fill-blank",
+    "question": "The longest _____ subsequence problem finds the longest strictly increasing subsequence.",
+    "correctAnswer": "increasing",
+    "explanation": "LIS finds longest increasing subsequence in array."
+  },
+  {
+    "id": "dp-medium-q10",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of 2D DP solution for LCS?",
+    "options": [
+      "O(m × n)",
+      "O(m + n)",
+      "O(max(m, n))",
+      "O(m × n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "LCS DP fills m×n table, so O(m×n) time complexity."
+  },
+  {
+    "id": "dp-hard-q1",
+    "type": "code-completion",
+    "question": "Complete the palindrome partitioning DP solution:",
+    "code": "def min_cut(s):\n    n = len(s)\n    dp = [float('inf')] * n\n    for i in range(n):\n        for j in range(i + 1):\n            if s[j:i+1] == s[j:i+1][::-1]:  # is palindrome\n                if j == 0:\n                    dp[i] = 0\n                else:\n                    dp[i] = min(dp[i], dp[_____] + 1)\n    return dp[n-1]",
+    "blanks": ["j-1"],
+    "explanation": "If substring is palindrome, add 1 to cuts needed before it."
+  },
+  {
+    "id": "dp-hard-q2",
+    "type": "multiple-choice",
+    "question": "In matrix chain multiplication, what do we optimize?",
+    "options": [
+      "Number of scalar multiplications",
+      "Memory usage",
+      "Number of matrices",
+      "Matrix dimensions"
+    ],
+    "correctAnswer": 0,
+    "explanation": "We minimize the number of scalar multiplications needed."
+  },
+  {
+    "id": "dp-hard-q3",
+    "type": "fill-blank",
+    "question": "The _____ problem uses DP to find optimal strategy for picking coins from ends of array.",
+    "correctAnswer": "optimal game",
+    "explanation": "Optimal game strategy maximizes player's score."
+  },
+  {
+    "id": "dp-hard-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps for solving subset sum problem:",
+    "items": ["Create DP table", "Fill base cases", "Check inclusion/exclusion", "Return final result"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard approach for subset sum DP solution."
+  },
+  {
+    "id": "dp-hard-q5",
+    "type": "code-completion",
+    "question": "Complete the longest palindromic subsequence:",
+    "code": "def longest_palindrome_subseq(s):\n    n = len(s)\n    dp = [[0] * n for _ in range(n)]\n    for i in range(n):\n        dp[i][i] = 1\n    for length in range(2, n + 1):\n        for i in range(n - length + 1):\n            j = i + length - 1\n            if s[i] == s[j]:\n                dp[i][j] = dp[i+1][j-1] + _____\n            else:\n                dp[i][j] = max(dp[i+1][j], dp[i][_____])",
+    "blanks": ["2", "j-1"],
+    "explanation": "If characters match, add 2. Otherwise, take maximum of adjacent cells."
+  },
+  {
+    "id": "dp-hard-q6",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of egg dropping problem with k eggs and n floors?",
+    "options": [
+      "O(k × n²)",
+      "O(k × n)",
+      "O(n²)",
+      "O(k²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "For each state (k,n), we try all n floors, giving O(k×n²)."
+  },
+  {
+    "id": "dp-hard-q7",
+    "type": "fill-blank",
+    "question": "In the _____ problem, we arrange numbers to form the largest possible number.",
+    "correctAnswer": "largest number",
+    "explanation": "Largest number problem uses custom sorting with DP concepts."
+  },
+  {
+    "id": "dp-hard-q8",
+    "type": "code-completion",
+    "question": "Complete the word break DP solution:",
+    "code": "def word_break(s, word_dict):\n    n = len(s)\n    dp = [False] * (n + 1)\n    dp[0] = True\n    for i in range(1, n + 1):\n        for j in range(i):\n            if dp[j] and s[j:i] in _____:\n                dp[i] = _____\n                break\n    return dp[n]",
+    "blanks": ["word_dict", "True"],
+    "explanation": "Check if substring exists in dictionary and previous part is breakable."
+  },
+  {
+    "id": "dp-hard-q9",
+    "type": "multiple-choice",
+    "question": "Which problem uses DP to find minimum operations to convert one string to another?",
+    "options": [
+      "Edit Distance",
+      "Longest Common Subsequence",
+      "Palindrome Check",
+      "String Matching"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Edit distance (Levenshtein distance) finds minimum edit operations."
+  },
+  {
+    "id": "dp-hard-q10",
+    "type": "fill-blank",
+    "question": "The _____ problem finds the maximum sum of non-adjacent elements in an array.",
+    "correctAnswer": "house robber",
+    "explanation": "House robber problem maximizes sum without taking adjacent elements."
+  }
+]

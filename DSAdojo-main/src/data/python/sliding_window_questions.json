@@ -1,0 +1,288 @@
+[
+  {
+    "id": "sliding-window-easy-q1",
+    "type": "multiple-choice",
+    "question": "What is the sliding window technique used for?",
+    "options": [
+      "Processing subarrays efficiently",
+      "Sorting arrays",
+      "Finding maximum element",
+      "Reversing arrays"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sliding window efficiently processes contiguous subarrays."
+  },
+  {
+    "id": "sliding-window-easy-q2",
+    "type": "fill-blank",
+    "question": "In sliding window, we maintain a _____ of fixed or variable size.",
+    "correctAnswer": "window",
+    "explanation": "The technique maintains a window that slides through the array."
+  },
+  {
+    "id": "sliding-window-easy-q3",
+    "type": "multiple-choice",
+    "question": "What are the two main types of sliding window?",
+    "options": [
+      "Fixed size and Variable size",
+      "Left and Right",
+      "Fast and Slow",
+      "Forward and Backward"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sliding window can have fixed size or variable size."
+  },
+  {
+    "id": "sliding-window-easy-q4",
+    "type": "code-completion",
+    "question": "Complete the basic sliding window template:",
+    "code": "def sliding_window(arr, k):\n    left = 0\n    result = []\n    for right in range(len(arr)):\n        # Add current element\n        \n        # Shrink window if needed\n        while condition:\n            left += _____\n            \n        # Update result\n        result.append(window_value)\n    return result",
+    "blanks": ["1"],
+    "explanation": "Move left pointer to shrink the window."
+  },
+  {
+    "id": "sliding-window-easy-q5",
+    "type": "fill-blank",
+    "question": "The time complexity of sliding window technique is typically _____.",
+    "correctAnswer": "O(n)",
+    "explanation": "Each element is visited at most twice (by left and right pointers)."
+  },
+  {
+    "id": "sliding-window-easy-q6",
+    "type": "multiple-choice",
+    "question": "In maximum sum subarray of size k, what do we track?",
+    "options": [
+      "Current window sum",
+      "All possible sums",
+      "Individual elements",
+      "Array indices"
+    ],
+    "correctAnswer": 0,
+    "explanation": "We maintain and update the current window sum."
+  },
+  {
+    "id": "sliding-window-easy-q7",
+    "type": "drag-drop",
+    "question": "Arrange the steps of fixed-size sliding window:",
+    "items": ["Initialize window", "Slide window right", "Remove leftmost", "Add rightmost"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard fixed-size sliding window process."
+  },
+  {
+    "id": "sliding-window-easy-q8",
+    "type": "fill-blank",
+    "question": "In sliding window, we use _____ pointers to define the window boundaries.",
+    "correctAnswer": "two",
+    "explanation": "Left and right pointers define the window boundaries."
+  },
+  {
+    "id": "sliding-window-easy-q9",
+    "type": "multiple-choice",
+    "question": "What happens when we slide the window to the right?",
+    "options": [
+      "Add new element, remove old element",
+      "Only add new element",
+      "Only remove old element",
+      "Reset the window"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sliding right adds new element and removes leftmost element."
+  },
+  {
+    "id": "sliding-window-easy-q10",
+    "type": "code-completion",
+    "question": "Complete the maximum sum of k-size subarray:",
+    "code": "def max_sum_subarray(arr, k):\n    if len(arr) < k:\n        return 0\n    window_sum = sum(arr[:k])\n    max_sum = window_sum\n    for i in range(k, len(arr)):\n        window_sum = window_sum - arr[i-k] + arr[_____]\n        max_sum = max(max_sum, window_sum)\n    return max_sum",
+    "blanks": ["i"],
+    "explanation": "Remove leftmost element and add current element."
+  },
+  {
+    "id": "sliding-window-medium-q1",
+    "type": "multiple-choice",
+    "question": "In variable-size sliding window, when do we shrink the window?",
+    "options": [
+      "When window violates the condition",
+      "When window size exceeds limit",
+      "After every iteration",
+      "Only at the end"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Shrink window when it violates the problem condition."
+  },
+  {
+    "id": "sliding-window-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the longest substring with k distinct characters:",
+    "code": "def longest_k_distinct(s, k):\n    if k == 0:\n        return 0\n    left = 0\n    char_count = {}\n    max_len = 0\n    \n    for right in range(len(s)):\n        char_count[s[right]] = char_count.get(s[right], 0) + 1\n        \n        while len(char_count) > k:\n            char_count[s[left]] -= 1\n            if char_count[s[left]] == 0:\n                del char_count[s[_____]]\n            left += 1\n            \n        max_len = max(max_len, right - left + 1)\n    return max_len",
+    "blanks": ["left"],
+    "explanation": "Remove character from hashmap when its count becomes 0."
+  },
+  {
+    "id": "sliding-window-medium-q3",
+    "type": "fill-blank",
+    "question": "The _____ problem finds the smallest subarray with sum greater than or equal to target.",
+    "correctAnswer": "minimum window",
+    "explanation": "Minimum window substring finds smallest valid subarray."
+  },
+  {
+    "id": "sliding-window-medium-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps for longest substring without repeating characters:",
+    "items": ["Expand window right", "Check for duplicates", "Shrink from left", "Update maximum length"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard approach for non-repeating substring problem."
+  },
+  {
+    "id": "sliding-window-medium-q5",
+    "type": "multiple-choice",
+    "question": "What data structure is commonly used with sliding window for character frequency?",
+    "options": [
+      "HashMap/Dictionary",
+      "Array",
+      "Stack",
+      "Queue"
+    ],
+    "correctAnswer": 0,
+    "explanation": "HashMap tracks character frequencies in current window."
+  },
+  {
+    "id": "sliding-window-medium-q6",
+    "type": "fill-blank",
+    "question": "In the fruits into baskets problem, we can pick fruits from at most _____ different types.",
+    "correctAnswer": "two",
+    "explanation": "Fruits into baskets allows maximum 2 different fruit types."
+  },
+  {
+    "id": "sliding-window-medium-q7",
+    "type": "code-completion",
+    "question": "Complete the minimum window substring solution:",
+    "code": "def min_window(s, t):\n    if len(t) > len(s):\n        return \"\"\n    \n    need = {}\n    for char in t:\n        need[char] = need.get(char, 0) + 1\n    \n    left = 0\n    formed = 0\n    required = len(need)\n    window_counts = {}\n    min_len = float('inf')\n    min_left = 0\n    \n    for right in range(len(s)):\n        char = s[right]\n        window_counts[char] = window_counts.get(char, 0) + 1\n        \n        if char in need and window_counts[char] == need[char]:\n            formed += 1\n        \n        while formed == _____ and left <= right:\n            if right - left + 1 < min_len:\n                min_len = right - left + 1\n                min_left = left\n            \n            char = s[left]\n            window_counts[char] -= 1\n            if char in need and window_counts[char] < need[char]:\n                formed -= 1\n            left += 1\n    \n    return \"\" if min_len == float('inf') else s[min_left:min_left + min_len]",
+    "blanks": ["required"],
+    "explanation": "Contract window when all required characters are satisfied."
+  },
+  {
+    "id": "sliding-window-medium-q8",
+    "type": "multiple-choice",
+    "question": "What is the key insight in permutation in string problem?",
+    "options": [
+      "Character frequency must match exactly",
+      "Order of characters matters",
+      "Length must be variable",
+      "Only unique characters allowed"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Permutation requires exact character frequency match."
+  },
+  {
+    "id": "sliding-window-medium-q9",
+    "type": "fill-blank",
+    "question": "The _____ subarray problem finds the longest subarray with equal number of 0s and 1s.",
+    "correctAnswer": "contiguous",
+    "explanation": "Contiguous subarray with equal 0s and 1s uses sliding window concepts."
+  },
+  {
+    "id": "sliding-window-medium-q10",
+    "type": "multiple-choice",
+    "question": "In longest repeating character replacement, what do we track?",
+    "options": [
+      "Frequency of most frequent character in window",
+      "Total number of characters",
+      "Position of characters",
+      "ASCII values"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Track max frequency to determine how many characters need replacement."
+  },
+  {
+    "id": "sliding-window-hard-q1",
+    "type": "code-completion",
+    "question": "Complete the sliding window maximum using deque:",
+    "code": "from collections import deque\n\ndef max_sliding_window(nums, k):\n    if not nums:\n        return []\n    \n    dq = deque()\n    result = []\n    \n    for i in range(len(nums)):\n        # Remove indices outside window\n        while dq and dq[0] < i - k + 1:\n            dq._____\n        \n        # Remove smaller elements\n        while dq and nums[dq[-1]] < nums[i]:\n            dq.pop()\n        \n        dq._____(i)\n        \n        # Add to result when window is complete\n        if i >= k - 1:\n            result.append(nums[dq[0]])\n    \n    return result",
+    "blanks": ["popleft()", "append"],
+    "explanation": "Use deque to maintain maximum element indices in current window."
+  },
+  {
+    "id": "sliding-window-hard-q2",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of sliding window maximum with deque?",
+    "options": [
+      "O(n)",
+      "O(n log k)",
+      "O(nk)",
+      "O(k)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each element is added and removed at most once, so O(n)."
+  },
+  {
+    "id": "sliding-window-hard-q3",
+    "type": "fill-blank",
+    "question": "The _____ problem finds all anagrams of a pattern in a text using sliding window.",
+    "correctAnswer": "find anagrams",
+    "explanation": "Find anagrams uses sliding window to match character frequencies."
+  },
+  {
+    "id": "sliding-window-hard-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps for substring with concatenation of all words:",
+    "items": ["Create word frequency map", "Use sliding window of word length", "Check word matches", "Move window by word length"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Complex sliding window problem requiring word-level processing."
+  },
+  {
+    "id": "sliding-window-hard-q5",
+    "type": "code-completion",
+    "question": "Complete the longest substring with at most k distinct characters:",
+    "code": "def longest_substring_k_distinct(s, k):\n    if k == 0:\n        return 0\n    \n    left = 0\n    char_freq = {}\n    max_length = 0\n    \n    for right in range(len(s)):\n        char_freq[s[right]] = char_freq.get(s[right], 0) + 1\n        \n        while len(char_freq) > k:\n            char_freq[s[left]] -= 1\n            if char_freq[s[left]] == 0:\n                del char_freq[s[_____]]\n            left += 1\n        \n        max_length = max(max_length, _____ - left + 1)\n    \n    return max_length",
+    "blanks": ["left", "right"],
+    "explanation": "Maintain character frequency and shrink window when needed."
+  },
+  {
+    "id": "sliding-window-hard-q6",
+    "type": "multiple-choice",
+    "question": "Which data structure is best for sliding window maximum problem?",
+    "options": [
+      "Deque (Double-ended queue)",
+      "Stack",
+      "Heap",
+      "Array"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Deque allows efficient insertion/deletion from both ends."
+  },
+  {
+    "id": "sliding-window-hard-q7",
+    "type": "fill-blank",
+    "question": "In the _____ problem, we find the minimum number of flips to make binary string alternating.",
+    "correctAnswer": "minimum flips",
+    "explanation": "Minimum flips uses sliding window to find optimal solution."
+  },
+  {
+    "id": "sliding-window-hard-q8",
+    "type": "code-completion",
+    "question": "Complete the subarrays with k different integers:",
+    "code": "def subarrays_with_k_distinct(A, K):\n    def at_most_k(A, K):\n        if K == 0:\n            return 0\n        left = 0\n        counter = {}\n        result = 0\n        \n        for right in range(len(A)):\n            if A[right] not in counter:\n                counter[A[right]] = 0\n            counter[A[right]] += 1\n            \n            while len(counter) > K:\n                counter[A[left]] -= 1\n                if counter[A[left]] == 0:\n                    del counter[A[left]]\n                left += 1\n            \n            result += right - left + 1\n        return result\n    \n    return at_most_k(A, K) - at_most_k(A, K - _____)",
+    "blanks": ["1"],
+    "explanation": "Exactly K = At most K - At most (K-1)."
+  },
+  {
+    "id": "sliding-window-hard-q9",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of sliding window approach?",
+    "options": [
+      "O(k) where k is window size or character set size",
+      "O(n)",
+      "O(1)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Space depends on window size or character set being tracked."
+  },
+  {
+    "id": "sliding-window-hard-q10",
+    "type": "fill-blank",
+    "question": "The _____ technique uses sliding window to find shortest subarray covering all elements of another array.",
+    "correctAnswer": "minimum window covering",
+    "explanation": "Minimum window covering finds shortest subarray containing all target elements."
+  }
+]

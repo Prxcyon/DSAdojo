@@ -1,0 +1,301 @@
+[
+  {
+    "id": "linkedlist-easy-q1",
+    "type": "multiple-choice",
+    "question": "What does each node in a singly linked list contain in C++?",
+    "options": [
+      "data and pointer to next node",
+      "Only data member",
+      "Only next pointer",
+      "data and array index"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each node contains data and a pointer to the next node."
+  },
+  {
+    "id": "linkedlist-easy-q2",
+    "type": "fill-blank",
+    "question": "The first node of a linked list is called the _____.",
+    "correctAnswer": "head",
+    "explanation": "The first node is referred to as the head pointer."
+  },
+  {
+    "id": "linkedlist-easy-q3",
+    "type": "multiple-choice",
+    "question": "How do you access the 5th element in a C++ linked list?",
+    "options": [
+      "Traverse from head 4 times",
+      "Use array indexing head[4]",
+      "Jump directly to position 5",
+      "Use pointer arithmetic"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Must traverse sequentially from head to reach any element."
+  },
+  {
+    "id": "linkedlist-easy-q4",
+    "type": "code-completion",
+    "question": "Complete the node structure for a singly linked list:",
+    "code": "struct ListNode {\n    int data;\n    ListNode* _____;\n    ListNode(int val) : data(val), next(nullptr) {}\n};",
+    "blanks": ["next"],
+    "explanation": "Each node has a 'next' pointer to the following node."
+  },
+  {
+    "id": "linkedlist-easy-q5",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of inserting at the beginning of a linked list?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Insertion at head takes constant time."
+  },
+  {
+    "id": "linkedlist-easy-q6",
+    "type": "drag-drop",
+    "question": "Arrange the steps to insert a node at the beginning:",
+    "items": ["Allocate new node", "Set new node's data", "Set new node's next to head", "Update head to new node"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Allocate memory, set data, link to existing head, update head pointer."
+  },
+  {
+    "id": "linkedlist-easy-q7",
+    "type": "multiple-choice",
+    "question": "What does nullptr indicate in a C++ linked list?",
+    "options": [
+      "End of the list",
+      "Beginning of list",
+      "Empty data",
+      "Invalid node"
+    ],
+    "correctAnswer": 0,
+    "explanation": "nullptr marks the end of the linked list."
+  },
+  {
+    "id": "linkedlist-easy-q8",
+    "type": "fill-blank",
+    "question": "To delete a node, we need to update the _____ pointer of the previous node.",
+    "correctAnswer": "next",
+    "explanation": "Previous node's next pointer must point to the node after deleted node."
+  },
+  {
+    "id": "linkedlist-easy-q9",
+    "type": "code-completion",
+    "question": "Complete the function to find length of linked list:",
+    "code": "int getLength(ListNode* head) {\n    int count = 0;\n    ListNode* current = head;\n    while (current != nullptr) {\n        count++;\n        current = current->_____;\n    }\n    return count;\n}",
+    "blanks": ["next"],
+    "explanation": "Traverse the list by following next pointers."
+  },
+  {
+    "id": "linkedlist-easy-q10",
+    "type": "multiple-choice",
+    "question": "Which is NOT an advantage of linked lists over arrays in C++?",
+    "options": [
+      "Random access",
+      "Dynamic size",
+      "Easy insertion/deletion",
+      "No fixed memory allocation"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Linked lists don't support random access like arrays."
+  },
+  {
+    "id": "linkedlist-medium-q1",
+    "type": "multiple-choice",
+    "question": "What is the main difference between singly and doubly linked list in C++?",
+    "options": [
+      "Doubly has pointers to both next and previous nodes",
+      "Doubly has two data members",
+      "Doubly is faster",
+      "Doubly uses less memory"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Doubly linked list has both next and prev pointers."
+  },
+  {
+    "id": "linkedlist-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the function to reverse a linked list:",
+    "code": "ListNode* reverse(ListNode* head) {\n    ListNode* prev = nullptr;\n    ListNode* current = head;\n    while (current != nullptr) {\n        ListNode* nextTemp = current->next;\n        current->next = _____;\n        prev = current;\n        current = _____;\n    }\n    return prev;\n}",
+    "blanks": ["prev", "nextTemp"],
+    "explanation": "Iteratively reverse the links between nodes."
+  },
+  {
+    "id": "linkedlist-medium-q3",
+    "type": "fill-blank",
+    "question": "The _____ algorithm uses two pointers moving at different speeds to detect cycles.",
+    "correctAnswer": "Floyd's",
+    "explanation": "Floyd's cycle detection algorithm uses slow and fast pointers."
+  },
+  {
+    "id": "linkedlist-medium-q4",
+    "type": "multiple-choice",
+    "question": "How do you find the middle element of a linked list in one pass?",
+    "options": [
+      "Use two pointers (slow and fast)",
+      "Count length first, then traverse",
+      "Use recursion with stack",
+      "Use vector to store nodes"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Slow pointer moves one step, fast moves two steps."
+  },
+  {
+    "id": "linkedlist-medium-q5",
+    "type": "drag-drop",
+    "question": "Arrange steps to delete a node with given value:",
+    "items": ["Check if head needs deletion", "Traverse to find target node", "Update previous node's next pointer", "Delete node and free memory"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Handle head case, find target, update links, free memory."
+  },
+  {
+    "id": "linkedlist-medium-q6",
+    "type": "code-completion",
+    "question": "Complete the merge function for two sorted linked lists:",
+    "code": "ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {\n    ListNode* dummy = new ListNode(0);\n    ListNode* current = dummy;\n    while (l1 != nullptr && l2 != nullptr) {\n        if (l1->data <= l2->data) {\n            current->next = l1;\n            l1 = l1->_____;\n        } else {\n            current->next = l2;\n            l2 = l2->_____;\n        }\n        current = current->next;\n    }\n    current->next = (l1 != nullptr) ? l1 : l2;\n    return dummy->next;\n}",
+    "blanks": ["next", "next"],
+    "explanation": "Compare values and link smaller node, advance pointers."
+  },
+  {
+    "id": "linkedlist-medium-q7",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of reversing a linked list iteratively?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Iterative reversal uses constant extra space."
+  },
+  {
+    "id": "linkedlist-medium-q8",
+    "type": "fill-blank",
+    "question": "In a circular linked list, the last node points to the _____ instead of nullptr.",
+    "correctAnswer": "head",
+    "explanation": "Circular list forms a loop by pointing last node to head."
+  },
+  {
+    "id": "linkedlist-medium-q9",
+    "type": "multiple-choice",
+    "question": "Which operation is more efficient in doubly linked list compared to singly linked list?",
+    "options": [
+      "Deletion of given node",
+      "Insertion at beginning",
+      "Finding length",
+      "Accessing first element"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Doubly linked list can delete node without traversing from head."
+  },
+  {
+    "id": "linkedlist-medium-q10",
+    "type": "code-completion",
+    "question": "Complete function to remove nth node from end:",
+    "code": "ListNode* removeNthFromEnd(ListNode* head, int n) {\n    ListNode* dummy = new ListNode(0);\n    dummy->next = head;\n    ListNode* first = dummy;\n    ListNode* second = dummy;\n    for (int i = 0; i <= n; i++) {\n        first = first->_____;\n    }\n    while (first != nullptr) {\n        first = first->next;\n        second = second->_____;\n    }\n    ListNode* nodeToDelete = second->next;\n    second->next = second->next->next;\n    delete nodeToDelete;\n    return dummy->next;\n}",
+    "blanks": ["next", "next"],
+    "explanation": "Use two pointers with n gap to find nth from end."
+  },
+  {
+    "id": "linkedlist-hard-q1",
+    "type": "code-completion",
+    "question": "Complete function to clone linked list with random pointers:",
+    "code": "ListNode* copyRandomList(ListNode* head) {\n    if (!head) return nullptr;\n    unordered_map<ListNode*, ListNode*> nodeMap;\n    ListNode* current = head;\n    while (current) {\n        nodeMap[current] = new ListNode(current->data);\n        current = current->_____;\n    }\n    current = head;\n    while (current) {\n        if (current->next) {\n            nodeMap[current]->_____ = nodeMap[current->next];\n        }\n        if (current->random) {\n            nodeMap[current]->random = nodeMap[_____];\n        }\n        current = current->next;\n    }\n    return nodeMap[head];\n}",
+    "blanks": ["next", "next", "current->random"],
+    "explanation": "Create node mapping using unordered_map, then set next and random pointers."
+  },
+  {
+    "id": "linkedlist-hard-q2",
+    "type": "multiple-choice",
+    "question": "What is the time complexity to find intersection point of two linked lists?",
+    "options": [
+      "O(m + n)",
+      "O(m * n)",
+      "O(log(m + n))",
+      "O(1)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Two-pointer approach takes O(m + n) time."
+  },
+  {
+    "id": "linkedlist-hard-q3",
+    "type": "fill-blank",
+    "question": "The _____ technique interleaves original and copied nodes to clone a list with random pointers.",
+    "correctAnswer": "interweaving",
+    "explanation": "Interweaving technique creates copies next to originals without extra space."
+  },
+  {
+    "id": "linkedlist-hard-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps to detect and remove loop in linked list:",
+    "items": ["Detect loop using Floyd's algorithm", "Find loop starting point", "Calculate loop length", "Break the loop connection"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Detect, locate start, measure length, then break loop."
+  },
+  {
+    "id": "linkedlist-hard-q5",
+    "type": "multiple-choice",
+    "question": "Which approach is most efficient to merge k sorted linked lists?",
+    "options": [
+      "Divide and conquer",
+      "Priority queue (min heap)",
+      "Sequential pairwise merging",
+      "All have similar efficiency"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Divide and conquer approach has O(n log k) complexity."
+  },
+  {
+    "id": "linkedlist-hard-q6",
+    "type": "code-completion",
+    "question": "Complete function to add two numbers represented as linked lists:",
+    "code": "ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {\n    ListNode* dummy = new ListNode(0);\n    ListNode* current = dummy;\n    int carry = 0;\n    while (l1 || l2 || carry) {\n        int val1 = l1 ? l1->data : 0;\n        int val2 = l2 ? l2->data : 0;\n        int sum = val1 + val2 + carry;\n        carry = sum / 10;\n        current->next = new ListNode(_____ % 10);\n        current = current->next;\n        l1 = l1 ? l1->next : nullptr;\n        l2 = l2 ? l2->next : nullptr;\n    }\n    return dummy->next;\n}",
+    "blanks": ["sum"],
+    "explanation": "Add digits with carry, create new nodes for result."
+  },
+  {
+    "id": "linkedlist-hard-q7",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of flattening a multilevel doubly linked list using stack?",
+    "options": [
+      "O(d) where d is maximum depth",
+      "O(n)",
+      "O(1)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Stack space needed proportional to maximum depth."
+  },
+  {
+    "id": "linkedlist-hard-q8",
+    "type": "fill-blank",
+    "question": "The _____ algorithm efficiently sorts a linked list in O(n log n) time and O(1) space.",
+    "correctAnswer": "merge sort",
+    "explanation": "Merge sort works efficiently on linked lists with constant space."
+  },
+  {
+    "id": "linkedlist-hard-q9",
+    "type": "multiple-choice",
+    "question": "Which technique helps implement LRU cache using linked list in C++?",
+    "options": [
+      "Doubly linked list with unordered_map",
+      "Singly linked list with vector",
+      "Circular linked list with array",
+      "Stack with linked list"
+    ],
+    "correctAnswer": 0,
+    "explanation": "LRU cache uses doubly linked list with unordered_map for O(1) operations."
+  },
+  {
+    "id": "linkedlist-hard-q10",
+    "type": "code-completion",
+    "question": "Complete function to reverse nodes in k-group:",
+    "code": "ListNode* reverseKGroup(ListNode* head, int k) {\n    ListNode* current = head;\n    int count = 0;\n    while (current != nullptr && count < k) {\n        current = current->_____;\n        count++;\n    }\n    if (count == k) {\n        current = reverseKGroup(current, k);\n        while (count > 0) {\n            ListNode* temp = head->next;\n            head->next = current;\n            current = head;\n            head = _____;\n            count--;\n        }\n        head = current;\n    }\n    return head;\n}",
+    "blanks": ["next", "temp"],
+    "explanation": "Recursively reverse k nodes, then link groups together."
+  }
+]

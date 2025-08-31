@@ -1,0 +1,301 @@
+[
+  {
+    "id": "linkedlist-easy-java-q1",
+    "type": "multiple-choice",
+    "question": "What does each node in a singly linked list contain?",
+    "options": [
+      "Data and reference to next node",
+      "Only data",
+      "Only reference",
+      "Data and index"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each node has data and a reference to the next node."
+  },
+  {
+    "id": "linkedlist-easy-java-q2",
+    "type": "fill-blank",
+    "question": "The first node of a linked list is called the _____.",
+    "correctAnswer": "head",
+    "explanation": "The first node is referred to as the head."
+  },
+  {
+    "id": "linkedlist-easy-java-q3",
+    "type": "multiple-choice",
+    "question": "How do you access the 5th element in a LinkedList in Java?",
+    "options": [
+      "Use get(4) method",
+      "Use index [4]",
+      "Direct access list[4]",
+      "Use binary search"
+    ],
+    "correctAnswer": 0,
+    "explanation": "LinkedList.get(index) method traverses to the specified position."
+  },
+  {
+    "id": "linkedlist-easy-java-q4",
+    "type": "code-completion",
+    "question": "Complete the node class for a singly linked list:",
+    "code": "class ListNode {\n    int val;\n    ListNode next;\n    ListNode(int val) {\n        this.val = val;\n        this._____ = null;\n    }\n}",
+    "blanks": ["next"],
+    "explanation": "Each node has a 'next' reference to the following node."
+  },
+  {
+    "id": "linkedlist-easy-java-q5",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of adding at the beginning of LinkedList?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "addFirst() or add(0, element) takes constant time."
+  },
+  {
+    "id": "linkedlist-easy-java-q6",
+    "type": "drag-drop",
+    "question": "Arrange the steps to insert a node at the beginning:",
+    "items": ["Create new node", "Set new node's data", "Set new node's next to head", "Update head to new node"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Create node, set data, link to existing head, update head reference."
+  },
+  {
+    "id": "linkedlist-easy-java-q7",
+    "type": "multiple-choice",
+    "question": "What does null reference indicate in a linked list?",
+    "options": [
+      "End of the list",
+      "Beginning of list",
+      "Empty data",
+      "Invalid node"
+    ],
+    "correctAnswer": 0,
+    "explanation": "null reference marks the end of the linked list."
+  },
+  {
+    "id": "linkedlist-easy-java-q8",
+    "type": "fill-blank",
+    "question": "The Java Collections Framework provides _____ class that implements linked list.",
+    "correctAnswer": "LinkedList",
+    "explanation": "LinkedList class in java.util package implements doubly linked list."
+  },
+  {
+    "id": "linkedlist-easy-java-q9",
+    "type": "code-completion",
+    "question": "Complete the method to find size of LinkedList:",
+    "code": "public int getSize(ListNode head) {\n    int count = 0;\n    ListNode current = head;\n    while (current != null) {\n        count++;\n        current = current._____;\n    }\n    return count;\n}",
+    "blanks": ["next"],
+    "explanation": "Traverse the list by following next references."
+  },
+  {
+    "id": "linkedlist-easy-java-q10",
+    "type": "multiple-choice",
+    "question": "Which is NOT an advantage of LinkedList over ArrayList?",
+    "options": [
+      "Random access",
+      "Dynamic size",
+      "Easy insertion/deletion",
+      "No memory waste"
+    ],
+    "correctAnswer": 0,
+    "explanation": "LinkedList doesn't support efficient random access like ArrayList."
+  },
+  {
+    "id": "linkedlist-medium-java-q1",
+    "type": "multiple-choice",
+    "question": "What type of linked list does Java's LinkedList class implement?",
+    "options": [
+      "Doubly linked list",
+      "Singly linked list",
+      "Circular linked list",
+      "Stack-based list"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Java's LinkedList implements doubly linked list with both next and previous references."
+  },
+  {
+    "id": "linkedlist-medium-java-q2",
+    "type": "code-completion",
+    "question": "Complete the method to reverse a linked list:",
+    "code": "public ListNode reverse(ListNode head) {\n    ListNode prev = null;\n    ListNode current = head;\n    while (current != null) {\n        ListNode nextTemp = current.next;\n        current.next = _____;\n        prev = current;\n        current = _____;\n    }\n    return prev;\n}",
+    "blanks": ["prev", "nextTemp"],
+    "explanation": "Iteratively reverse the links between nodes."
+  },
+  {
+    "id": "linkedlist-medium-java-q3",
+    "type": "fill-blank",
+    "question": "The _____ algorithm uses two pointers to detect cycles in linked list.",
+    "correctAnswer": "Floyd's cycle detection",
+    "explanation": "Floyd's algorithm uses slow and fast pointers to detect cycles."
+  },
+  {
+    "id": "linkedlist-medium-java-q4",
+    "type": "multiple-choice",
+    "question": "How do you find the middle element of a linked list in one pass?",
+    "options": [
+      "Use two pointers (slow and fast)",
+      "Count length first, then traverse",
+      "Use Collections.sort()",
+      "Use Iterator"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Slow pointer moves one step, fast moves two steps."
+  },
+  {
+    "id": "linkedlist-medium-java-q5",
+    "type": "drag-drop",
+    "question": "Arrange steps to remove a node with given value from LinkedList:",
+    "items": ["Check if head needs removal", "Traverse to find node", "Update previous node's reference", "Help garbage collection"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Handle head case, find target, update links, let GC cleanup."
+  },
+  {
+    "id": "linkedlist-medium-java-q6",
+    "type": "code-completion",
+    "question": "Complete the merge method for two sorted linked lists:",
+    "code": "public ListNode merge(ListNode l1, ListNode l2) {\n    ListNode dummy = new ListNode(0);\n    ListNode current = dummy;\n    while (l1 != null && l2 != null) {\n        if (l1.val <= l2.val) {\n            current.next = l1;\n            l1 = l1._____;\n        } else {\n            current.next = l2;\n            l2 = l2._____;\n        }\n        current = current.next;\n    }\n    current.next = (l1 != null) ? l1 : l2;\n    return dummy.next;\n}",
+    "blanks": ["next", "next"],
+    "explanation": "Compare values and link smaller node, advance references."
+  },
+  {
+    "id": "linkedlist-medium-java-q7",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of reversing a linked list iteratively?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Iterative reversal uses constant extra space."
+  },
+  {
+    "id": "linkedlist-medium-java-q8",
+    "type": "fill-blank",
+    "question": "Java's LinkedList class implements both List and _____ interfaces.",
+    "correctAnswer": "Deque",
+    "explanation": "LinkedList implements both List and Deque interfaces."
+  },
+  {
+    "id": "linkedlist-medium-java-q9",
+    "type": "multiple-choice",
+    "question": "Which LinkedList method is most efficient for adding at the end?",
+    "options": [
+      "addLast()",
+      "add(size(), element)",
+      "insertAtEnd()",
+      "append()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "addLast() is optimized for end insertion in doubly linked list."
+  },
+  {
+    "id": "linkedlist-medium-java-q10",
+    "type": "code-completion",
+    "question": "Complete method to remove nth node from end:",
+    "code": "public ListNode removeNthFromEnd(ListNode head, int n) {\n    ListNode dummy = new ListNode(0);\n    dummy.next = head;\n    ListNode first = dummy;\n    ListNode second = dummy;\n    for (int i = 0; i <= n; i++) {\n        first = first._____;\n    }\n    while (first != null) {\n        first = first.next;\n        second = second._____;\n    }\n    second.next = second.next.next;\n    return dummy.next;\n}",
+    "blanks": ["next", "next"],
+    "explanation": "Use two pointers with n gap to find nth from end."
+  },
+  {
+    "id": "linkedlist-hard-java-q1",
+    "type": "code-completion",
+    "question": "Complete method to clone linked list with random pointers:",
+    "code": "public Node copyRandomList(Node head) {\n    if (head == null) return null;\n    Map<Node, Node> map = new HashMap<>();\n    Node current = head;\n    while (current != null) {\n        map.put(current, new Node(current.val));\n        current = current._____;\n    }\n    current = head;\n    while (current != null) {\n        if (current.next != null) {\n            map.get(current)._____ = map.get(current.next);\n        }\n        if (current.random != null) {\n            map.get(current).random = map.get(_____);\n        }\n        current = current.next;\n    }\n    return map.get(head);\n}",
+    "blanks": ["next", "next", "current.random"],
+    "explanation": "Create node mapping using HashMap, then set next and random references."
+  },
+  {
+    "id": "linkedlist-hard-java-q2",
+    "type": "multiple-choice",
+    "question": "What is the time complexity to find intersection point of two linked lists?",
+    "options": [
+      "O(m + n)",
+      "O(m * n)",
+      "O(log(m + n))",
+      "O(1)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Two-pointer approach takes O(m + n) time."
+  },
+  {
+    "id": "linkedlist-hard-java-q3",
+    "type": "fill-blank",
+    "question": "Java's _____ class provides thread-safe operations on linked structures.",
+    "correctAnswer": "ConcurrentLinkedQueue",
+    "explanation": "ConcurrentLinkedQueue provides thread-safe linked list operations."
+  },
+  {
+    "id": "linkedlist-hard-java-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps to detect and remove loop in linked list:",
+    "items": ["Detect loop using Floyd's algorithm", "Find loop start using two pointers", "Count loop length", "Remove loop by breaking connection"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Detect, locate start, measure length, then break loop connection."
+  },
+  {
+    "id": "linkedlist-hard-java-q5",
+    "type": "multiple-choice",
+    "question": "Which Java collection is best for implementing LRU cache with linked list?",
+    "options": [
+      "LinkedHashMap",
+      "HashMap + LinkedList",
+      "TreeMap + LinkedList",
+      "ArrayList + HashMap"
+    ],
+    "correctAnswer": 0,
+    "explanation": "LinkedHashMap maintains insertion/access order efficiently."
+  },
+  {
+    "id": "linkedlist-hard-java-q6",
+    "type": "code-completion",
+    "question": "Complete method to add two numbers represented as linked lists:",
+    "code": "public ListNode addTwoNumbers(ListNode l1, ListNode l2) {\n    ListNode dummy = new ListNode(0);\n    ListNode current = dummy;\n    int carry = 0;\n    while (l1 != null || l2 != null || carry != 0) {\n        int val1 = (l1 != null) ? l1.val : 0;\n        int val2 = (l2 != null) ? l2.val : 0;\n        int sum = val1 + val2 + carry;\n        carry = sum / 10;\n        current.next = new ListNode(_____ % 10);\n        current = current.next;\n        l1 = (l1 != null) ? l1.next : null;\n        l2 = (l2 != null) ? l2.next : null;\n    }\n    return dummy.next;\n}",
+    "blanks": ["sum"],
+    "explanation": "Add digits with carry, create new nodes for result."
+  },
+  {
+    "id": "linkedlist-hard-java-q7",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of merge sort on linked list?",
+    "options": [
+      "O(log n)",
+      "O(n)",
+      "O(1)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Merge sort on linked list uses O(log n) stack space for recursion."
+  },
+  {
+    "id": "linkedlist-hard-java-q8",
+    "type": "fill-blank",
+    "question": "The _____ interface extends both Queue and Stack functionalities in Java.",
+    "correctAnswer": "Deque",
+    "explanation": "Deque interface provides double-ended queue operations."
+  },
+  {
+    "id": "linkedlist-hard-java-q9",
+    "type": "multiple-choice",
+    "question": "Which approach is most memory-efficient for implementing doubly linked list?",
+    "options": [
+      "XOR linked list",
+      "Standard doubly linked list",
+      "Array-based implementation",
+      "Tree-based implementation"
+    ],
+    "correctAnswer": 0,
+    "explanation": "XOR linked list uses single pointer per node through bitwise XOR."
+  },
+  {
+    "id": "linkedlist-hard-java-q10",
+    "type": "code-completion",
+    "question": "Complete method to reverse nodes in k-group:",
+    "code": "public ListNode reverseKGroup(ListNode head, int k) {\n    ListNode current = head;\n    int count = 0;\n    while (current != null && count < k) {\n        current = current._____;\n        count++;\n    }\n    if (count == k) {\n        current = reverseKGroup(current, k);\n        while (count > 0) {\n            ListNode temp = head.next;\n            head.next = current;\n            current = head;\n            head = _____;\n            count--;\n        }\n        head = current;\n    }\n    return head;\n}",
+    "blanks": ["next", "temp"],
+    "explanation": "Recursively reverse k nodes, then link groups together."
+  }
+]

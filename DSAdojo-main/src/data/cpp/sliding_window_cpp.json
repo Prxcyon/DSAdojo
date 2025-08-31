@@ -1,0 +1,288 @@
+[
+  {
+    "id": "sliding-window-cpp-easy-q1",
+    "type": "multiple-choice",
+    "question": "What is the sliding window technique used for in C++?",
+    "options": [
+      "Processing contiguous subarrays efficiently",
+      "Sorting vectors with std::sort",
+      "Finding maximum with std::max_element",
+      "Reversing vectors with std::reverse"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sliding window efficiently processes contiguous subarrays in linear time."
+  },
+  {
+    "id": "sliding-window-cpp-easy-q2",
+    "type": "fill-blank",
+    "question": "In C++ sliding window, we maintain a _____ that slides through the container.",
+    "correctAnswer": "window",
+    "explanation": "The window represents a range of elements that moves through the container."
+  },
+  {
+    "id": "sliding-window-cpp-easy-q3",
+    "type": "multiple-choice",
+    "question": "What are the two main types of sliding window in C++?",
+    "options": [
+      "Fixed size and Variable size",
+      "Iterator and Index based",
+      "Static and Dynamic",
+      "Template and Non-template"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sliding window can have fixed size or variable size based on problem requirements."
+  },
+  {
+    "id": "sliding-window-cpp-easy-q4",
+    "type": "code-completion",
+    "question": "Complete the basic sliding window template in C++:",
+    "code": "#include <vector>\nusing namespace std;\n\nvector<int> slidingWindow(vector<int>& arr, int k) {\n    int left = 0;\n    vector<int> result;\n    \n    for (int right = 0; right < arr.size(); right++) {\n        // Add current element to window\n        \n        // Shrink window if needed\n        while (condition) {\n            left += _____;\n        }\n        \n        // Update result\n        result.push_back(windowValue);\n    }\n    return result;\n}",
+    "blanks": ["1"],
+    "explanation": "Increment left pointer to shrink the window from left side."
+  },
+  {
+    "id": "sliding-window-cpp-easy-q5",
+    "type": "fill-blank",
+    "question": "The time complexity of sliding window technique is typically _____ in C++.",
+    "correctAnswer": "O(n)",
+    "explanation": "Each element is visited at most twice by left and right pointers."
+  },
+  {
+    "id": "sliding-window-cpp-easy-q6",
+    "type": "multiple-choice",
+    "question": "In maximum sum subarray of size k, what C++ variable do we track?",
+    "options": [
+      "Current window sum",
+      "All possible sums in vector",
+      "Individual elements in set",
+      "Array indices in map"
+    ],
+    "correctAnswer": 0,
+    "explanation": "We maintain and update the current window sum as we slide."
+  },
+  {
+    "id": "sliding-window-cpp-easy-q7",
+    "type": "drag-drop",
+    "question": "Arrange the steps of fixed-size sliding window in C++:",
+    "items": ["Initialize window with first k elements", "Slide window to right", "Remove leftmost element", "Add new rightmost element"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard process for fixed-size sliding window in C++."
+  },
+  {
+    "id": "sliding-window-cpp-easy-q8",
+    "type": "fill-blank",
+    "question": "In C++ sliding window, we use _____ pointers (left and right) to define boundaries.",
+    "correctAnswer": "two",
+    "explanation": "Left and right pointers define the current window boundaries."
+  },
+  {
+    "id": "sliding-window-cpp-easy-q9",
+    "type": "multiple-choice",
+    "question": "When we slide the window right in C++, what happens?",
+    "options": [
+      "Add new element at right, remove element at left",
+      "Only add new element at right",
+      "Only remove element at left",  
+      "Reset window to beginning"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sliding right involves adding new element and removing leftmost element."
+  },
+  {
+    "id": "sliding-window-cpp-easy-q10",
+    "type": "code-completion",
+    "question": "Complete the maximum sum of k-size subarray in C++:",
+    "code": "#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint maxSumSubarray(vector<int>& arr, int k) {\n    if (arr.size() < k) return 0;\n    \n    int windowSum = 0;\n    // Calculate first window sum\n    for (int i = 0; i < k; i++) {\n        windowSum += arr[i];\n    }\n    \n    int maxSum = windowSum;\n    \n    for (int i = k; i < arr.size(); i++) {\n        windowSum = windowSum - arr[i - k] + arr[_____];\n        maxSum = max(maxSum, windowSum);\n    }\n    \n    return maxSum;\n}",
+    "blanks": ["i"],
+    "explanation": "Add current element at index i while removing element at i-k."
+  },
+  {
+    "id": "sliding-window-cpp-medium-q1",
+    "type": "multiple-choice",
+    "question": "In variable-size sliding window, when do we shrink the window in C++?",
+    "options": [
+      "When window violates the problem condition",
+      "When window size exceeds vector capacity",
+      "After every iteration automatically",
+      "Only when we reach vector end"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Shrink window when it violates the specific problem constraints."
+  },
+  {
+    "id": "sliding-window-cpp-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the longest substring with k distinct characters in C++:",
+    "code": "#include <string>\n#include <unordered_map>\n#include <algorithm>\nusing namespace std;\n\nint longestKDistinct(string s, int k) {\n    if (k == 0) return 0;\n    \n    int left = 0;\n    unordered_map<char, int> charCount;\n    int maxLen = 0;\n    \n    for (int right = 0; right < s.length(); right++) {\n        charCount[s[right]]++;\n        \n        while (charCount.size() > k) {\n            charCount[s[left]]--;\n            if (charCount[s[left]] == 0) {\n                charCount.erase(s[_____]);\n            }\n            left++;\n        }\n        \n        maxLen = max(maxLen, right - left + 1);\n    }\n    \n    return maxLen;\n}",
+    "blanks": ["left"],
+    "explanation": "Erase character from unordered_map when its count becomes 0."
+  },
+  {
+    "id": "sliding-window-cpp-medium-q3",
+    "type": "fill-blank",
+    "question": "The _____ problem finds the smallest subarray with sum >= target using C++.",
+    "correctAnswer": "minimum window",
+    "explanation": "Minimum window substring finds the smallest valid subarray meeting criteria."
+  },
+  {
+    "id": "sliding-window-cpp-medium-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps for longest substring without repeating characters in C++:",
+    "items": ["Expand window with right pointer", "Check for duplicates using unordered_set", "Shrink window from left", "Update maximum length found"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard approach for non-repeating substring using C++ unordered_set."
+  },
+  {
+    "id": "sliding-window-cpp-medium-q5",
+    "type": "multiple-choice",
+    "question": "What C++ STL container is commonly used for character frequency in sliding window?",
+    "options": [
+      "unordered_map or map",
+      "vector",
+      "unordered_set",
+      "stack"
+    ],
+    "correctAnswer": 0,
+    "explanation": "unordered_map or map tracks character frequencies in current window."
+  },
+  {
+    "id": "sliding-window-cpp-medium-q6",
+    "type": "fill-blank",
+    "question": "In the fruits into baskets problem, we can have at most _____ different fruit types.",
+    "correctAnswer": "two",
+    "explanation": "Fruits into baskets constraint allows maximum 2 different fruit types."
+  },
+  {
+    "id": "sliding-window-cpp-medium-q7",
+    "type": "code-completion",
+    "question": "Complete the minimum window substring solution in C++:",
+    "code": "#include <string>\n#include <unordered_map>\n#include <climits>\nusing namespace std;\n\nstring minWindow(string s, string t) {\n    if (t.length() > s.length()) return \"\";\n    \n    unordered_map<char, int> need;\n    for (char c : t) {\n        need[c]++;\n    }\n    \n    int left = 0, formed = 0;\n    int required = need.size();\n    unordered_map<char, int> windowCounts;\n    int minLen = INT_MAX, minLeft = 0;\n    \n    for (int right = 0; right < s.length(); right++) {\n        char c = s[right];\n        windowCounts[c]++;\n        \n        if (need.count(c) && windowCounts[c] == need[c]) {\n            formed++;\n        }\n        \n        while (formed == _____ && left <= right) {\n            if (right - left + 1 < minLen) {\n                minLen = right - left + 1;\n                minLeft = left;\n            }\n            \n            char leftChar = s[left];\n            windowCounts[leftChar]--;\n            if (need.count(leftChar) && windowCounts[leftChar] < need[leftChar]) {\n                formed--;\n            }\n            left++;\n        }\n    }\n    \n    return minLen == INT_MAX ? \"\" : s.substr(minLeft, minLen);\n}",
+    "blanks": ["required"],
+    "explanation": "Contract window when all required characters are satisfied."
+  },
+  {
+    "id": "sliding-window-cpp-medium-q8",
+    "type": "multiple-choice",
+    "question": "What is the key insight in permutation in string problem using C++?",
+    "options": [
+      "Character frequency must match exactly",
+      "Order of characters must be preserved",
+      "Window length must be variable",
+      "Only unique characters are allowed"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Permutation requires exact character frequency match, not order."
+  },
+  {
+    "id": "sliding-window-cpp-medium-q9",
+    "type": "fill-blank",
+    "question": "The _____ subarray problem finds longest subarray with equal 0s and 1s in C++.",
+    "correctAnswer": "contiguous",
+    "explanation": "Contiguous subarray with equal 0s and 1s uses sliding window concepts."
+  },
+  {
+    "id": "sliding-window-cpp-medium-q10",
+    "type": "multiple-choice",
+    "question": "In longest repeating character replacement, what do we track in C++?",
+    "options": [
+      "Frequency of most frequent character in current window",
+      "Total number of all characters",
+      "Position indices of characters",
+      "ASCII values of characters"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Track max frequency to determine how many characters need replacement."
+  },
+  {
+    "id": "sliding-window-cpp-hard-q1",
+    "type": "code-completion",
+    "question": "Complete the sliding window maximum using C++ deque:",
+    "code": "#include <vector>\n#include <deque>\nusing namespace std;\n\nvector<int> maxSlidingWindow(vector<int>& nums, int k) {\n    if (nums.empty()) return {};\n    \n    deque<int> dq; // Store indices\n    vector<int> result;\n    \n    for (int i = 0; i < nums.size(); i++) {\n        // Remove indices outside current window\n        while (!dq.empty() && dq.front() < i - k + 1) {\n            dq._____();\n        }\n        \n        // Remove indices of smaller elements\n        while (!dq.empty() && nums[dq.back()] < nums[i]) {\n            dq.pop_back();\n        }\n        \n        dq._____(i);\n        \n        // Add to result when window is complete\n        if (i >= k - 1) {\n            result.push_back(nums[dq.front()]);\n        }\n    }\n    \n    return result;\n}",
+    "blanks": ["pop_front", "push_back"],
+    "explanation": "Use deque pop_front() and push_back() for efficient maximum tracking."
+  },
+  {
+    "id": "sliding-window-cpp-hard-q2",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of sliding window maximum with deque in C++?",
+    "options": [
+      "O(n)",
+      "O(n log k)",
+      "O(nk)",
+      "O(k)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each element is added and removed at most once, resulting in O(n)."
+  },
+  {
+    "id": "sliding-window-cpp-hard-q3",
+    "type": "fill-blank",
+    "question": "The _____ problem finds all anagrams of pattern in text using C++ sliding window.",
+    "correctAnswer": "find anagrams",
+    "explanation": "Find anagrams uses sliding window to match character frequencies efficiently."
+  },
+  {
+    "id": "sliding-window-cpp-hard-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps for substring with concatenation of all words in C++:",
+    "items": ["Create word frequency unordered_map", "Use sliding window of total word length", "Check if current window matches all words", "Move window by single word length"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Complex sliding window problem requiring word-level processing with unordered_map."
+  },
+  {
+    "id": "sliding-window-cpp-hard-q5",
+    "type": "code-completion",
+    "question": "Complete the longest substring with at most k distinct characters in C++:",
+    "code": "#include <string>\n#include <unordered_map>\n#include <algorithm>\nusing namespace std;\n\nint longestSubstringKDistinct(string s, int k) {\n    if (k == 0) return 0;\n    \n    int left = 0;\n    unordered_map<char, int> charFreq;\n    int maxLength = 0;\n    \n    for (int right = 0; right < s.length(); right++) {\n        charFreq[s[right]]++;\n        \n        while (charFreq.size() > k) {\n            charFreq[s[left]]--;\n            if (charFreq[s[left]] == 0) {\n                charFreq.erase(s[_____]);\n            }\n            left++;\n        }\n        \n        maxLength = max(maxLength, _____ - left + 1);\n    }\n    \n    return maxLength;\n}",
+    "blanks": ["left", "right"],
+    "explanation": "Maintain character frequency unordered_map and shrink window when constraint violated."
+  },
+  {
+    "id": "sliding-window-cpp-hard-q6",
+    "type": "multiple-choice",
+    "question": "Which C++ STL container is best for sliding window maximum problem?",
+    "options": [
+      "deque (double-ended queue)",
+      "stack",
+      "priority_queue",
+      "vector"
+    ],
+    "correctAnswer": 0,
+    "explanation": "deque allows efficient insertion/deletion from both ends."
+  },
+  {
+    "id": "sliding-window-cpp-hard-q7",
+    "type": "fill-blank",
+    "question": "In the _____ problem, we find minimum flips to make binary string alternating using C++.",
+    "correctAnswer": "minimum flips",
+    "explanation": "Minimum flips uses sliding window to find optimal alternating pattern."
+  },
+  {
+    "id": "sliding-window-cpp-hard-q8",
+    "type": "code-completion",
+    "question": "Complete the subarrays with k different integers in C++:",
+    "code": "#include <vector>\n#include <unordered_map>\nusing namespace std;\n\nclass Solution {\npublic:\n    int subarraysWithKDistinct(vector<int>& A, int K) {\n        return atMostK(A, K) - atMostK(A, K - 1);\n    }\n    \nprivate:\n    int atMostK(vector<int>& A, int K) {\n        if (K == 0) return 0;\n        \n        int left = 0;\n        unordered_map<int, int> counter;\n        int result = 0;\n        \n        for (int right = 0; right < A.size(); right++) {\n            counter[A[right]]++;\n            \n            while (counter.size() > K) {\n                counter[A[left]]--;\n                if (counter[A[left]] == 0) {\n                    counter.erase(A[left]);\n                }\n                left++;\n            }\n            \n            result += right - left + 1;\n        }\n        \n        return result;\n    }\n};\n\nint subarraysWithKDistinct(vector<int>& A, int K) {\n    Solution sol;\n    return sol.atMostK(A, K) - sol.atMostK(A, K - _____);\n}",
+    "blanks": ["1"],
+    "explanation": "Exactly K distinct = At most K - At most (K-1) distinct integers."
+  },
+  {
+    "id": "sliding-window-cpp-hard-q9",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of sliding window approach in C++?",
+    "options": [
+      "O(k) where k is window size or unique elements",
+      "O(n) where n is vector size",
+      "O(1) constant space",
+      "O(n²) quadratic space"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Space depends on window size or size of unordered_map/unordered_set tracking elements."
+  },
+  {
+    "id": "sliding-window-cpp-hard-q10",
+    "type": "fill-blank",
+    "question": "The _____ technique finds shortest subarray covering all elements using C++ unordered_map.",
+    "correctAnswer": "minimum window covering",
+    "explanation": "Minimum window covering finds shortest subarray containing all target elements."
+  }
+]

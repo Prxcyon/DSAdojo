@@ -1,0 +1,311 @@
+[
+  {
+    "id": "graph-easy-q1",
+    "type": "multiple-choice",
+    "question": "Which STL container is most commonly used for adjacency list representation in C++?",
+    "options": [
+      "vector<vector<int>>",
+      "array<array<int>>",
+      "list<list<int>>",
+      "stack<int>"
+    ],
+    "correctAnswer": 0,
+    "explanation": "vector<vector<int>> provides dynamic adjacency list representation."
+  },
+  {
+    "id": "graph-easy-q2",
+    "type": "multiple-choice",
+    "question": "Which header file contains the queue class needed for BFS in C++?",
+    "options": [
+      "#include <queue>",
+      "#include <stack>",
+      "#include <vector>",
+      "#include <list>"
+    ],
+    "correctAnswer": 0,
+    "explanation": "queue header provides the queue container for BFS implementation."
+  },
+  {
+    "id": "graph-easy-q3",
+    "type": "fill-blank",
+    "question": "In C++, to check if a vector is empty, we use the _____ function.",
+    "correctAnswer": "empty()",
+    "explanation": "empty() function returns true if the container has no elements."
+  },
+  {
+    "id": "graph-easy-q4",
+    "type": "multiple-choice",
+    "question": "What is the correct way to declare an adjacency list for a graph with V vertices?",
+    "options": [
+      "vector<vector<int>> adj(V);",
+      "int adj[V][V];",
+      "vector<int> adj[V];",
+      "Both a and c"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Both vector<vector<int>> and vector<int> array can represent adjacency lists."
+  },
+  {
+    "id": "graph-easy-q5",
+    "type": "drag-drop",
+    "question": "Arrange the steps to add an edge in C++ adjacency list:",
+    "items": ["adj[u].push_back(v);", "adj[v].push_back(u);", "void addEdge(int u, int v) {", "}"],
+    "correctOrder": [2, 0, 1, 3],
+    "explanation": "Function declaration, then add edge in both directions for undirected graph."
+  },
+  {
+    "id": "graph-easy-q6",
+    "type": "multiple-choice",
+    "question": "Which STL container is used for BFS traversal in C++?",
+    "options": [
+      "queue",
+      "stack",
+      "priority_queue",
+      "deque"
+    ],
+    "correctAnswer": 0,
+    "explanation": "queue follows FIFO principle required for BFS level-order traversal."
+  },
+  {
+    "id": "graph-easy-q7",
+    "type": "fill-blank",
+    "question": "To mark vertices as visited in C++, we commonly use _____ array or _____ container.",
+    "correctAnswer": "bool, vector<bool>",
+    "explanation": "bool array or vector<bool> efficiently tracks visited vertices."
+  },
+  {
+    "id": "graph-easy-q8",
+    "type": "multiple-choice",
+    "question": "What is the advantage of using vector over array for adjacency list?",
+    "options": [
+      "Dynamic size",
+      "Better cache performance",
+      "Faster access",
+      "Less memory usage"
+    ],
+    "correctAnswer": 0,
+    "explanation": "vector can grow dynamically unlike fixed-size arrays."
+  },
+  {
+    "id": "graph-easy-q9",
+    "type": "code-completion",
+    "question": "Complete the graph class declaration in C++:",
+    "code": "#include <vector>\n#include <iostream>\nusing namespace std;\n\nclass Graph {\nprivate:\n    int V;\n    vector<vector<int>> adj;\n    \npublic:\n    Graph(int vertices) {\n        V = vertices;\n        adj._____(V);\n    }\n    \n    void addEdge(int u, int v) {\n        adj[u]._____(v);\n        adj[v]._____(u);\n    }\n};",
+    "blanks": ["resize", "push_back", "push_back"],
+    "explanation": "resize() allocates space for V vertices, push_back() adds edges."
+  },
+  {
+    "id": "graph-easy-q10",
+    "type": "multiple-choice",
+    "question": "Which of these is NOT a valid way to iterate through adjacency list in C++?",
+    "options": [
+      "for(int i : adj[v]) cout << i;",
+      "for(auto it = adj[v].begin(); it != adj[v].end(); ++it)",
+      "for(int i = 0; i < adj[v].size(); i++)",
+      "for(int i in adj[v]) cout << i;"
+    ],
+    "correctAnswer": 3,
+    "explanation": "C++ uses 'for(int i : container)' not 'for(int i in container)'."
+  },
+  {
+    "id": "graph-medium-q1",
+    "type": "multiple-choice",
+    "question": "Which algorithm finds the shortest path in unweighted graphs?",
+    "options": [
+      "BFS",
+      "DFS",
+      "Dijkstra's",
+      "Bellman-Ford"
+    ],
+    "correctAnswer": 0,
+    "explanation": "BFS finds shortest path in unweighted graphs in O(V+E) time."
+  },
+  {
+    "id": "graph-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the BFS implementation in C++:",
+    "code": "#include <queue>\n\nvoid BFS(int start) {\n    vector<bool> visited(V, false);\n    queue<int> q;\n    \n    visited[start] = true;\n    q._____(start);\n    \n    while(!q.empty()) {\n        int vertex = q._____();\n        q._____();\n        cout << vertex << \" \";\n        \n        for(int neighbor : adj[vertex]) {\n            if(!visited[neighbor]) {\n                visited[neighbor] = true;\n                q._____(neighbor);\n            }\n        }\n    }\n}",
+    "blanks": ["push", "front", "pop", "push"],
+    "explanation": "BFS uses push() to add, front() to access, pop() to remove from queue."
+  },
+  {
+    "id": "graph-medium-q3",
+    "type": "fill-blank",
+    "question": "In cycle detection for undirected graphs, we ignore the _____ vertex to avoid false positive.",
+    "correctAnswer": "parent",
+    "explanation": "We ignore the immediate parent to avoid detecting false cycles."
+  },
+  {
+    "id": "graph-medium-q4",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of DFS using recursion?",
+    "options": [
+      "O(V) for recursion stack",
+      "O(V²)",
+      "O(E)",
+      "O(1)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "DFS recursion stack can go up to O(V) depth in worst case."
+  },
+  {
+    "id": "graph-medium-q5",
+    "type": "drag-drop",
+    "question": "Arrange the steps for topological sorting using DFS:",
+    "items": ["Visit all unvisited vertices", "Perform DFS on each vertex", "Push vertex to stack after visiting all neighbors", "Pop from stack for topological order"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Topological sort uses DFS with post-order stack insertion."
+  },
+  {
+    "id": "graph-medium-q6",
+    "type": "multiple-choice",
+    "question": "Which STL container is best for implementing a visited set with O(1) lookup?",
+    "options": [
+      "unordered_set",
+      "vector",
+      "list",
+      "array"
+    ],
+    "correctAnswer": 0,
+    "explanation": "unordered_set provides average O(1) lookup time using hash table."
+  },
+  {
+    "id": "graph-medium-q7",
+    "type": "fill-blank",
+    "question": "A graph with no cycles is called _____, and if it's connected, it's called a _____.",
+    "correctAnswer": "acyclic, tree",
+    "explanation": "Acyclic graphs have no cycles; connected acyclic graphs are trees."
+  },
+  {
+    "id": "graph-medium-q8",
+    "type": "code-completion",
+    "question": "Complete the recursive DFS implementation:",
+    "code": "void DFSUtil(int vertex, vector<bool>& visited) {\n    visited[vertex] = _____;\n    cout << vertex << \" \";\n    \n    for(int neighbor : adj[vertex]) {\n        if(!visited[neighbor]) {\n            _____(neighbor, visited);\n        }\n    }\n}\n\nvoid DFS(int start) {\n    vector<bool> visited(V, false);\n    DFSUtil(start, visited);\n}",
+    "blanks": ["true", "DFSUtil"],
+    "explanation": "Mark vertex as visited and recursively call DFSUtil for unvisited neighbors."
+  },
+  {
+    "id": "graph-medium-q9",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of detecting a cycle in an undirected graph using DFS?",
+    "options": [
+      "O(V + E)",
+      "O(V²)",
+      "O(V * E)",
+      "O(E²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "DFS visits each vertex and edge once, giving O(V + E) complexity."
+  },
+  {
+    "id": "graph-medium-q10",
+    "type": "multiple-choice",
+    "question": "Which algorithm is used to find strongly connected components in directed graphs?",
+    "options": [
+      "Kosaraju's algorithm",
+      "Kruskal's algorithm",
+      "Prim's algorithm",
+      "Dijkstra's algorithm"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Kosaraju's algorithm finds SCCs using two DFS traversals."
+  },
+  {
+    "id": "graph-hard-q1",
+    "type": "code-completion",
+    "question": "Complete Dijkstra's algorithm using priority queue in C++:",
+    "code": "#include <queue>\n#include <vector>\n#include <climits>\n\nvector<int> dijkstra(int src) {\n    vector<int> dist(V, INT_MAX);\n    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;\n    \n    dist[src] = 0;\n    pq._____(make_pair(0, src));\n    \n    while(!pq.empty()) {\n        int u = pq.top().second;\n        pq._____();\n        \n        for(auto& edge : adj[u]) {\n            int v = edge.first;\n            int weight = edge.second;\n            \n            if(dist[u] + weight < dist[v]) {\n                dist[v] = dist[u] + weight;\n                pq.push(make_pair(dist[v], v));\n            }\n        }\n    }\n    return dist;\n}",
+    "blanks": ["push", "pop"],
+    "explanation": "Dijkstra uses push() to add vertices and pop() to remove minimum distance vertex."
+  },
+  {
+    "id": "graph-hard-q2",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of Dijkstra's algorithm using binary heap?",
+    "options": [
+      "O((V + E) log V)",
+      "O(V²)",
+      "O(V + E)",
+      "O(V log V)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each vertex is extracted once (V log V) and each edge is relaxed once (E log V)."
+  },
+  {
+    "id": "graph-hard-q3",
+    "type": "fill-blank",
+    "question": "The _____ algorithm can detect negative weight cycles and works with negative edge weights.",
+    "correctAnswer": "Bellman-Ford",
+    "explanation": "Bellman-Ford algorithm handles negative weights and detects negative cycles."
+  },
+  {
+    "id": "graph-hard-q4",
+    "type": "drag-drop",
+    "question": "Arrange the steps for Prim's MST algorithm:",
+    "items": ["Start with arbitrary vertex", "Add to MST", "Find minimum weight edge from MST", "Repeat until all vertices included"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Prim's algorithm grows MST by adding minimum weight edges from current MST."
+  },
+  {
+    "id": "graph-hard-q5",
+    "type": "multiple-choice",
+    "question": "Which data structure is used in Kruskal's algorithm to detect cycles?",
+    "options": [
+      "Union-Find (Disjoint Set)",
+      "Stack",
+      "Queue",
+      "Priority Queue"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Union-Find efficiently detects cycles by checking if vertices are in same component."
+  },
+  {
+    "id": "graph-hard-q6",
+    "type": "code-completion",
+    "question": "Complete the Union-Find implementation for Kruskal's algorithm:",
+    "code": "class UnionFind {\n    vector<int> parent, rank;\n    \npublic:\n    UnionFind(int n) : parent(n), rank(n, 0) {\n        for(int i = 0; i < n; i++) parent[i] = i;\n    }\n    \n    int find(int x) {\n        if(parent[x] != x) {\n            parent[x] = _____(parent[x]);  // Path compression\n        }\n        return parent[x];\n    }\n    \n    bool unite(int x, int y) {\n        int px = find(x), py = find(y);\n        if(px == py) return false;\n        \n        if(rank[px] < rank[py]) {\n            parent[px] = py;\n        } else if(rank[px] > rank[py]) {\n            parent[py] = px;\n        } else {\n            parent[py] = px;\n            rank[px]++;\n        }\n        return true;\n    }\n};",
+    "blanks": ["find"],
+    "explanation": "Path compression in find() flattens the tree structure for efficiency."
+  },
+  {
+    "id": "graph-hard-q7",
+    "type": "multiple-choice",
+    "question": "What is the minimum number of colors needed for a bipartite graph?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "1"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Bipartite graphs can always be colored with exactly 2 colors."
+  },
+  {
+    "id": "graph-hard-q8",
+    "type": "fill-blank",
+    "question": "The _____ algorithm finds all-pairs shortest paths in O(V³) time complexity.",
+    "correctAnswer": "Floyd-Warshall",
+    "explanation": "Floyd-Warshall uses dynamic programming to find shortest paths between all pairs."
+  },
+  {
+    "id": "graph-hard-q9",
+    "type": "multiple-choice",
+    "question": "Which problem is solved by finding articulation points in a graph?",
+    "options": [
+      "Network reliability analysis",
+      "Shortest path finding",
+      "Minimum spanning tree",
+      "Graph coloring"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Articulation points identify critical nodes whose removal disconnects the graph."
+  },
+  {
+    "id": "graph-hard-q10",
+    "type": "code-completion",
+    "question": "Complete the Tarjan's algorithm for finding bridges:",
+    "code": "void bridgeUtil(int u, vector<bool>& visited, vector<int>& disc, vector<int>& low, vector<int>& parent) {\n    visited[u] = true;\n    disc[u] = low[u] = ++timer;\n    \n    for(int v : adj[u]) {\n        if(!visited[v]) {\n            parent[v] = u;\n            bridgeUtil(v, visited, disc, low, parent);\n            \n            low[u] = min(low[u], low[v]);\n            \n            if(low[v] > _____[u]) {\n                cout << u << \" \" << v << \" is a bridge\\n\";\n            }\n        } else if(v != parent[u]) {\n            low[u] = min(low[u], disc[v]);\n        }\n    }\n}",
+    "blanks": ["disc"],
+    "explanation": "A bridge exists when low[v] > disc[u], meaning no back edge from subtree of v."
+  }
+]

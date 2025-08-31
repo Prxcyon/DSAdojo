@@ -1,0 +1,293 @@
+[
+  {
+    "id": "binary-tree-easy-q1",
+    "type": "multiple-choice",
+    "question": "What is the maximum number of children a node can have in a binary tree?",
+    "options": [
+      "2",
+      "3",
+      "1",
+      "Unlimited"
+    ],
+    "correctAnswer": 0,
+    "explanation": "In a binary tree, each node can have at most 2 children."
+  },
+  {
+    "id": "binary-tree-easy-q2",
+    "type": "fill-blank",
+    "question": "In a binary tree, the topmost node is called the _____.",
+    "correctAnswer": "root",
+    "explanation": "The root is the topmost node in a binary tree."
+  },
+  {
+    "id": "binary-tree-easy-q3",
+    "type": "multiple-choice",
+    "question": "What are the two children of a node called?",
+    "options": [
+      "Left child and Right child",
+      "First child and Second child",
+      "Upper child and Lower child",
+      "Primary child and Secondary child"
+    ],
+    "correctAnswer": 0,
+    "explanation": "In binary trees, children are referred to as left and right child."
+  },
+  {
+    "id": "binary-tree-easy-q4",
+    "type": "fill-blank",
+    "question": "A node with no children is called a _____ node.",
+    "correctAnswer": "leaf",
+    "explanation": "Leaf nodes are nodes that have no children."
+  },
+  {
+    "id": "binary-tree-easy-q5",
+    "type": "multiple-choice",
+    "question": "What is the height of a tree with only one node (root)?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "-1"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Height is measured from leaf to root, so single node has height 0."
+  },
+  {
+    "id": "binary-tree-easy-q6",
+    "type": "drag-drop",
+    "question": "Arrange the tree traversal methods in alphabetical order:",
+    "items": ["Postorder", "Inorder", "Preorder"],
+    "correctOrder": [1, 2, 0],
+    "explanation": "Alphabetical order: Inorder, Preorder, Postorder."
+  },
+  {
+    "id": "binary-tree-easy-q7",
+    "type": "multiple-choice",
+    "question": "In which traversal do we visit the root node first?",
+    "options": [
+      "Preorder",
+      "Inorder",
+      "Postorder",
+      "Level order"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Preorder traversal visits root first, then left, then right."
+  },
+  {
+    "id": "binary-tree-easy-q8",
+    "type": "code-completion",
+    "question": "Complete the basic tree node structure:",
+    "code": "class TreeNode:\n    def __init__(self, val=0):\n        self.val = val\n        self._____ = None\n        self._____ = None",
+    "blanks": ["left", "right"],
+    "explanation": "Binary tree nodes have left and right child pointers."
+  },
+  {
+    "id": "binary-tree-easy-q9",
+    "type": "fill-blank",
+    "question": "The _____ of a tree is the longest path from root to any leaf.",
+    "correctAnswer": "height",
+    "explanation": "Height represents the longest path from root to leaf."
+  },
+  {
+    "id": "binary-tree-easy-q10",
+    "type": "multiple-choice",
+    "question": "What is the minimum number of nodes in a binary tree of height h?",
+    "options": [
+      "h + 1",
+      "2^h",
+      "h",
+      "2^(h+1) - 1"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Minimum nodes = h + 1 (one node per level in a linear tree)."
+  },
+  {
+    "id": "binary-tree-medium-q1",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of searching in a balanced binary search tree?",
+    "options": [
+      "O(log n)",
+      "O(n)",
+      "O(1)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Balanced BST provides O(log n) search time."
+  },
+  {
+    "id": "binary-tree-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the inorder traversal function:",
+    "code": "def inorder(root):\n    result = []\n    if root:\n        result.extend(inorder(root._____))\n        result._____(root.val)\n        result.extend(inorder(root._____))\n    return result",
+    "blanks": ["left", "append", "right"],
+    "explanation": "Inorder: Left, Root, Right traversal order."
+  },
+  {
+    "id": "binary-tree-medium-q3",
+    "type": "fill-blank",
+    "question": "In a complete binary tree, all levels are filled except possibly the _____ level.",
+    "correctAnswer": "last",
+    "explanation": "Complete binary tree has all levels filled except last level."
+  },
+  {
+    "id": "binary-tree-medium-q4",
+    "type": "drag-drop",
+    "question": "Arrange the steps to check if a binary tree is balanced:",
+    "items": ["Calculate left height", "Calculate right height", "Check height difference", "Recursively check subtrees"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard algorithm to check if tree is height-balanced."
+  },
+  {
+    "id": "binary-tree-medium-q5",
+    "type": "multiple-choice",
+    "question": "What is the maximum number of nodes at level k in a binary tree?",
+    "options": [
+      "2^k",
+      "2^(k-1)",
+      "k",
+      "2k"
+    ],
+    "correctAnswer": 0,
+    "explanation": "At level k, maximum nodes = 2^k (0-indexed levels)."
+  },
+  {
+    "id": "binary-tree-medium-q6",
+    "type": "fill-blank",
+    "question": "A binary search tree where the height difference between left and right subtrees is at most 1 is called an _____ tree.",
+    "correctAnswer": "AVL",
+    "explanation": "AVL tree is a self-balancing binary search tree."
+  },
+  {
+    "id": "binary-tree-medium-q7",
+    "type": "code-completion",
+    "question": "Complete the function to find maximum depth of binary tree:",
+    "code": "def max_depth(root):\n    if not root:\n        return 0\n    left_depth = max_depth(root._____)\n    right_depth = max_depth(root._____)\n    return _____(left_depth, right_depth) + 1",
+    "blanks": ["left", "right", "max"],
+    "explanation": "Recursively find maximum depth of left and right subtrees."
+  },
+  {
+    "id": "binary-tree-medium-q8",
+    "type": "multiple-choice",
+    "question": "Which traversal gives nodes in sorted order for a BST?",
+    "options": [
+      "Inorder",
+      "Preorder",
+      "Postorder",
+      "Level order"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Inorder traversal of BST gives sorted sequence."
+  },
+  {
+    "id": "binary-tree-medium-q9",
+    "type": "fill-blank",
+    "question": "The _____ of a binary tree is the number of nodes on the longest path from root to leaf.",
+    "correctAnswer": "depth",
+    "explanation": "Depth includes the count of nodes on the path."
+  },
+  {
+    "id": "binary-tree-medium-q10",
+    "type": "multiple-choice",
+    "question": "What is a full binary tree?",
+    "options": [
+      "Every node has 0 or 2 children",
+      "All leaves at same level",
+      "All levels completely filled",
+      "Height is minimum possible"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Full binary tree: every node has either 0 or 2 children."
+  },
+  {
+    "id": "binary-tree-hard-q1",
+    "type": "code-completion",
+    "question": "Complete the function to find lowest common ancestor in BST:",
+    "code": "def lca_bst(root, p, q):\n    if not root:\n        return None\n    if p.val < root.val and q.val < root.val:\n        return lca_bst(root._____, p, q)\n    elif p.val > root.val and q.val > root.val:\n        return lca_bst(root._____, p, q)\n    else:\n        return _____",
+    "blanks": ["left", "right", "root"],
+    "explanation": "Use BST property to find LCA efficiently."
+  },
+  {
+    "id": "binary-tree-hard-q2",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of converting a sorted array to balanced BST?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each element is visited once, so O(n) time complexity."
+  },
+  {
+    "id": "binary-tree-hard-q3",
+    "type": "fill-blank",
+    "question": "Morris traversal achieves inorder traversal in O(1) space using _____ links.",
+    "correctAnswer": "threaded",
+    "explanation": "Morris traversal uses threaded binary tree concept."
+  },
+  {
+    "id": "binary-tree-hard-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps to serialize a binary tree:",
+    "items": ["Use preorder traversal", "Handle null nodes", "Convert to string", "Add delimiters"],
+    "correctOrder": [0, 1, 3, 2],
+    "explanation": "Standard approach for tree serialization."
+  },
+  {
+    "id": "binary-tree-hard-q5",
+    "type": "code-completion",
+    "question": "Complete the function to find diameter of binary tree:",
+    "code": "def diameter(root):\n    def dfs(node):\n        if not node:\n            return 0\n        left = dfs(node._____)\n        right = dfs(node._____)\n        self.diameter = max(self.diameter, left + right)\n        return _____(left, right) + 1\n    \n    self.diameter = 0\n    dfs(root)\n    return self.diameter",
+    "blanks": ["left", "right", "max"],
+    "explanation": "Diameter is the longest path between any two nodes."
+  },
+  {
+    "id": "binary-tree-hard-q6",
+    "type": "multiple-choice",
+    "question": "Which algorithm is used to construct BST from preorder traversal in O(n) time?",
+    "options": [
+      "Stack-based approach",
+      "Recursion with bounds",
+      "Morris traversal",
+      "Both a and b"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Both stack-based and recursion with bounds work in O(n)."
+  },
+  {
+    "id": "binary-tree-hard-q7",
+    "type": "fill-blank",
+    "question": "The _____ view of a binary tree shows nodes visible when looking from the right side.",
+    "correctAnswer": "right",
+    "explanation": "Right view shows rightmost node at each level."
+  },
+  {
+    "id": "binary-tree-hard-q8",
+    "type": "code-completion",
+    "question": "Complete the function to check if tree is valid BST:",
+    "code": "def is_valid_bst(root, min_val=float('-inf'), max_val=float('inf')):\n    if not root:\n        return True\n    if root.val <= _____ or root.val >= _____:\n        return False\n    return (is_valid_bst(root.left, min_val, root._____) and\n            is_valid_bst(root.right, root._____, max_val))",
+    "blanks": ["min_val", "max_val", "val", "val"],
+    "explanation": "Use bounds to validate BST property recursively."
+  },
+  {
+    "id": "binary-tree-hard-q9",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of iterative postorder traversal using one stack?",
+    "options": [
+      "O(h) where h is height",
+      "O(n)",
+      "O(1)",
+      "O(log n)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Stack stores at most h nodes where h is tree height."
+  },
+  {
+    "id": "binary-tree-hard-q10",
+    "type": "fill-blank",
+    "question": "In a binary tree, the number of leaf nodes is always _____ more than nodes with two children.",
+    "correctAnswer": "one",
+    "explanation": "For any binary tree: leaves = internal nodes with 2 children + 1."
+  }
+]

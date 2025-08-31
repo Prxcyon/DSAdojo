@@ -1,0 +1,294 @@
+[
+  {
+    "id": "java-binary-tree-easy-q1",
+    "type": "multiple-choice",
+    "question": "What is the maximum number of children a node can have in a binary tree?",
+    "options": [
+      "2",
+      "3",
+      "1",
+      "Unlimited"
+    ],
+    "correctAnswer": 0,
+    "explanation": "In a binary tree, each node can have at most 2 children."
+  },
+  {
+    "id": "java-binary-tree-easy-q2",
+    "type": "fill-blank",
+    "question": "In a binary tree, the topmost node is called the _____.",
+    "correctAnswer": "root",
+    "explanation": "The root is the topmost node in a binary tree."
+  },
+  {
+    "id": "java-binary-tree-easy-q3",
+    "type": "code-completion",
+    "question": "Complete the basic TreeNode class in Java:",
+    "code": "class TreeNode {\n    int val;\n    TreeNode _____;\n    TreeNode _____;\n    \n    TreeNode(int val) {\n        this._____ = val;\n    }\n}",
+    "blanks": ["left", "right", "val"],
+    "explanation": "Binary tree nodes have left and right child references and a value."
+  },
+  {
+    "id": "java-binary-tree-easy-q4",
+    "type": "multiple-choice",
+    "question": "What are the two children of a node called in a binary tree?",
+    "options": [
+      "Left child and Right child",
+      "First child and Second child",
+      "Upper child and Lower child",
+      "Primary child and Secondary child"
+    ],
+    "correctAnswer": 0,
+    "explanation": "In binary trees, children are referred to as left and right child."
+  },
+  {
+    "id": "java-binary-tree-easy-q5",
+    "type": "fill-blank",
+    "question": "A node with no children is called a _____ node.",
+    "correctAnswer": "leaf",
+    "explanation": "Leaf nodes are nodes that have no children."
+  },
+  {
+    "id": "java-binary-tree-easy-q6",
+    "type": "multiple-choice",
+    "question": "What is the height of a tree with only one node (root)?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "-1"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Height is measured from leaf to root, so single node has height 0."
+  },
+  {
+    "id": "java-binary-tree-easy-q7",
+    "type": "drag-drop",
+    "question": "Arrange the tree traversal methods in alphabetical order:",
+    "items": ["Postorder", "Inorder", "Preorder"],
+    "correctOrder": [1, 2, 0],
+    "explanation": "Alphabetical order: Inorder, Preorder, Postorder."
+  },
+  {
+    "id": "java-binary-tree-easy-q8",
+    "type": "multiple-choice",
+    "question": "In which traversal do we visit the root node first?",
+    "options": [
+      "Preorder",
+      "Inorder",
+      "Postorder",
+      "Level order"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Preorder traversal visits root first, then left, then right."
+  },
+  {
+    "id": "java-binary-tree-easy-q9",
+    "type": "fill-blank",
+    "question": "The _____ of a tree is the longest path from root to any leaf.",
+    "correctAnswer": "height",
+    "explanation": "Height represents the longest path from root to leaf."
+  },
+  {
+    "id": "java-binary-tree-easy-q10",
+    "type": "multiple-choice",
+    "question": "What is the minimum number of nodes in a binary tree of height h?",
+    "options": [
+      "h + 1",
+      "2^h",
+      "h",
+      "2^(h+1) - 1"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Minimum nodes = h + 1 (one node per level in a linear tree)."
+  },
+  {
+    "id": "java-binary-tree-medium-q1",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of searching in a balanced binary search tree?",
+    "options": [
+      "O(log n)",
+      "O(n)",
+      "O(1)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Balanced BST provides O(log n) search time due to height being log n."
+  },
+  {
+    "id": "java-binary-tree-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the inorder traversal method:",
+    "code": "public List<Integer> inorderTraversal(TreeNode root) {\n    List<Integer> result = new ArrayList<>();\n    if (root != null) {\n        result.addAll(inorderTraversal(root._____));\n        result._____(root.val);\n        result.addAll(inorderTraversal(root._____));\n    }\n    return result;\n}",
+    "blanks": ["left", "add", "right"],
+    "explanation": "Inorder traversal: Left subtree, Root, Right subtree."
+  },
+  {
+    "id": "java-binary-tree-medium-q3",
+    "type": "fill-blank",
+    "question": "In a complete binary tree, all levels are filled except possibly the _____ level.",
+    "correctAnswer": "last",
+    "explanation": "Complete binary tree has all levels filled except possibly the last level."
+  },
+  {
+    "id": "java-binary-tree-medium-q4",
+    "type": "multiple-choice",
+    "question": "What is the maximum number of nodes at level k in a binary tree?",
+    "options": [
+      "2^k",
+      "2^(k-1)",
+      "k",
+      "2k"
+    ],
+    "correctAnswer": 0,
+    "explanation": "At level k, maximum nodes = 2^k (assuming 0-indexed levels)."
+  },
+  {
+    "id": "java-binary-tree-medium-q5",
+    "type": "code-completion",
+    "question": "Complete the method to find maximum depth of binary tree:",
+    "code": "public int maxDepth(TreeNode root) {\n    if (root == null) {\n        return 0;\n    }\n    int leftDepth = maxDepth(root._____);\n    int rightDepth = maxDepth(root._____);\n    return Math._____(leftDepth, rightDepth) + 1;\n}",
+    "blanks": ["left", "right", "max"],
+    "explanation": "Recursively find maximum depth of left and right subtrees."
+  },
+  {
+    "id": "java-binary-tree-medium-q6",
+    "type": "fill-blank",
+    "question": "A binary search tree where the height difference between left and right subtrees is at most 1 is called an _____ tree.",
+    "correctAnswer": "AVL",
+    "explanation": "AVL tree is a self-balancing binary search tree."
+  },
+  {
+    "id": "java-binary-tree-medium-q7",
+    "type": "multiple-choice",
+    "question": "Which traversal gives nodes in sorted order for a BST?",
+    "options": [
+      "Inorder",
+      "Preorder",
+      "Postorder",
+      "Level order"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Inorder traversal of BST gives sorted sequence."
+  },
+  {
+    "id": "java-binary-tree-medium-q8",
+    "type": "drag-drop",
+    "question": "Arrange the steps to check if a binary tree is balanced:",
+    "items": ["Calculate left height", "Calculate right height", "Check height difference", "Recursively check subtrees"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard algorithm to check if tree is height-balanced."
+  },
+  {
+    "id": "java-binary-tree-medium-q9",
+    "type": "multiple-choice",
+    "question": "What is a full binary tree?",
+    "options": [
+      "Every node has 0 or 2 children",
+      "All leaves at same level",
+      "All levels completely filled",
+      "Height is minimum possible"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Full binary tree: every node has either 0 or 2 children."
+  },
+  {
+    "id": "java-binary-tree-medium-q10",
+    "type": "fill-blank",
+    "question": "Level order traversal uses a _____ data structure for implementation.",
+    "correctAnswer": "queue",
+    "explanation": "Queue is used for level order (breadth-first) traversal."
+  },
+  {
+    "id": "java-binary-tree-hard-q1",
+    "type": "code-completion",
+    "question": "Complete the method to find lowest common ancestor in BST:",
+    "code": "public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {\n    if (root == null) return null;\n    \n    if (p.val < root.val && q.val < root.val) {\n        return lowestCommonAncestor(root._____, p, q);\n    } else if (p.val > root.val && q.val > root.val) {\n        return lowestCommonAncestor(root._____, p, q);\n    } else {\n        return _____;\n    }\n}",
+    "blanks": ["left", "right", "root"],
+    "explanation": "Use BST property to efficiently find LCA."
+  },
+  {
+    "id": "java-binary-tree-hard-q2",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of converting a sorted array to balanced BST?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each element is visited once to create the BST, so O(n) time."
+  },
+  {
+    "id": "java-binary-tree-hard-q3",
+    "type": "fill-blank",
+    "question": "Morris traversal achieves inorder traversal in O(1) space using _____ links.",
+    "correctAnswer": "threaded",
+    "explanation": "Morris traversal uses threaded binary tree concept for space optimization."
+  },
+  {
+    "id": "java-binary-tree-hard-q4",
+    "type": "code-completion",
+    "question": "Complete the method to serialize a binary tree:",
+    "code": "public String serialize(TreeNode root) {\n    if (root == null) return \"#\";\n    \n    return root.val + \",\" + \n           serialize(root._____) + \",\" + \n           serialize(root._____);\n}",
+    "blanks": ["left", "right"],
+    "explanation": "Preorder traversal with null markers for serialization."
+  },
+  {
+    "id": "java-binary-tree-hard-q5",
+    "type": "multiple-choice",
+    "question": "Which data structure is used for iterative postorder traversal?",
+    "options": [
+      "Two stacks",
+      "Queue",
+      "ArrayList",
+      "HashMap"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Two stacks or one stack with modified approach for iterative postorder."
+  },
+  {
+    "id": "java-binary-tree-hard-q6",
+    "type": "code-completion",
+    "question": "Complete the method to find diameter of binary tree:",
+    "code": "private int maxDiameter = 0;\n\npublic int diameterOfBinaryTree(TreeNode root) {\n    calculateHeight(root);\n    return maxDiameter;\n}\n\nprivate int calculateHeight(TreeNode node) {\n    if (node == null) return 0;\n    \n    int left = calculateHeight(node._____);\n    int right = calculateHeight(node._____);\n    \n    maxDiameter = Math.max(maxDiameter, left + right);\n    return Math._____(left, right) + 1;\n}",
+    "blanks": ["left", "right", "max"],
+    "explanation": "Diameter is the longest path between any two nodes in the tree."
+  },
+  {
+    "id": "java-binary-tree-hard-q7",
+    "type": "fill-blank",
+    "question": "The _____ view of a binary tree shows nodes visible when looking from the right side.",
+    "correctAnswer": "right",
+    "explanation": "Right view shows the rightmost node at each level."
+  },
+  {
+    "id": "java-binary-tree-hard-q8",
+    "type": "drag-drop",
+    "question": "Arrange steps to validate a binary search tree:",
+    "items": ["Set initial bounds", "Check current node value", "Recursively validate left", "Recursively validate right"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Use bounds to validate BST property recursively."
+  },
+  {
+    "id": "java-binary-tree-hard-q9",
+    "type": "code-completion",
+    "question": "Complete the method to construct BST from preorder:",
+    "code": "private int idx = 0;\n\npublic TreeNode bstFromPreorder(int[] preorder) {\n    return buildBST(preorder, Integer.MIN_VALUE, Integer.MAX_VALUE);\n}\n\nprivate TreeNode buildBST(int[] preorder, int min, int max) {\n    if (idx >= preorder.length) return null;\n    \n    int val = preorder[idx];\n    if (val < _____ || val > _____) return null;\n    \n    _____++;\n    TreeNode root = new TreeNode(val);\n    root.left = buildBST(preorder, min, val);\n    root.right = buildBST(preorder, val, max);\n    return root;\n}",
+    "blanks": ["min", "max", "idx"],
+    "explanation": "Use bounds to construct BST from preorder traversal efficiently."
+  },
+  {
+    "id": "java-binary-tree-hard-q10",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of recursive inorder traversal?",
+    "options": [
+      "O(h) where h is height",
+      "O(n)",
+      "O(1)",
+      "O(log n)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Recursive calls use O(h) space on call stack where h is tree height."
+  }
+]

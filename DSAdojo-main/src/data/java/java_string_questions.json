@@ -1,0 +1,301 @@
+[
+  {
+    "id": "string-easy-q1",
+    "type": "multiple-choice",
+    "question": "What is the index of the first character in a Java String?",
+    "options": [
+      "0",
+      "1",
+      "-1",
+      "undefined"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Java Strings are zero-indexed like arrays."
+  },
+  {
+    "id": "string-easy-q2",
+    "type": "fill-blank",
+    "question": "The method _____ returns the length of a String in Java.",
+    "correctAnswer": "length()",
+    "explanation": "length() method returns String length in Java."
+  },
+  {
+    "id": "string-easy-q3",
+    "type": "multiple-choice",
+    "question": "How do you access the last character of String 's'?",
+    "options": [
+      "s.charAt(s.length() - 1)",
+      "s.charAt(0)",
+      "s.last()",
+      "s.charAt(s.length())"
+    ],
+    "correctAnswer": 0,
+    "explanation": "charAt(s.length() - 1) gives the last character."
+  },
+  {
+    "id": "string-easy-q4",
+    "type": "code-completion",
+    "question": "Complete the code to convert String to uppercase:",
+    "code": "String text = \"hello world\";\nString uppercase = text._____;",
+    "blanks": ["toUpperCase()"],
+    "explanation": "toUpperCase() method converts String to uppercase."
+  },
+  {
+    "id": "string-easy-q5",
+    "type": "multiple-choice",
+    "question": "Which method splits a String into an array?",
+    "options": [
+      "split()",
+      "join()",
+      "replace()",
+      "indexOf()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "split() method divides String into array elements."
+  },
+  {
+    "id": "string-easy-q6",
+    "type": "drag-drop",
+    "question": "Arrange the steps to reverse a String using StringBuilder:",
+    "items": ["Create StringBuilder", "Append the String", "Call reverse()", "Convert to String"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "StringBuilder.reverse() efficiently reverses the String."
+  },
+  {
+    "id": "string-easy-q7",
+    "type": "fill-blank",
+    "question": "The method _____ removes whitespace from both ends of a String.",
+    "correctAnswer": "trim",
+    "explanation": "trim() removes leading and trailing whitespace."
+  },
+  {
+    "id": "string-easy-q8",
+    "type": "multiple-choice",
+    "question": "What does \"Hello\" + \"World\" return in Java?",
+    "options": [
+      "HelloWorld",
+      "Hello World",
+      "Compilation Error",
+      "null"
+    ],
+    "correctAnswer": 0,
+    "explanation": "String concatenation joins Strings without space."
+  },
+  {
+    "id": "string-easy-q9",
+    "type": "code-completion",
+    "question": "Complete the code to check if String contains a substring:",
+    "code": "String text = \"Java Programming\";\nif (text._____(\"gram\")) {\n    System.out.println(\"Found\");\n}",
+    "blanks": ["contains"],
+    "explanation": "contains() method checks substring presence."
+  },
+  {
+    "id": "string-easy-q10",
+    "type": "multiple-choice",
+    "question": "Which method finds the position of substring in a String?",
+    "options": [
+      "indexOf()",
+      "search()",
+      "locate()",
+      "position()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "indexOf() returns index of substring or -1 if not found."
+  },
+  {
+    "id": "string-medium-q1",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of String concatenation using + operator in Java?",
+    "options": [
+      "O(n)",
+      "O(1)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "String concatenation creates new String object, taking O(n) time."
+  },
+  {
+    "id": "string-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the function to check if String is palindrome:",
+    "code": "public static boolean isPalindrome(String s) {\n    s = s.toLowerCase().replaceAll(\"\\\\s\", \"\");\n    int left = 0, right = s.length() - 1;\n    while (left < right) {\n        if (s.charAt(left) != s.charAt(_____)) {\n            return false;\n        }\n        left++;\n        right--;\n    }\n    return true;\n}",
+    "blanks": ["right"],
+    "explanation": "Compare characters from both ends moving inward."
+  },
+  {
+    "id": "string-medium-q3",
+    "type": "fill-blank",
+    "question": "The _____ algorithm efficiently finds pattern occurrences in text with O(n+m) complexity.",
+    "correctAnswer": "KMP",
+    "explanation": "KMP (Knuth-Morris-Pratt) algorithm for pattern matching."
+  },
+  {
+    "id": "string-medium-q4",
+    "type": "multiple-choice",
+    "question": "Which is the most efficient way to build a String from multiple parts in Java?",
+    "options": [
+      "StringBuilder",
+      "+ operator",
+      "String.format()",
+      "Concatenation in loop"
+    ],
+    "correctAnswer": 0,
+    "explanation": "StringBuilder is most efficient for multiple String parts."
+  },
+  {
+    "id": "string-medium-q5",
+    "type": "drag-drop",
+    "question": "Arrange steps to count character frequency in String:",
+    "items": ["Initialize HashMap", "Iterate through String", "Update character count", "Return HashMap"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard approach for character frequency counting."
+  },
+  {
+    "id": "string-medium-q6",
+    "type": "code-completion",
+    "question": "Complete function to remove duplicates from String:",
+    "code": "public static String removeDuplicates(String s) {\n    Set<Character> seen = new HashSet<>();\n    StringBuilder result = new StringBuilder();\n    for (char c : s.toCharArray()) {\n        if (!seen._____c)) {\n            seen._____(c);\n            result.append(c);\n        }\n    }\n    return result.toString();\n}",
+    "blanks": ["contains(", "add"],
+    "explanation": "Use HashSet to track seen characters and maintain order."
+  },
+  {
+    "id": "string-medium-q7",
+    "type": "multiple-choice",
+    "question": "What does String slicing s.substring(1, 4) return for s = \"Python\"?",
+    "options": [
+      "yth",
+      "ytho",
+      "Pyt",
+      "tho"
+    ],
+    "correctAnswer": 0,
+    "explanation": "substring(1, 4) returns characters from index 1 to 3 (exclusive of 4)."
+  },
+  {
+    "id": "string-medium-q8",
+    "type": "fill-blank",
+    "question": "Java's _____ class provides powerful pattern matching capabilities for Strings.",
+    "correctAnswer": "Pattern",
+    "explanation": "Pattern class with Matcher is used for regex operations."
+  },
+  {
+    "id": "string-medium-q9",
+    "type": "multiple-choice",
+    "question": "Which approach checks if two Strings are anagrams in Java?",
+    "options": [
+      "Sort both Strings",
+      "Count character frequency",
+      "Use char arrays",
+      "All of these"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Multiple valid approaches exist for anagram checking."
+  },
+  {
+    "id": "string-medium-q10",
+    "type": "code-completion",
+    "question": "Complete function to find longest common prefix:",
+    "code": "public static String longestCommonPrefix(String[] strs) {\n    if (strs.length == 0) return \"\";\n    String prefix = strs[0];\n    for (int i = 1; i < strs.length; i++) {\n        while (!strs[i]._____(prefix)) {\n            prefix = prefix.substring(0, prefix.length() - 1);\n            if (prefix.isEmpty()) return \"\";\n        }\n    }\n    return prefix;\n}",
+    "blanks": ["startsWith"],
+    "explanation": "Reduce prefix until all Strings start with it."
+  },
+  {
+    "id": "string-hard-q1",
+    "type": "code-completion",
+    "question": "Complete the KMP pattern matching algorithm:",
+    "code": "private static int[] computeLPS(String pattern) {\n    int[] lps = new int[pattern.length()];\n    int len = 0;\n    int i = 1;\n    while (i < pattern.length()) {\n        if (pattern.charAt(i) == pattern.charAt(len)) {\n            len++;\n            lps[i] = len;\n            i++;\n        } else {\n            if (len != 0) {\n                len = lps[_____ - 1];\n            } else {\n                lps[i] = 0;\n                i++;\n            }\n        }\n    }\n    return lps;\n}",
+    "blanks": ["len"],
+    "explanation": "LPS array helps in pattern matching efficiency."
+  },
+  {
+    "id": "string-hard-q2",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of Rabin-Karp algorithm for string matching?",
+    "options": [
+      "O(n+m) average, O(nm) worst",
+      "O(n+m)",
+      "O(nm)",
+      "O(n log m)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Rabin-Karp uses rolling hash for average O(n+m) time."
+  },
+  {
+    "id": "string-hard-q3",
+    "type": "fill-blank",
+    "question": "The _____ data structure is used to solve multiple string pattern matching problems efficiently.",
+    "correctAnswer": "Trie",
+    "explanation": "Trie (prefix tree) efficiently handles multiple patterns."
+  },
+  {
+    "id": "string-hard-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps for string compression algorithm:",
+    "items": ["Count consecutive characters", "Append char and count", "Handle single characters", "Return compressed string"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard run-length encoding approach."
+  },
+  {
+    "id": "string-hard-q5",
+    "type": "multiple-choice",
+    "question": "Which algorithm finds the longest palindromic substring in O(n) time?",
+    "options": [
+      "Manacher's algorithm",
+      "Dynamic programming",
+      "Brute force",
+      "KMP algorithm"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Manacher's algorithm achieves linear time for longest palindrome."
+  },
+  {
+    "id": "string-hard-q6",
+    "type": "code-completion",
+    "question": "Complete function for minimum window substring:",
+    "code": "public static String minWindow(String s, String t) {\n    Map<Character, Integer> need = new HashMap<>();\n    for (char c : t.toCharArray()) {\n        need.put(c, need.getOrDefault(c, 0) + 1);\n    }\n    int missing = t.length();\n    int left = 0, start = 0, minLen = Integer.MAX_VALUE;\n    \n    for (int right = 0; right < s.length(); right++) {\n        char c = s.charAt(right);\n        if (need.getOrDefault(c, 0) > 0) missing--;\n        need.put(c, need.getOrDefault(c, 0) - 1);\n        \n        while (missing == 0) {\n            if (right - left + 1 < minLen) {\n                minLen = right - left + 1;\n                start = _____;\n            }\n            char leftChar = s.charAt(left);\n            if (need.get(leftChar) == 0) missing++;\n            need.put(leftChar, need.get(leftChar) + 1);\n            left++;\n        }\n    }\n    return minLen == Integer.MAX_VALUE ? \"\" : s.substring(start, start + minLen);\n}",
+    "blanks": ["left"],
+    "explanation": "Sliding window technique for minimum window substring."
+  },
+  {
+    "id": "string-hard-q7",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of building a suffix array in Java?",
+    "options": [
+      "O(n)",
+      "O(n²)",
+      "O(n log n)",
+      "O(1)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Suffix array requires O(n) space for n suffixes."
+  },
+  {
+    "id": "string-hard-q8",
+    "type": "fill-blank",
+    "question": "The _____ algorithm uses hashing to find all occurrences of pattern in text with expected O(n+m) time.",
+    "correctAnswer": "Rabin-Karp",
+    "explanation": "Rabin-Karp uses rolling hash for pattern matching."
+  },
+  {
+    "id": "string-hard-q9",
+    "type": "multiple-choice",
+    "question": "Which approach solves the edit distance problem between two Strings?",
+    "options": [
+      "Dynamic programming",
+      "Greedy algorithm",
+      "Divide and conquer",
+      "Backtracking"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Edit distance uses dynamic programming approach."
+  },
+  {
+    "id": "string-hard-q10",
+    "type": "code-completion",
+    "question": "Complete function to generate all permutations of String:",
+    "code": "public static List<String> permutations(String s) {\n    List<String> result = new ArrayList<>();\n    char[] chars = s.toCharArray();\n    backtrack(chars, 0, result);\n    return result;\n}\n\nprivate static void backtrack(char[] chars, int start, List<String> result) {\n    if (start == chars.length) {\n        result.add(new String(chars));\n        return;\n    }\n    for (int i = start; i < chars.length; i++) {\n        swap(chars, start, i);\n        _____(chars, start + 1, result);\n        swap(chars, start, i);  // backtrack\n    }\n}",
+    "blanks": ["backtrack"],
+    "explanation": "Backtracking generates all String permutations recursively."
+  }
+]

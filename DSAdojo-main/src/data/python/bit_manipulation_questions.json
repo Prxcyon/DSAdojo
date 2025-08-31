@@ -1,0 +1,288 @@
+[
+  {
+    "id": "bit-manipulation-easy-q1",
+    "type": "multiple-choice",
+    "question": "What does the bitwise AND operation (&) do?",
+    "options": [
+      "Returns 1 only when both bits are 1",
+      "Returns 1 when at least one bit is 1",
+      "Returns 1 when bits are different",
+      "Returns 1 when both bits are 0"
+    ],
+    "correctAnswer": 0,
+    "explanation": "AND returns 1 only when both corresponding bits are 1."
+  },
+  {
+    "id": "bit-manipulation-easy-q2",
+    "type": "fill-blank",
+    "question": "The bitwise _____ operation flips all bits in a number.",
+    "correctAnswer": "NOT",
+    "explanation": "NOT operation (~) flips all bits (1 becomes 0, 0 becomes 1)."
+  },
+  {
+    "id": "bit-manipulation-easy-q3",
+    "type": "multiple-choice",
+    "question": "What is the result of 5 & 3 in binary?",
+    "options": [
+      "1 (binary: 001)",
+      "7 (binary: 111)",
+      "6 (binary: 110)",
+      "2 (binary: 010)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "5 (101) & 3 (011) = 001 = 1."
+  },
+  {
+    "id": "bit-manipulation-easy-q4",
+    "type": "code-completion",
+    "question": "Complete the function to check if a number is even:",
+    "code": "def is_even(n):\n    return (n & _____) == 0",
+    "blanks": ["1"],
+    "explanation": "n & 1 checks the least significant bit. If 0, number is even."
+  },
+  {
+    "id": "bit-manipulation-easy-q5",
+    "type": "fill-blank",
+    "question": "Left shift (<<) by n positions is equivalent to multiplying by _____.",
+    "correctAnswer": "2^n",
+    "explanation": "Left shift by n positions multiplies the number by 2^n."
+  },
+  {
+    "id": "bit-manipulation-easy-q6",
+    "type": "multiple-choice",
+    "question": "What does XOR (^) return when both bits are the same?",
+    "options": [
+      "0",
+      "1",
+      "The original bit",
+      "Error"
+    ],
+    "correctAnswer": 0,
+    "explanation": "XOR returns 0 when both bits are the same (0^0=0, 1^1=0)."
+  },
+  {
+    "id": "bit-manipulation-easy-q7",
+    "type": "drag-drop",
+    "question": "Arrange the bitwise operations by their symbols:",
+    "items": ["AND (&)", "OR (|)", "XOR (^)", "NOT (~)"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard bitwise operation symbols in order."
+  },
+  {
+    "id": "bit-manipulation-easy-q8",
+    "type": "fill-blank",
+    "question": "Right shift (>>) by n positions is equivalent to dividing by _____ (for positive numbers).",
+    "correctAnswer": "2^n",
+    "explanation": "Right shift by n positions divides by 2^n (integer division)."
+  },
+  {
+    "id": "bit-manipulation-easy-q9",
+    "type": "multiple-choice",
+    "question": "What is the result of any number XOR with itself?",
+    "options": [
+      "0",
+      "1",
+      "The number itself",
+      "All 1s"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Any number XOR with itself always equals 0 (n ^ n = 0)."
+  },
+  {
+    "id": "bit-manipulation-easy-q10",
+    "type": "code-completion",
+    "question": "Complete the function to set the i-th bit:",
+    "code": "def set_bit(n, i):\n    return n | (1 << _____)",
+    "blanks": ["i"],
+    "explanation": "Use OR with (1 << i) to set the i-th bit."
+  },
+  {
+    "id": "bit-manipulation-medium-q1",
+    "type": "multiple-choice",
+    "question": "How do you clear the i-th bit of a number?",
+    "options": [
+      "n & ~(1 << i)",
+      "n | (1 << i)",
+      "n ^ (1 << i)",
+      "n << i"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Use AND with complement of (1 << i) to clear i-th bit."
+  },
+  {
+    "id": "bit-manipulation-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the function to count set bits (popcount):",
+    "code": "def count_set_bits(n):\n    count = 0\n    while n:\n        count += n & 1\n        n >>= _____\n    return count",
+    "blanks": ["1"],
+    "explanation": "Check least significant bit and right shift by 1."
+  },
+  {
+    "id": "bit-manipulation-medium-q3",
+    "type": "fill-blank",
+    "question": "Brian Kernighan's algorithm uses n & (n-1) to clear the _____ set bit.",
+    "correctAnswer": "rightmost",
+    "explanation": "n & (n-1) clears the rightmost set bit efficiently."
+  },
+  {
+    "id": "bit-manipulation-medium-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps to find single number in array where all others appear twice:",
+    "items": ["Initialize result as 0", "XOR all elements", "Return result", "Use XOR property"],
+    "correctOrder": [0, 3, 1, 2],
+    "explanation": "XOR all elements; duplicates cancel out, leaving single number."
+  },
+  {
+    "id": "bit-manipulation-medium-q5",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of checking if a number is power of 2?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(sqrt(n))"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Use n & (n-1) == 0 for O(1) power of 2 check."
+  },
+  {
+    "id": "bit-manipulation-medium-q6",
+    "type": "fill-blank",
+    "question": "To toggle the i-th bit, use the operation n _____ (1 << i).",
+    "correctAnswer": "^",
+    "explanation": "XOR with (1 << i) toggles the i-th bit."
+  },
+  {
+    "id": "bit-manipulation-medium-q7",
+    "type": "code-completion",
+    "question": "Complete the function to reverse bits:",
+    "code": "def reverse_bits(n):\n    result = 0\n    for i in range(32):\n        result = (result << 1) | (n & 1)\n        n >>= _____\n    return result",
+    "blanks": ["1"],
+    "explanation": "Extract each bit from right and build result from left."
+  },
+  {
+    "id": "bit-manipulation-medium-q8",
+    "type": "multiple-choice",
+    "question": "What does n & (-n) give you?",
+    "options": [
+      "Rightmost set bit",
+      "Leftmost set bit",
+      "Number of set bits",
+      "Complement of n"
+    ],
+    "correctAnswer": 0,
+    "explanation": "n & (-n) isolates the rightmost set bit."
+  },
+  {
+    "id": "bit-manipulation-medium-q9",
+    "type": "fill-blank",
+    "question": "In two's complement representation, -n is calculated as _____ + 1.",
+    "correctAnswer": "~n",
+    "explanation": "Two's complement: -n = ~n + 1."
+  },
+  {
+    "id": "bit-manipulation-medium-q10",
+    "type": "multiple-choice",
+    "question": "Which property makes XOR useful for finding missing numbers?",
+    "options": [
+      "Self-inverse property (a ^ a = 0)",
+      "Commutative property",
+      "Associative property",
+      "All of the above"
+    ],
+    "correctAnswer": 3,
+    "explanation": "All XOR properties are useful, especially self-inverse for cancellation."
+  },
+  {
+    "id": "bit-manipulation-hard-q1",
+    "type": "code-completion",
+    "question": "Complete the function to find two non-repeating elements:",
+    "code": "def find_two_non_repeating(arr):\n    xor_all = 0\n    for num in arr:\n        xor_all ^= num\n    \n    # Find rightmost set bit\n    rightmost_set_bit = xor_all & (-xor_all)\n    \n    num1 = num2 = 0\n    for num in arr:\n        if num & rightmost_set_bit:\n            num1 ^= num\n        else:\n            num2 ^= _____\n    \n    return [num1, num2]",
+    "blanks": ["num"],
+    "explanation": "Partition array based on rightmost set bit of XOR result."
+  },
+  {
+    "id": "bit-manipulation-hard-q2",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of multiplying two n-bit numbers using bit manipulation?",
+    "options": [
+      "O(n²)",
+      "O(n log n)",
+      "O(n)",
+      "O(log n)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Naive bit manipulation multiplication takes O(n²) time."
+  },
+  {
+    "id": "bit-manipulation-hard-q3",
+    "type": "fill-blank",
+    "question": "The _____ algorithm efficiently computes x^n using bit manipulation and repeated squaring.",
+    "correctAnswer": "fast exponentiation",
+    "explanation": "Fast exponentiation uses binary representation of exponent."
+  },
+  {
+    "id": "bit-manipulation-hard-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps for finding maximum XOR of two numbers in array:",
+    "items": ["Build trie of binary representations", "Insert all numbers", "For each number, find max XOR", "Traverse trie greedily"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Use trie to efficiently find maximum XOR pairs."
+  },
+  {
+    "id": "bit-manipulation-hard-q5",
+    "type": "code-completion",
+    "question": "Complete the function for fast exponentiation:",
+    "code": "def power(base, exp):\n    result = 1\n    while exp > 0:\n        if exp & 1:\n            result *= base\n        base *= base\n        exp >>= _____\n    return result",
+    "blanks": ["1"],
+    "explanation": "Check if exponent is odd, then square base and halve exponent."
+  },
+  {
+    "id": "bit-manipulation-hard-q6",
+    "type": "multiple-choice",
+    "question": "In a bitwise trie, what is the maximum depth for 32-bit integers?",
+    "options": [
+      "32",
+      "31",
+      "16",
+      "64"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each bit position requires one level, so 32 levels for 32-bit integers."
+  },
+  {
+    "id": "bit-manipulation-hard-q7",
+    "type": "fill-blank",
+    "question": "The _____ problem finds the minimum XOR value between any two elements in an array.",
+    "correctAnswer": "minimum XOR",
+    "explanation": "Minimum XOR problem can be solved using trie or sorting."
+  },
+  {
+    "id": "bit-manipulation-hard-q8",
+    "type": "code-completion",
+    "question": "Complete the function to find if array has pair with given XOR:",
+    "code": "def has_pair_with_xor(arr, target):\n    seen = set()\n    for num in arr:\n        if target ^ num in seen:\n            return True\n        seen._____(num)\n    return False",
+    "blanks": ["add"],
+    "explanation": "For each number, check if target^num exists in seen set."
+  },
+  {
+    "id": "bit-manipulation-hard-q9",
+    "type": "multiple-choice",
+    "question": "What is the bit manipulation trick to check if a number has alternating bits?",
+    "options": [
+      "n ^ (n >> 1) should have all bits set",
+      "n & (n >> 1) should be 0",
+      "n | (n >> 1) should be odd",
+      "n + (n >> 1) should be power of 2"
+    ],
+    "correctAnswer": 0,
+    "explanation": "For alternating bits, n ^ (n >> 1) produces all 1s."
+  },
+  {
+    "id": "bit-manipulation-hard-q10",
+    "type": "fill-blank",
+    "question": "To count trailing zeros in binary representation, use n & (-n) and then find its _____ position.",
+    "correctAnswer": "bit",
+    "explanation": "n & (-n) isolates rightmost set bit, its position gives trailing zeros count."
+  }
+]

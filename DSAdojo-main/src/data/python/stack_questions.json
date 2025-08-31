@@ -1,0 +1,311 @@
+[
+  {
+    "id": "stack-easy-q1",
+    "type": "multiple-choice",
+    "question": "What principle does a stack follow?",
+    "options": [
+      "LIFO (Last In, First Out)",
+      "FIFO (First In, First Out)",
+      "Random Access",
+      "Priority Based"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Stack follows Last In, First Out principle."
+  },
+  {
+    "id": "stack-easy-q2",
+    "type": "multiple-choice",
+    "question": "Which operation adds an element to the top of a stack?",
+    "options": [
+      "push()",
+      "pop()",
+      "peek()",
+      "top()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "push() adds elements to the top of stack."
+  },
+  {
+    "id": "stack-easy-q3",
+    "type": "fill-blank",
+    "question": "The _____ operation removes and returns the top element from a stack.",
+    "correctAnswer": "pop",
+    "explanation": "pop() removes and returns the top element."
+  },
+  {
+    "id": "stack-easy-q4",
+    "type": "multiple-choice",
+    "question": "What happens when you try to pop from an empty stack?",
+    "options": [
+      "Stack Underflow",
+      "Stack Overflow",
+      "Returns null",
+      "Nothing happens"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Popping from empty stack causes underflow."
+  },
+  {
+    "id": "stack-easy-q5",
+    "type": "drag-drop",
+    "question": "Arrange the stack operations in the order they would be called to add three elements (1, 2, 3) and then remove one:",
+    "items": ["push(1)", "push(2)", "push(3)", "pop()"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "First push all elements, then pop the last one."
+  },
+  {
+    "id": "stack-easy-q6",
+    "type": "multiple-choice",
+    "question": "Which operation looks at the top element without removing it?",
+    "options": [
+      "peek() or top()",
+      "pop()",
+      "push()",
+      "isEmpty()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "peek() or top() returns top element without removal."
+  },
+  {
+    "id": "stack-easy-q7",
+    "type": "fill-blank",
+    "question": "If we push 5, 10, 15 onto an empty stack, the top element will be _____.",
+    "correctAnswer": "15",
+    "explanation": "Last pushed element (15) becomes the top."
+  },
+  {
+    "id": "stack-easy-q8",
+    "type": "multiple-choice",
+    "question": "How do you check if a stack is empty?",
+    "options": [
+      "isEmpty()",
+      "size() == 0",
+      "top == -1",
+      "All of these"
+    ],
+    "correctAnswer": 3,
+    "explanation": "All methods can check if stack is empty."
+  },
+  {
+    "id": "stack-easy-q9",
+    "type": "code-completion",
+    "question": "Complete the code to create a stack using Python list:",
+    "code": "stack = []\nstack._____(5)\nstack._____(10)",
+    "blanks": ["append", "append"],
+    "explanation": "append() acts as push() for list-based stack."
+  },
+  {
+    "id": "stack-easy-q10",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of push operation?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Push operation takes constant time O(1)."
+  },
+  {
+    "id": "stack-medium-q1",
+    "type": "multiple-choice",
+    "question": "Which application commonly uses stacks?",
+    "options": [
+      "Function call management",
+      "Web page navigation",
+      "Undo operations",
+      "All of these"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Stacks are used in all these applications."
+  },
+  {
+    "id": "stack-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the function to check balanced parentheses:",
+    "code": "def is_balanced(s):\n    stack = []\n    for char in s:\n        if char in '([{':\n            stack._____(char)\n        elif char in ')]}':\n            if not stack:\n                return False\n            stack._____\n    return len(stack) == 0",
+    "blanks": ["append", "pop()"],
+    "explanation": "Push opening brackets, pop for closing ones."
+  },
+  {
+    "id": "stack-medium-q3",
+    "type": "fill-blank",
+    "question": "In postfix evaluation, operands are pushed onto the stack and when an operator is encountered, _____ operands are popped.",
+    "correctAnswer": "two",
+    "explanation": "Binary operators need two operands from stack."
+  },
+  {
+    "id": "stack-medium-q4",
+    "type": "multiple-choice",
+    "question": "What will be the output after these operations: push(1), push(2), pop(), push(3), pop()?",
+    "options": [
+      "Stack contains [1]",
+      "Stack contains [1, 3]",
+      "Stack contains [2, 3]",
+      "Stack is empty"
+    ],
+    "correctAnswer": 0,
+    "explanation": "After operations: push(1) → [1], push(2) → [1,2], pop() → [1], push(3) → [1,3], pop() → [1]."
+  },
+  {
+    "id": "stack-medium-q5",
+    "type": "drag-drop",
+    "question": "Arrange the steps to convert infix '2+3*4' to postfix:",
+    "items": ["Scan left to right", "Push operands to output", "Use stack for operators", "Pop remaining operators"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard algorithm for infix to postfix conversion."
+  },
+  {
+    "id": "stack-medium-q6",
+    "type": "multiple-choice",
+    "question": "Which data structure can implement a stack?",
+    "options": [
+      "Array",
+      "Linked List",
+      "Dynamic Array",
+      "All of these"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Stacks can be implemented using various data structures."
+  },
+  {
+    "id": "stack-medium-q7",
+    "type": "fill-blank",
+    "question": "The maximum number of elements a stack can hold is called its _____.",
+    "correctAnswer": "capacity",
+    "explanation": "Capacity defines the maximum size of stack."
+  },
+  {
+    "id": "stack-medium-q8",
+    "type": "code-completion",
+    "question": "Implement a stack method to get minimum element:",
+    "code": "class MinStack:\n    def __init__(self):\n        self.stack = []\n        self.min_stack = []\n    \n    def push(self, x):\n        self.stack.append(x)\n        if not self.min_stack or x <= self.min_stack[-1]:\n            self.min_stack._____(x)",
+    "blanks": ["append"],
+    "explanation": "Maintain auxiliary stack for minimum elements."
+  },
+  {
+    "id": "stack-medium-q9",
+    "type": "multiple-choice",
+    "question": "What is stack overflow?",
+    "options": [
+      "Pushing to a full stack",
+      "Popping from empty stack",
+      "Stack size is zero",
+      "Stack is sorted"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Stack overflow occurs when pushing to full stack."
+  },
+  {
+    "id": "stack-medium-q10",
+    "type": "multiple-choice",
+    "question": "Which expression notation uses stacks for evaluation?",
+    "options": [
+      "Postfix",
+      "Prefix",
+      "Infix",
+      "Both a and b"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Both postfix and prefix use stacks for evaluation."
+  },
+  {
+    "id": "stack-hard-q1",
+    "type": "code-completion",
+    "question": "Complete the function to find next greater element using stack:",
+    "code": "def next_greater(arr):\n    result = [-1] * len(arr)\n    stack = []\n    for i in range(len(arr)):\n        while stack and arr[i] > arr[stack[-1]]:\n            result[stack._____] = arr[i]\n        stack._____(i)\n    return result",
+    "blanks": ["pop()", "append"],
+    "explanation": "Use stack to store indices and find next greater elements."
+  },
+  {
+    "id": "stack-hard-q2",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of implementing two stacks in one array?",
+    "options": [
+      "O(n)",
+      "O(2n)",
+      "O(n²)",
+      "O(log n)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Two stacks in one array still need O(n) space."
+  },
+  {
+    "id": "stack-hard-q3",
+    "type": "fill-blank",
+    "question": "The _____ algorithm uses stack to find the largest rectangular area in a histogram.",
+    "correctAnswer": "stack-based",
+    "explanation": "Stack-based algorithm efficiently finds largest rectangle."
+  },
+  {
+    "id": "stack-hard-q4",
+    "type": "drag-drop",
+    "question": "Arrange the steps for stock span problem using stack:",
+    "items": ["Iterate through prices", "Pop smaller elements", "Calculate span", "Push current index"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard approach for stock span problem."
+  },
+  {
+    "id": "stack-hard-q5",
+    "type": "multiple-choice",
+    "question": "Which problem can be solved using stack in O(n) time?",
+    "options": [
+      "Trapping rainwater",
+      "Celebrity problem",
+      "Valid parentheses",
+      "All of these"
+    ],
+    "correctAnswer": 3,
+    "explanation": "All these problems have O(n) stack solutions."
+  },
+  {
+    "id": "stack-hard-q6",
+    "type": "code-completion",
+    "question": "Implement stack using two queues - complete the pop operation:",
+    "code": "def pop(self):\n    if not self.q1:\n        return None\n    while len(self.q1) > 1:\n        self.q2._____(self.q1.popleft())\n    result = self.q1._____\n    self.q1, self.q2 = self.q2, self.q1\n    return result",
+    "blanks": ["append", "popleft()"],
+    "explanation": "Transfer elements between queues to simulate stack."
+  },
+  {
+    "id": "stack-hard-q7",
+    "type": "multiple-choice",
+    "question": "What is the minimum number of stacks needed to sort a stack?",
+    "options": [
+      "1 additional stack",
+      "2 additional stacks",
+      "3 additional stacks",
+      "No additional stack needed"
+    ],
+    "correctAnswer": 0,
+    "explanation": "One additional stack is sufficient to sort."
+  },
+  {
+    "id": "stack-hard-q8",
+    "type": "fill-blank",
+    "question": "In the _____ problem, we use stack to find the nearest smaller element to the left of each array element.",
+    "correctAnswer": "nearest smaller element",
+    "explanation": "Stack efficiently finds nearest smaller elements."
+  },
+  {
+    "id": "stack-hard-q9",
+    "type": "multiple-choice",
+    "question": "Which approach is used to implement stack with getMin() in O(1)?",
+    "options": [
+      "Auxiliary stack",
+      "Modified push/pop",
+      "Mathematical formula",
+      "All of these"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Multiple approaches exist for O(1) getMin()."
+  },
+  {
+    "id": "stack-hard-q10",
+    "type": "code-completion",
+    "question": "Complete the function to reverse a stack using recursion:",
+    "code": "def reverse_stack(stack):\n    if not stack:\n        return\n    temp = stack._____\n    reverse_stack(stack)\n    insert_at_bottom(stack, temp)\n    \ndef insert_at_bottom(stack, item):\n    if not stack:\n        stack._____(item)\n        return\n    temp = stack.pop()\n    insert_at_bottom(stack, item)\n    stack.append(temp)",
+    "blanks": ["pop()", "append"],
+    "explanation": "Use recursion and helper function to reverse stack."
+  }
+]

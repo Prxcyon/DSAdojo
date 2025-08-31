@@ -1,0 +1,289 @@
+[
+  {
+    "id": "dp-easy-cpp-q1",
+    "type": "multiple-choice",
+    "question": "What does Dynamic Programming break down?",
+    "options": [
+      "Complex problems into simpler subproblems",
+      "Arrays into smaller arrays",
+      "Functions into variables",
+      "Loops into conditions"
+    ],
+    "correctAnswer": 0,
+    "explanation": "DP breaks complex problems into overlapping subproblems."
+  },
+  {
+    "id": "dp-easy-cpp-q2",
+    "type": "fill-blank",
+    "question": "Dynamic Programming avoids redundant calculations by storing results in a _____.",
+    "correctAnswer": "vector",
+    "explanation": "DP uses vector or array to store computed results in C++."
+  },
+  {
+    "id": "dp-easy-cpp-q3",
+    "type": "multiple-choice",
+    "question": "Which property must a problem have to use Dynamic Programming?",
+    "options": [
+      "Overlapping subproblems",
+      "Optimal substructure",
+      "Both a and b",
+      "Neither a nor b"
+    ],
+    "correctAnswer": 2,
+    "explanation": "DP requires both overlapping subproblems and optimal substructure."
+  },
+  {
+    "id": "dp-easy-cpp-q4",
+    "type": "code-completion",
+    "question": "Complete the basic Fibonacci using DP:",
+    "code": "int fibonacci(int n) {\n    if (n <= 1) return n;\n    vector<int> dp(n + 1, 0);\n    dp[1] = 1;\n    for (int i = 2; i <= n; i++) {\n        dp[i] = dp[i-1] + dp[i-_____];\n    }\n    return dp[n];\n}",
+    "blanks": ["2"],
+    "explanation": "Fibonacci: F(n) = F(n-1) + F(n-2)."
+  },
+  {
+    "id": "dp-easy-cpp-q5",
+    "type": "fill-blank",
+    "question": "The two main approaches in DP are top-down (memoization) and _____ (tabulation).",
+    "correctAnswer": "bottom-up",
+    "explanation": "Bottom-up approach builds solution from smaller subproblems."
+  },
+  {
+    "id": "dp-easy-cpp-q6",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of DP Fibonacci solution?",
+    "options": [
+      "O(n)",
+      "O(2^n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "DP Fibonacci computes each value once, so O(n)."
+  },
+  {
+    "id": "dp-easy-cpp-q7",
+    "type": "drag-drop",
+    "question": "Arrange the steps of DP approach:",
+    "items": ["Identify subproblems", "Find recurrence relation", "Solve base cases", "Build solution"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard DP problem-solving methodology."
+  },
+  {
+    "id": "dp-easy-cpp-q8",
+    "type": "fill-blank",
+    "question": "In the climbing stairs problem, to reach step n, you can come from step _____ or step _____.",
+    "correctAnswer": "n-1, n-2",
+    "explanation": "You can climb 1 or 2 steps at a time."
+  },
+  {
+    "id": "dp-easy-cpp-q9",
+    "type": "multiple-choice",
+    "question": "What is memoization in DP?",
+    "options": [
+      "Storing computed results to avoid recomputation",
+      "Breaking problem into parts",
+      "Using recursion",
+      "Optimizing space"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Memoization caches results to prevent redundant calculations."
+  },
+  {
+    "id": "dp-easy-cpp-q10",
+    "type": "code-completion",
+    "question": "Complete the climbing stairs DP solution:",
+    "code": "int climbStairs(int n) {\n    if (n <= 2) return n;\n    vector<int> dp(n + 1);\n    dp[1] = 1;\n    dp[2] = 2;\n    for (int i = 3; i <= n; i++) {\n        dp[i] = dp[i-1] + dp[i-_____];\n    }\n    return dp[n];\n}",
+    "blanks": ["2"],
+    "explanation": "Ways to reach step i = ways to reach (i-1) + ways to reach (i-2)."
+  },
+  {
+    "id": "dp-medium-cpp-q1",
+    "type": "multiple-choice",
+    "question": "In the 0/1 Knapsack problem, what does dp[i][w] represent?",
+    "options": [
+      "Maximum value using first i items with weight limit w",
+      "Weight of first i items",
+      "Number of items with weight w",
+      "Minimum weight needed"
+    ],
+    "correctAnswer": 0,
+    "explanation": "dp[i][w] stores maximum value achievable with first i items and weight limit w."
+  },
+  {
+    "id": "dp-medium-cpp-q2",
+    "type": "code-completion",
+    "question": "Complete the Longest Common Subsequence DP solution:",
+    "code": "int longestCommonSubsequence(string text1, string text2) {\n    int m = text1.length(), n = text2.length();\n    vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));\n    for (int i = 1; i <= m; i++) {\n        for (int j = 1; j <= n; j++) {\n            if (text1[i-1] == text2[j-1]) {\n                dp[i][j] = dp[i-1][j-1] + _____;\n            } else {\n                dp[i][j] = max(dp[i-1][j], dp[i][j-_____]);\n            }\n        }\n    }\n    return dp[m][n];\n}",
+    "blanks": ["1", "1"],
+    "explanation": "If characters match, add 1 to diagonal. Otherwise, take maximum."
+  },
+  {
+    "id": "dp-medium-cpp-q3",
+    "type": "fill-blank",
+    "question": "The _____ problem asks for the minimum number of coins needed to make a given amount.",
+    "correctAnswer": "coin change",
+    "explanation": "Coin change is a classic DP optimization problem."
+  },
+  {
+    "id": "dp-medium-cpp-q4",
+    "type": "drag-drop",
+    "question": "Arrange the steps to solve House Robber problem:",
+    "items": ["Consider current house", "Skip current house", "Take maximum", "Update DP state"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "At each house, choose between robbing or skipping."
+  },
+  {
+    "id": "dp-medium-cpp-q5",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of optimized Fibonacci DP?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Only need to store last two values, so O(1) space."
+  },
+  {
+    "id": "dp-medium-cpp-q6",
+    "type": "fill-blank",
+    "question": "In the edit distance problem, we can perform three operations: insert, delete, and _____.",
+    "correctAnswer": "replace",
+    "explanation": "Edit distance allows insert, delete, and replace operations."
+  },
+  {
+    "id": "dp-medium-cpp-q7",
+    "type": "code-completion",
+    "question": "Complete the minimum path sum in grid:",
+    "code": "int minPathSum(vector<vector<int>>& grid) {\n    int m = grid.size(), n = grid[0].size();\n    for (int i = 0; i < m; i++) {\n        for (int j = 0; j < n; j++) {\n            if (i == 0 && j == 0) continue;\n            else if (i == 0) {\n                grid[i][j] += grid[i][j-_____];\n            } else if (j == 0) {\n                grid[i][j] += grid[_____][j];\n            } else {\n                grid[i][j] += min(grid[i-1][j], grid[i][j-1]);\n            }\n        }\n    }\n    return grid[m-1][n-1];\n}",
+    "blanks": ["1", "i-1"],
+    "explanation": "Add minimum of top or left cell to current cell."
+  },
+  {
+    "id": "dp-medium-cpp-q8",
+    "type": "multiple-choice",
+    "question": "Which DP problem has the recurrence: dp[i] = max(dp[i-1], dp[i-2] + arr[i])?",
+    "options": [
+      "House Robber",
+      "Climbing Stairs",
+      "Fibonacci",
+      "Coin Change"
+    ],
+    "correctAnswer": 0,
+    "explanation": "House Robber: either skip current or rob current + previous non-adjacent."
+  },
+  {
+    "id": "dp-medium-cpp-q9",
+    "type": "fill-blank",
+    "question": "The longest _____ subsequence problem finds the longest strictly increasing subsequence.",
+    "correctAnswer": "increasing",
+    "explanation": "LIS finds longest increasing subsequence in array."
+  },
+  {
+    "id": "dp-medium-cpp-q10",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of 2D DP solution for LCS?",
+    "options": [
+      "O(m × n)",
+      "O(m + n)",
+      "O(max(m, n))",
+      "O(m × n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "LCS DP fills m×n table, so O(m×n) time complexity."
+  },
+  {
+    "id": "dp-hard-cpp-q1",
+    "type": "code-completion",
+    "question": "Complete the palindrome partitioning DP solution:",
+    "code": "int minCut(string s) {\n    int n = s.length();\n    vector<int> dp(n, INT_MAX);\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j <= i; j++) {\n            string substr = s.substr(j, i - j + 1);\n            string rev = substr;\n            reverse(rev.begin(), rev.end());\n            if (substr == rev) {\n                if (j == 0) {\n                    dp[i] = 0;\n                } else {\n                    dp[i] = min(dp[i], dp[_____] + 1);\n                }\n            }\n        }\n    }\n    return dp[n-1];\n}",
+    "blanks": ["j-1"],
+    "explanation": "If substring is palindrome, add 1 to cuts needed before it."
+  },
+  {
+    "id": "dp-hard-cpp-q2",
+    "type": "multiple-choice",
+    "question": "In matrix chain multiplication, what do we optimize?",
+    "options": [
+      "Number of scalar multiplications",
+      "Memory usage",
+      "Number of matrices",
+      "Matrix dimensions"
+    ],
+    "correctAnswer": 0,
+    "explanation": "We minimize the number of scalar multiplications needed."
+  },
+  {
+    "id": "dp-hard-cpp-q3",
+    "type": "fill-blank",
+    "question": "The _____ problem uses DP to find optimal strategy for picking coins from ends of array.",
+    "correctAnswer": "optimal game",
+    "explanation": "Optimal game strategy maximizes player's score."
+  },
+  {
+    "id": "dp-hard-cpp-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps for solving subset sum problem:",
+    "items": ["Create DP table", "Fill base cases", "Check inclusion/exclusion", "Return final result"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard approach for subset sum DP solution."
+  },
+  {
+    "id": "dp-hard-cpp-q5",
+    "type": "code-completion",
+    "question": "Complete the longest palindromic subsequence:",
+    "code": "int longestPalindromeSubseq(string s) {\n    int n = s.length();\n    vector<vector<int>> dp(n, vector<int>(n, 0));\n    for (int i = 0; i < n; i++) {\n        dp[i][i] = 1;\n    }\n    for (int length = 2; length <= n; length++) {\n        for (int i = 0; i <= n - length; i++) {\n            int j = i + length - 1;\n            if (s[i] == s[j]) {\n                dp[i][j] = dp[i+1][j-1] + _____;\n            } else {\n                dp[i][j] = max(dp[i+1][j], dp[i][_____]);\n            }\n        }\n    }\n    return dp[0][n-1];\n}",
+    "blanks": ["2", "j-1"],
+    "explanation": "If characters match, add 2. Otherwise, take maximum of adjacent cells."
+  },
+  {
+    "id": "dp-hard-cpp-q6",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of egg dropping problem with k eggs and n floors?",
+    "options": [
+      "O(k × n²)",
+      "O(k × n)",
+      "O(n²)",
+      "O(k²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "For each state (k,n), we try all n floors, giving O(k×n²)."
+  },
+  {
+    "id": "dp-hard-cpp-q7",
+    "type": "fill-blank",
+    "question": "In C++, which header is needed for using vector in DP solutions?",
+    "correctAnswer": "#include <vector>",
+    "explanation": "Vector header is required for dynamic arrays in C++."
+  },
+  {
+    "id": "dp-hard-cpp-q8",
+    "type": "code-completion",
+    "question": "Complete the word break DP solution:",
+    "code": "bool wordBreak(string s, vector<string>& wordDict) {\n    int n = s.length();\n    vector<bool> dp(n + 1, false);\n    dp[0] = true;\n    unordered_set<string> wordSet(wordDict.begin(), wordDict.end());\n    for (int i = 1; i <= n; i++) {\n        for (int j = 0; j < i; j++) {\n            if (dp[j] && wordSet.find(s.substr(j, i - j)) != wordSet.end()) {\n                dp[i] = _____;\n                break;\n            }\n        }\n    }\n    return dp[n];\n}",
+    "blanks": ["true"],
+    "explanation": "Check if substring exists in dictionary and previous part is breakable."
+  },
+  {
+    "id": "dp-hard-cpp-q9",
+    "type": "multiple-choice",
+    "question": "Which problem uses DP to find minimum operations to convert one string to another?",
+    "options": [
+      "Edit Distance",
+      "Longest Common Subsequence",
+      "Palindrome Check",
+      "String Matching"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Edit distance (Levenshtein distance) finds minimum edit operations."
+  },
+  {
+    "id": "dp-hard-cpp-q10",
+    "type": "code-completion",
+    "question": "Complete the maximum subarray sum (Kadane's algorithm):",
+    "code": "int maxSubarraySum(vector<int>& nums) {\n    int maxSoFar = nums[0];\n    int maxEndingHere = nums[0];\n    for (int i = 1; i < nums.size(); i++) {\n        maxEndingHere = max(nums[i], maxEndingHere + _____);\n        maxSoFar = max(maxSoFar, _____);\n    }\n    return maxSoFar;\n}",
+    "blanks": ["nums[i]", "maxEndingHere"],
+    "explanation": "Either start new subarray at current element or extend existing one."
+  }
+]

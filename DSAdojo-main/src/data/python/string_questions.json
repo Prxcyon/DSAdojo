@@ -1,0 +1,301 @@
+[
+  {
+    "id": "string-easy-q1",
+    "type": "multiple-choice",
+    "question": "What is the index of the first character in a string?",
+    "options": [
+      "0",
+      "1",
+      "-1",
+      "undefined"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Strings are zero-indexed like arrays."
+  },
+  {
+    "id": "string-easy-q2",
+    "type": "fill-blank",
+    "question": "The function _____ returns the length of a string in Python.",
+    "correctAnswer": "len",
+    "explanation": "len() function returns string length."
+  },
+  {
+    "id": "string-easy-q3",
+    "type": "multiple-choice",
+    "question": "How do you access the last character of string 's'?",
+    "options": [
+      "s[-1]",
+      "s[0]",
+      "s.last()",
+      "s[len(s)]"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Negative indexing s[-1] gives last character."
+  },
+  {
+    "id": "string-easy-q4",
+    "type": "code-completion",
+    "question": "Complete the code to convert string to uppercase:",
+    "code": "text = 'hello world'\nuppercase = text._____",
+    "blanks": ["upper()"],
+    "explanation": "upper() method converts string to uppercase."
+  },
+  {
+    "id": "string-easy-q5",
+    "type": "multiple-choice",
+    "question": "Which method splits a string into a list?",
+    "options": [
+      "split()",
+      "join()",
+      "replace()",
+      "find()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "split() method divides string into list elements."
+  },
+  {
+    "id": "string-easy-q6",
+    "type": "drag-drop",
+    "question": "Arrange the steps to reverse a string using slicing:",
+    "items": ["Take the string", "Use [::-1] slice", "Store in variable", "Print result"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "String slicing with [::-1] reverses the string."
+  },
+  {
+    "id": "string-easy-q7",
+    "type": "fill-blank",
+    "question": "The method _____ removes whitespace from both ends of a string.",
+    "correctAnswer": "strip",
+    "explanation": "strip() removes leading and trailing whitespace."
+  },
+  {
+    "id": "string-easy-q8",
+    "type": "multiple-choice",
+    "question": "What does 'Hello' + 'World' return?",
+    "options": [
+      "HelloWorld",
+      "Hello World",
+      "Error",
+      "None"
+    ],
+    "correctAnswer": 0,
+    "explanation": "String concatenation joins strings without space."
+  },
+  {
+    "id": "string-easy-q9",
+    "type": "code-completion",
+    "question": "Complete the code to check if string contains a substring:",
+    "code": "text = 'Python Programming'\nif 'gram' _____ text:\n    print('Found')",
+    "blanks": ["in"],
+    "explanation": "'in' operator checks substring presence."
+  },
+  {
+    "id": "string-easy-q10",
+    "type": "multiple-choice",
+    "question": "Which function finds the position of substring in a string?",
+    "options": [
+      "find()",
+      "search()",
+      "locate()",
+      "position()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "find() returns index of substring or -1 if not found."
+  },
+  {
+    "id": "string-medium-q1",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of string concatenation in Python?",
+    "options": [
+      "O(n)",
+      "O(1)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "String concatenation creates new string, taking O(n) time."
+  },
+  {
+    "id": "string-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the function to check if string is palindrome:",
+    "code": "def is_palindrome(s):\n    s = s.lower().replace(' ', '')\n    left, right = 0, len(s) - 1\n    while left < right:\n        if s[left] != s[_____]:\n            return False\n        left += 1\n        right -= 1\n    return True",
+    "blanks": ["right"],
+    "explanation": "Compare characters from both ends moving inward."
+  },
+  {
+    "id": "string-medium-q3",
+    "type": "fill-blank",
+    "question": "The _____ algorithm efficiently finds pattern occurrences in text with O(n+m) complexity.",
+    "correctAnswer": "KMP",
+    "explanation": "KMP (Knuth-Morris-Pratt) algorithm for pattern matching."
+  },
+  {
+    "id": "string-medium-q4",
+    "type": "multiple-choice",
+    "question": "Which is the most efficient way to build a string from multiple parts?",
+    "options": [
+      "join() method",
+      "+ operator",
+      "String formatting",
+      "Concatenation in loop"
+    ],
+    "correctAnswer": 0,
+    "explanation": "join() is most efficient for multiple string parts."
+  },
+  {
+    "id": "string-medium-q5",
+    "type": "drag-drop",
+    "question": "Arrange steps to count character frequency in string:",
+    "items": ["Initialize counter dict", "Iterate through string", "Update character count", "Return dictionary"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard approach for character frequency counting."
+  },
+  {
+    "id": "string-medium-q6",
+    "type": "code-completion",
+    "question": "Complete function to remove duplicates from string:",
+    "code": "def remove_duplicates(s):\n    seen = set()\n    result = []\n    for char in s:\n        if char not in _____:\n            seen._____(char)\n            result.append(char)\n    return ''.join(result)",
+    "blanks": ["seen", "add"],
+    "explanation": "Use set to track seen characters and maintain order."
+  },
+  {
+    "id": "string-medium-q7",
+    "type": "multiple-choice",
+    "question": "What does string slicing s[1:4] return for s = 'Python'?",
+    "options": [
+      "yth",
+      "ytho",
+      "Pyt",
+      "tho"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Slicing [1:4] returns characters at indices 1, 2, 3."
+  },
+  {
+    "id": "string-medium-q8",
+    "type": "fill-blank",
+    "question": "Regular expressions use _____ to match patterns in strings efficiently.",
+    "correctAnswer": "finite automata",
+    "explanation": "Regex engines use finite state automata for pattern matching."
+  },
+  {
+    "id": "string-medium-q9",
+    "type": "multiple-choice",
+    "question": "Which approach checks if two strings are anagrams?",
+    "options": [
+      "Sort both strings",
+      "Count character frequency",
+      "Use hash maps",
+      "All of these"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Multiple valid approaches exist for anagram checking."
+  },
+  {
+    "id": "string-medium-q10",
+    "type": "code-completion",
+    "question": "Complete function to find longest common prefix:",
+    "code": "def longest_common_prefix(strs):\n    if not strs:\n        return ''\n    prefix = strs[0]\n    for s in strs[1:]:\n        while not s._____._____prefix):\n            prefix = prefix[:-1]\n            if not prefix:\n                return ''\n    return prefix",
+    "blanks": ["startswith(", ")"],
+    "explanation": "Reduce prefix until all strings start with it."
+  },
+  {
+    "id": "string-hard-q1",
+    "type": "code-completion",
+    "question": "Complete the KMP pattern matching algorithm:",
+    "code": "def kmp_search(text, pattern):\n    def compute_lps(pattern):\n        lps = [0] * len(pattern)\n        length = 0\n        i = 1\n        while i < len(pattern):\n            if pattern[i] == pattern[length]:\n                length += 1\n                lps[i] = length\n                i += 1\n            else:\n                if length != 0:\n                    length = lps[_____ - 1]\n                else:\n                    lps[i] = 0\n                    i += 1\n        return lps",
+    "blanks": ["length"],
+    "explanation": "LPS array helps in pattern matching efficiency."
+  },
+  {
+    "id": "string-hard-q2",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of Rabin-Karp algorithm for string matching?",
+    "options": [
+      "O(n+m) average, O(nm) worst",
+      "O(n+m)",
+      "O(nm)",
+      "O(n log m)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Rabin-Karp uses rolling hash for average O(n+m) time."
+  },
+  {
+    "id": "string-hard-q3",
+    "type": "fill-blank",
+    "question": "The _____ data structure is used to solve multiple string pattern matching problems efficiently.",
+    "correctAnswer": "trie",
+    "explanation": "Trie (prefix tree) efficiently handles multiple patterns."
+  },
+  {
+    "id": "string-hard-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps for string compression algorithm:",
+    "items": ["Count consecutive characters", "Append char and count", "Handle single characters", "Return compressed string"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Standard run-length encoding approach."
+  },
+  {
+    "id": "string-hard-q5",
+    "type": "multiple-choice",
+    "question": "Which algorithm finds the longest palindromic substring in O(n) time?",
+    "options": [
+      "Manacher's algorithm",
+      "Dynamic programming",
+      "Brute force",
+      "KMP algorithm"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Manacher's algorithm achieves linear time for longest palindrome."
+  },
+  {
+    "id": "string-hard-q6",
+    "type": "code-completion",
+    "question": "Complete function for minimum window substring:",
+    "code": "def min_window(s, t):\n    need = Counter(t)\n    missing = len(t)\n    left = start = 0\n    min_len = float('inf')\n    \n    for right in range(len(s)):\n        if need[s[right]] > 0:\n            missing -= 1\n        need[s[right]] -= 1\n        \n        while missing == 0:\n            if right - left + 1 < min_len:\n                min_len = right - left + 1\n                start = _____\n            if need[s[left]] == 0:\n                missing += 1\n            need[s[left]] += 1\n            left += 1\n    \n    return s[start:start + min_len] if min_len != float('inf') else ''",
+    "blanks": ["left"],
+    "explanation": "Sliding window technique for minimum window substring."
+  },
+  {
+    "id": "string-hard-q7",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of building a suffix array?",
+    "options": [
+      "O(n)",
+      "O(n²)",
+      "O(n log n)",
+      "O(1)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Suffix array requires O(n) space for n suffixes."
+  },
+  {
+    "id": "string-hard-q8",
+    "type": "fill-blank",
+    "question": "The _____ algorithm uses hashing to find all occurrences of pattern in text with expected O(n+m) time.",
+    "correctAnswer": "Rabin-Karp",
+    "explanation": "Rabin-Karp uses rolling hash for pattern matching."
+  },
+  {
+    "id": "string-hard-q9",
+    "type": "multiple-choice",
+    "question": "Which approach solves the edit distance problem between two strings?",
+    "options": [
+      "Dynamic programming",
+      "Greedy algorithm",
+      "Divide and conquer",
+      "Backtracking"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Edit distance uses dynamic programming approach."
+  },
+  {
+    "id": "string-hard-q10",
+    "type": "code-completion",
+    "question": "Complete function to generate all permutations of string:",
+    "code": "def permutations(s):\n    def backtrack(start):\n        if start == len(s):\n            result.append(''.join(s))\n            return\n        for i in range(start, len(s)):\n            s[start], s[i] = s[i], s[start]\n            _____(start + 1)\n            s[start], s[i] = s[i], s[start]  # backtrack\n    \n    result = []\n    s = list(s)\n    backtrack(0)\n    return result",
+    "blanks": ["backtrack"],
+    "explanation": "Backtracking generates all string permutations recursively."
+  }
+]

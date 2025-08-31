@@ -1,0 +1,301 @@
+[
+  {
+    "id": "linkedlist-easy-q1",
+    "type": "multiple-choice",
+    "question": "What does each node in a singly linked list contain?",
+    "options": [
+      "Data and pointer to next node",
+      "Only data",
+      "Only pointer",
+      "Data and index"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each node has data and a pointer to the next node."
+  },
+  {
+    "id": "linkedlist-easy-q2",
+    "type": "fill-blank",
+    "question": "The first node of a linked list is called the _____.",
+    "correctAnswer": "head",
+    "explanation": "The first node is referred to as the head."
+  },
+  {
+    "id": "linkedlist-easy-q3",
+    "type": "multiple-choice",
+    "question": "How do you access the 5th element in a linked list?",
+    "options": [
+      "Traverse from head 4 times",
+      "Use index list[4]",
+      "Jump directly to position 5",
+      "Use binary search"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Must traverse sequentially from head to reach any element."
+  },
+  {
+    "id": "linkedlist-easy-q4",
+    "type": "code-completion",
+    "question": "Complete the node structure for a singly linked list:",
+    "code": "class ListNode:\n    def __init__(self, val):\n        self.val = val\n        self._____ = None",
+    "blanks": ["next"],
+    "explanation": "Each node has a 'next' pointer to the following node."
+  },
+  {
+    "id": "linkedlist-easy-q5",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of inserting at the beginning of a linked list?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Insertion at head takes constant time."
+  },
+  {
+    "id": "linkedlist-easy-q6",
+    "type": "drag-drop",
+    "question": "Arrange the steps to insert a node at the beginning:",
+    "items": ["Create new node", "Set new node's next to head", "Update head to new node", "Set new node's data"],
+    "correctOrder": [0, 3, 1, 2],
+    "explanation": "Create node, set data, link to existing head, update head pointer."
+  },
+  {
+    "id": "linkedlist-easy-q7",
+    "type": "multiple-choice",
+    "question": "What does NULL/None pointer indicate in a linked list?",
+    "options": [
+      "End of the list",
+      "Beginning of list",
+      "Empty data",
+      "Invalid node"
+    ],
+    "correctAnswer": 0,
+    "explanation": "NULL/None pointer marks the end of the linked list."
+  },
+  {
+    "id": "linkedlist-easy-q8",
+    "type": "fill-blank",
+    "question": "To delete a node, we need to update the _____ pointer of the previous node.",
+    "correctAnswer": "next",
+    "explanation": "Previous node's next pointer must point to the node after deleted node."
+  },
+  {
+    "id": "linkedlist-easy-q9",
+    "type": "code-completion",
+    "question": "Complete the function to find length of linked list:",
+    "code": "def length(head):\n    count = 0\n    current = head\n    while current:\n        count += 1\n        current = current._____\n    return count",
+    "blanks": ["next"],
+    "explanation": "Traverse the list by following next pointers."
+  },
+  {
+    "id": "linkedlist-easy-q10",
+    "type": "multiple-choice",
+    "question": "Which is NOT an advantage of linked lists over arrays?",
+    "options": [
+      "Random access",
+      "Dynamic size",
+      "Easy insertion/deletion",
+      "No memory waste"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Linked lists don't support random access like arrays."
+  },
+  {
+    "id": "linkedlist-medium-q1",
+    "type": "multiple-choice",
+    "question": "What is the difference between singly and doubly linked list?",
+    "options": [
+      "Doubly has pointers to both next and previous nodes",
+      "Doubly has two data fields",
+      "Doubly is faster",
+      "Doubly uses less memory"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Doubly linked list has both next and previous pointers."
+  },
+  {
+    "id": "linkedlist-medium-q2",
+    "type": "code-completion",
+    "question": "Complete the function to reverse a linked list:",
+    "code": "def reverse(head):\n    prev = None\n    current = head\n    while current:\n        next_temp = current.next\n        current.next = _____\n        prev = current\n        current = _____\n    return prev",
+    "blanks": ["prev", "next_temp"],
+    "explanation": "Iteratively reverse the links between nodes."
+  },
+  {
+    "id": "linkedlist-medium-q3",
+    "type": "fill-blank",
+    "question": "The _____ algorithm uses two pointers moving at different speeds to detect cycles in linked list.",
+    "correctAnswer": "Floyd's",
+    "explanation": "Floyd's cycle detection uses slow and fast pointers."
+  },
+  {
+    "id": "linkedlist-medium-q4",
+    "type": "multiple-choice",
+    "question": "How do you find the middle element of a linked list in one pass?",
+    "options": [
+      "Use two pointers (slow and fast)",
+      "Count length first, then traverse",
+      "Use recursion",
+      "Use stack"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Slow pointer moves one step, fast moves two steps."
+  },
+  {
+    "id": "linkedlist-medium-q5",
+    "type": "drag-drop",
+    "question": "Arrange steps to delete a node with given value:",
+    "items": ["Check if head needs deletion", "Traverse to find node", "Update previous node's pointer", "Free memory"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Handle head case, find target, update links, cleanup."
+  },
+  {
+    "id": "linkedlist-medium-q6",
+    "type": "code-completion",
+    "question": "Complete the merge function for two sorted linked lists:",
+    "code": "def merge(l1, l2):\n    dummy = ListNode(0)\n    current = dummy\n    while l1 and l2:\n        if l1.val <= l2.val:\n            current.next = l1\n            l1 = l1._____\n        else:\n            current.next = l2\n            l2 = l2._____\n        current = current.next\n    current.next = l1 or l2\n    return dummy.next",
+    "blanks": ["next", "next"],
+    "explanation": "Compare values and link smaller node, advance pointers."
+  },
+  {
+    "id": "linkedlist-medium-q7",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of reversing a linked list iteratively?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Iterative reversal uses constant extra space."
+  },
+  {
+    "id": "linkedlist-medium-q8",
+    "type": "fill-blank",
+    "question": "In a circular linked list, the last node points to the _____ instead of NULL.",
+    "correctAnswer": "head",
+    "explanation": "Circular list forms a loop by pointing last node to head."
+  },
+  {
+    "id": "linkedlist-medium-q9",
+    "type": "multiple-choice",
+    "question": "Which operation is efficient in doubly linked list compared to singly linked list?",
+    "options": [
+      "Deletion of given node",
+      "Insertion at beginning",
+      "Finding length",
+      "Accessing first element"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Doubly linked list can delete node without traversing from head."
+  },
+  {
+    "id": "linkedlist-medium-q10",
+    "type": "code-completion",
+    "question": "Complete function to remove nth node from end:",
+    "code": "def remove_nth_from_end(head, n):\n    dummy = ListNode(0)\n    dummy.next = head\n    first = second = dummy\n    for i in range(n + 1):\n        first = first._____\n    while first:\n        first = first.next\n        second = second._____\n    second.next = second.next.next\n    return dummy.next",
+    "blanks": ["next", "next"],
+    "explanation": "Use two pointers with n gap to find nth from end."
+  },
+  {
+    "id": "linkedlist-hard-q1",
+    "type": "code-completion",
+    "question": "Complete function to clone linked list with random pointers:",
+    "code": "def copy_random_list(head):\n    if not head:\n        return None\n    # Create mapping\n    mapping = {}\n    current = head\n    while current:\n        mapping[current] = ListNode(current.val)\n        current = current._____\n    # Set next and random pointers\n    current = head\n    while current:\n        if current.next:\n            mapping[current]._____ = mapping[current.next]\n        if current.random:\n            mapping[current].random = mapping[_____]\n        current = current.next\n    return mapping[head]",
+    "blanks": ["next", "next", "current.random"],
+    "explanation": "Create node mapping, then set next and random pointers."
+  },
+  {
+    "id": "linkedlist-hard-q2",
+    "type": "multiple-choice",
+    "question": "What is the time complexity to find intersection point of two linked lists?",
+    "options": [
+      "O(m + n)",
+      "O(m * n)",
+      "O(log(m + n))",
+      "O(1)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Two-pointer approach takes O(m + n) time."
+  },
+  {
+    "id": "linkedlist-hard-q3",
+    "type": "fill-blank",
+    "question": "The _____ technique interleaves original and copied nodes to clone a linked list with random pointers.",
+    "correctAnswer": "interweaving",
+    "explanation": "Interweaving technique creates copies next to originals."
+  },
+  {
+    "id": "linkedlist-hard-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps to detect and remove loop in linked list:",
+    "items": ["Detect loop using Floyd's algorithm", "Find loop start", "Count loop length", "Remove loop"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Detect, locate start, measure length, then break loop."
+  },
+  {
+    "id": "linkedlist-hard-q5",
+    "type": "multiple-choice",
+    "question": "Which approach is used to merge k sorted linked lists efficiently?",
+    "options": [
+      "Divide and conquer",
+      "Priority queue",
+      "Sequential merging",
+      "All of these"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Multiple approaches exist for merging k sorted lists."
+  },
+  {
+    "id": "linkedlist-hard-q6",
+    "type": "code-completion",
+    "question": "Complete function to add two numbers represented as linked lists:",
+    "code": "def add_two_numbers(l1, l2):\n    dummy = ListNode(0)\n    current = dummy\n    carry = 0\n    while l1 or l2 or carry:\n        val1 = l1.val if l1 else 0\n        val2 = l2.val if l2 else 0\n        total = val1 + val2 + carry\n        carry = total // 10\n        current.next = ListNode(_____ % 10)\n        current = current.next\n        l1 = l1.next if l1 else None\n        l2 = l2.next if l2 else None\n    return dummy.next",
+    "blanks": ["total"],
+    "explanation": "Add digits with carry, create new nodes for result."
+  },
+  {
+    "id": "linkedlist-hard-q7",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of flattening a multilevel doubly linked list?",
+    "options": [
+      "O(d) where d is maximum depth",
+      "O(n)",
+      "O(1)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Stack space needed proportional to maximum depth."
+  },
+  {
+    "id": "linkedlist-hard-q8",
+    "type": "fill-blank",
+    "question": "The _____ algorithm efficiently sorts a linked list in O(n log n) time.",
+    "correctAnswer": "merge sort",
+    "explanation": "Merge sort works efficiently on linked lists."
+  },
+  {
+    "id": "linkedlist-hard-q9",
+    "type": "multiple-choice",
+    "question": "Which technique helps implement LRU cache using linked list?",
+    "options": [
+      "Doubly linked list with hash map",
+      "Singly linked list with array",
+      "Circular linked list",
+      "Stack with linked list"
+    ],
+    "correctAnswer": 0,
+    "explanation": "LRU cache uses doubly linked list for O(1) operations."
+  },
+  {
+    "id": "linkedlist-hard-q10",
+    "type": "code-completion",
+    "question": "Complete function to reverse nodes in k-group:",
+    "code": "def reverse_k_group(head, k):\n    # Check if k nodes available\n    current = head\n    count = 0\n    while current and count < k:\n        current = current._____\n        count += 1\n    if count == k:\n        current = reverse_k_group(current, k)\n        while count > 0:\n            temp = head.next\n            head.next = current\n            current = head\n            head = _____\n            count -= 1\n        head = current\n    return head",
+    "blanks": ["next", "temp"],
+    "explanation": "Recursively reverse k nodes, then link groups."
+  }
+]

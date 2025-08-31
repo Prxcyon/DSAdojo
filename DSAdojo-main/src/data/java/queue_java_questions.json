@@ -1,0 +1,305 @@
+[
+  {
+    "id": "queue-easy-java-q1",
+    "type": "multiple-choice",
+    "question": "What principle does a queue follow?",
+    "options": [
+      "FIFO (First In, First Out)",
+      "LIFO (Last In, First Out)",
+      "Random Access",
+      "Priority Based"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Queue follows First In, First Out principle."
+  },
+  {
+    "id": "queue-easy-java-q2",
+    "type": "fill-blank",
+    "question": "The method to add an element to the rear of a Queue in Java is _____.",
+    "correctAnswer": "offer",
+    "explanation": "offer() or add() methods add elements to the rear of queue."
+  },
+  {
+    "id": "queue-easy-java-q3",
+    "type": "multiple-choice",
+    "question": "Which method removes an element from the front of a Queue in Java?",
+    "options": [
+      "poll()",
+      "offer()",
+      "peek()",
+      "add()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "poll() removes and returns the head of the queue."
+  },
+  {
+    "id": "queue-easy-java-q4",
+    "type": "drag-drop",
+    "question": "Arrange the queue operations in correct order to add elements 1, 2, 3 and then remove one:",
+    "items": ["queue.offer(1)", "queue.offer(2)", "queue.offer(3)", "queue.poll()"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Offer all elements first, then poll removes the first added."
+  },
+  {
+    "id": "queue-easy-java-q5",
+    "type": "multiple-choice",
+    "question": "What does poll() return when called on an empty queue?",
+    "options": [
+      "null",
+      "Throws exception",
+      "0",
+      "-1"
+    ],
+    "correctAnswer": 0,
+    "explanation": "poll() returns null when queue is empty."
+  },
+  {
+    "id": "queue-easy-java-q6",
+    "type": "fill-blank",
+    "question": "If we offer 5, 10, 15 to an empty queue, peek() will return _____.",
+    "correctAnswer": "5",
+    "explanation": "First offered element (5) becomes the head."
+  },
+  {
+    "id": "queue-easy-java-q7",
+    "type": "code-completion",
+    "question": "Complete the code to implement queue using LinkedList:",
+    "code": "Queue<Integer> queue = new _____<>();\nqueue._____(5);  // Add to rear\nqueue._____(10);\nInteger first = queue._____(0);  // Remove from front",
+    "blanks": ["LinkedList", "offer", "offer", "poll"],
+    "explanation": "LinkedList implements Queue interface, offer() adds, poll() removes."
+  },
+  {
+    "id": "queue-easy-java-q8",
+    "type": "multiple-choice",
+    "question": "Which method returns the front element without removing it?",
+    "options": [
+      "peek()",
+      "poll()",
+      "offer()",
+      "isEmpty()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "peek() returns front element without removal."
+  },
+  {
+    "id": "queue-easy-java-q9",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of offer operation in LinkedList implementation?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Offer operation takes constant time O(1) in LinkedList."
+  },
+  {
+    "id": "queue-easy-java-q10",
+    "type": "fill-blank",
+    "question": "The _____ interface in Java provides queue operations like offer(), poll(), and peek().",
+    "correctAnswer": "Queue",
+    "explanation": "Queue interface defines standard queue operations."
+  },
+  {
+    "id": "queue-medium-java-q1",
+    "type": "multiple-choice",
+    "question": "Which Java class is commonly used to implement queue?",
+    "options": [
+      "LinkedList",
+      "ArrayList",
+      "Vector",
+      "Stack"
+    ],
+    "correctAnswer": 0,
+    "explanation": "LinkedList implements Queue interface efficiently."
+  },
+  {
+    "id": "queue-medium-java-q2",
+    "type": "code-completion",
+    "question": "Implement a circular queue - complete the enqueue method:",
+    "code": "public boolean enqueue(int item) {\n    if ((rear + 1) % capacity == front) {\n        return false;  // Queue is full\n    }\n    queue[rear] = item;\n    rear = (rear + 1) % _____;\n    return true;\n}",
+    "blanks": ["capacity"],
+    "explanation": "Use modular arithmetic for circular queue implementation."
+  },
+  {
+    "id": "queue-medium-java-q3",
+    "type": "multiple-choice",
+    "question": "Which collection provides thread-safe queue operations?",
+    "options": [
+      "ConcurrentLinkedQueue",
+      "LinkedList",
+      "ArrayList",
+      "Vector"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ConcurrentLinkedQueue provides thread-safe queue operations."
+  },
+  {
+    "id": "queue-medium-java-q4",
+    "type": "fill-blank",
+    "question": "In BFS (Breadth-First Search), we use a _____ to store nodes to be visited.",
+    "correctAnswer": "Queue",
+    "explanation": "BFS uses Queue to maintain order of node visits."
+  },
+  {
+    "id": "queue-medium-java-q5",
+    "type": "drag-drop",
+    "question": "Arrange the steps for implementing queue using two stacks:",
+    "items": ["Use stack1 for enqueue", "Transfer to stack2 for dequeue", "Pop from stack2", "Handle empty cases"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Use two stacks to simulate queue operations."
+  },
+  {
+    "id": "queue-medium-java-q6",
+    "type": "multiple-choice",
+    "question": "Which is NOT a standard implementation of Queue interface?",
+    "options": [
+      "LinkedList",
+      "ArrayDeque",
+      "PriorityQueue",
+      "TreeSet"
+    ],
+    "correctAnswer": 3,
+    "explanation": "TreeSet does not implement Queue interface."
+  },
+  {
+    "id": "queue-medium-java-q7",
+    "type": "code-completion",
+    "question": "Complete the dequeue operation for queue using stacks:",
+    "code": "public Integer dequeue() {\n    if (stack2.isEmpty()) {\n        while (!stack1.isEmpty()) {\n            stack2._____(stack1._____());\n        }\n    }\n    if (!stack2.isEmpty()) {\n        return stack2._____();\n    }\n    return null;\n}",
+    "blanks": ["push", "pop", "pop"],
+    "explanation": "Transfer from stack1 to stack2, then pop from stack2."
+  },
+  {
+    "id": "queue-medium-java-q8",
+    "type": "multiple-choice",
+    "question": "What is the main characteristic of PriorityQueue?",
+    "options": [
+      "Elements are ordered by priority",
+      "Elements are ordered by insertion",
+      "Elements are randomly ordered",
+      "Elements are reverse ordered"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PriorityQueue orders elements based on their natural ordering or comparator."
+  },
+  {
+    "id": "queue-medium-java-q9",
+    "type": "fill-blank",
+    "question": "The _____ class allows insertion and removal at both ends.",
+    "correctAnswer": "ArrayDeque",
+    "explanation": "ArrayDeque implements Deque interface for double-ended operations."
+  },
+  {
+    "id": "queue-medium-java-q10",
+    "type": "multiple-choice",
+    "question": "Which method should be used instead of add() for better queue implementation?",
+    "options": [
+      "offer()",
+      "put()",
+      "insert()",
+      "append()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "offer() is preferred as it returns boolean instead of throwing exception."
+  },
+  {
+    "id": "queue-hard-java-q1",
+    "type": "code-completion",
+    "question": "Implement sliding window maximum using ArrayDeque:",
+    "code": "public int[] slidingWindowMax(int[] arr, int k) {\n    Deque<Integer> dq = new ArrayDeque<>();\n    int[] result = new int[arr.length - k + 1];\n    for (int i = 0; i < arr.length; i++) {\n        while (!dq.isEmpty() && dq.peekFirst() <= i - k) {\n            dq._____();\n        }\n        while (!dq.isEmpty() && arr[dq.peekLast()] <= arr[i]) {\n            dq._____();\n        }\n        dq._____(i);\n        if (i >= k - 1) {\n            result[i - k + 1] = arr[dq.peekFirst()];\n        }\n    }\n    return result;\n}",
+    "blanks": ["pollFirst", "pollLast", "offerLast"],
+    "explanation": "Use ArrayDeque to maintain window maximum efficiently."
+  },
+  {
+    "id": "queue-hard-java-q2",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of finding minimum in a queue of size n?",
+    "options": [
+      "O(n)",
+      "O(1)",
+      "O(log n)",
+      "O(n log n)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Need to examine all elements to find minimum without auxiliary structure."
+  },
+  {
+    "id": "queue-hard-java-q3",
+    "type": "fill-blank",
+    "question": "The _____ traversal uses queue to process tree nodes level by level.",
+    "correctAnswer": "level-order",
+    "explanation": "Level-order traversal uses queue for level-by-level processing."
+  },
+  {
+    "id": "queue-hard-java-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps to reverse first K elements of a queue:",
+    "items": ["Dequeue K elements to stack", "Pop stack to auxiliary queue", "Dequeue remaining to auxiliary", "Transfer back to original"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Use stack to reverse first K elements."
+  },
+  {
+    "id": "queue-hard-java-q5",
+    "type": "multiple-choice",
+    "question": "Which combination is best for implementing LRU cache?",
+    "options": [
+      "LinkedHashMap",
+      "HashMap + LinkedList",
+      "TreeMap + Queue",
+      "ArrayList + Stack"
+    ],
+    "correctAnswer": 0,
+    "explanation": "LinkedHashMap provides O(1) access with insertion order."
+  },
+  {
+    "id": "queue-hard-java-q6",
+    "type": "code-completion",
+    "question": "Complete the function to generate binary numbers from 1 to n using queue:",
+    "code": "public List<String> generateBinary(int n) {\n    Queue<String> queue = new LinkedList<>();\n    List<String> result = new ArrayList<>();\n    queue._____(\"1\");\n    for (int i = 0; i < n; i++) {\n        String binary = queue._____();\n        result.add(binary);\n        queue.offer(binary + \"0\");\n        queue._____(binary + \"1\");\n    }\n    return result;\n}",
+    "blanks": ["offer", "poll", "offer"],
+    "explanation": "Generate binary numbers by appending 0 and 1 to queue elements."
+  },
+  {
+    "id": "queue-hard-java-q7",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of ArrayDeque compared to LinkedList for queue operations?",
+    "options": [
+      "ArrayDeque is more space efficient",
+      "LinkedList is more space efficient",
+      "Both are equally efficient",
+      "Depends on the operations"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ArrayDeque doesn't need extra memory for node pointers."
+  },
+  {
+    "id": "queue-hard-java-q8",
+    "type": "fill-blank",
+    "question": "The _____ class implements a blocking queue for producer-consumer scenarios.",
+    "correctAnswer": "BlockingQueue",
+    "explanation": "BlockingQueue implementations handle thread synchronization automatically."
+  },
+  {
+    "id": "queue-hard-java-q9",
+    "type": "multiple-choice",
+    "question": "Which approach efficiently implements a queue that supports getMin() in O(1)?",
+    "options": [
+      "Auxiliary min deque",
+      "Sorting the queue",
+      "Using TreeSet",
+      "Linear search"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Auxiliary deque tracks minimum elements."
+  },
+  {
+    "id": "queue-hard-java-q10",
+    "type": "code-completion",
+    "question": "Implement queue using single stack with recursion:",
+    "code": "public Integer dequeue() {\n    if (stack.size() == 1) {\n        return stack._____();\n    }\n    Integer item = stack.pop();\n    Integer result = _____();\n    stack._____(item);\n    return result;\n}",
+    "blanks": ["pop", "dequeue", "push"],
+    "explanation": "Use recursion with single stack to implement queue operations."
+  }
+]

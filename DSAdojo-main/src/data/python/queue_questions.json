@@ -1,0 +1,305 @@
+[
+  {
+    "id": "queue-easy-q1",
+    "type": "multiple-choice",
+    "question": "What principle does a queue follow?",
+    "options": [
+      "FIFO (First In, First Out)",
+      "LIFO (Last In, First Out)",
+      "Random Access",
+      "Priority Based"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Queue follows First In, First Out principle."
+  },
+  {
+    "id": "queue-easy-q2",
+    "type": "fill-blank",
+    "question": "The operation to add an element to the rear of a queue is called _____.",
+    "correctAnswer": "enqueue",
+    "explanation": "enqueue() adds elements to the rear of queue."
+  },
+  {
+    "id": "queue-easy-q3",
+    "type": "multiple-choice",
+    "question": "Which operation removes an element from the front of a queue?",
+    "options": [
+      "dequeue()",
+      "enqueue()",
+      "front()",
+      "rear()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "dequeue() removes elements from the front."
+  },
+  {
+    "id": "queue-easy-q4",
+    "type": "drag-drop",
+    "question": "Arrange the queue operations in correct order to add elements 1, 2, 3 and then remove one:",
+    "items": ["enqueue(1)", "enqueue(2)", "enqueue(3)", "dequeue()"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Enqueue all elements first, then dequeue removes the first added."
+  },
+  {
+    "id": "queue-easy-q5",
+    "type": "multiple-choice",
+    "question": "What happens when you try to dequeue from an empty queue?",
+    "options": [
+      "Queue Underflow",
+      "Queue Overflow",
+      "Returns null",
+      "Queue becomes full"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Dequeuing from empty queue causes underflow."
+  },
+  {
+    "id": "queue-easy-q6",
+    "type": "fill-blank",
+    "question": "If we enqueue 5, 10, 15 to an empty queue, the front element will be _____.",
+    "correctAnswer": "5",
+    "explanation": "First enqueued element (5) becomes the front."
+  },
+  {
+    "id": "queue-easy-q7",
+    "type": "code-completion",
+    "question": "Complete the code to implement queue using Python list:",
+    "code": "queue = []\nqueue._____(5)  # Add to rear\nqueue._____(10)\nfirst = queue._____(0)  # Remove from front",
+    "blanks": ["append", "append", "pop"],
+    "explanation": "append() adds to rear, pop(0) removes from front."
+  },
+  {
+    "id": "queue-easy-q8",
+    "type": "multiple-choice",
+    "question": "Which operation returns the front element without removing it?",
+    "options": [
+      "front() or peek()",
+      "dequeue()",
+      "enqueue()",
+      "isEmpty()"
+    ],
+    "correctAnswer": 0,
+    "explanation": "front() or peek() returns front element without removal."
+  },
+  {
+    "id": "queue-easy-q9",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of enqueue operation?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Enqueue operation takes constant time O(1)."
+  },
+  {
+    "id": "queue-easy-q10",
+    "type": "fill-blank",
+    "question": "A queue has two ends: _____ for insertion and _____ for deletion.",
+    "correctAnswer": "rear, front",
+    "explanation": "Elements are inserted at rear and deleted from front."
+  },
+  {
+    "id": "queue-medium-q1",
+    "type": "multiple-choice",
+    "question": "Which real-world scenario best represents a queue?",
+    "options": [
+      "People waiting in line",
+      "Stack of plates",
+      "Recursive function calls",
+      "Undo operations"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Queue models first-come-first-served scenarios like waiting lines."
+  },
+  {
+    "id": "queue-medium-q2",
+    "type": "code-completion",
+    "question": "Implement a circular queue - complete the enqueue method:",
+    "code": "def enqueue(self, item):\n    if (self.rear + 1) % self.capacity == self.front:\n        return False  # Queue is full\n    self.queue[self.rear] = item\n    self.rear = (self.rear + 1) % _____",
+    "blanks": ["self.capacity"],
+    "explanation": "Use modular arithmetic for circular queue."
+  },
+  {
+    "id": "queue-medium-q3",
+    "type": "multiple-choice",
+    "question": "What is the main advantage of circular queue over linear queue?",
+    "options": [
+      "Better space utilization",
+      "Faster operations",
+      "Less memory usage",
+      "Simpler implementation"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Circular queue reuses freed space efficiently."
+  },
+  {
+    "id": "queue-medium-q4",
+    "type": "fill-blank",
+    "question": "In BFS (Breadth-First Search), we use a _____ to store nodes to be visited.",
+    "correctAnswer": "queue",
+    "explanation": "BFS uses queue to maintain order of node visits."
+  },
+  {
+    "id": "queue-medium-q5",
+    "type": "drag-drop",
+    "question": "Arrange the steps for implementing queue using two stacks:",
+    "items": ["Use stack1 for enqueue", "Transfer to stack2 for dequeue", "Pop from stack2", "Handle empty cases"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Use two stacks to simulate queue operations."
+  },
+  {
+    "id": "queue-medium-q6",
+    "type": "multiple-choice",
+    "question": "Which of these is NOT a type of queue?",
+    "options": [
+      "Linear Queue",
+      "Circular Queue",
+      "Priority Queue",
+      "Binary Queue"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Binary Queue is not a standard queue type."
+  },
+  {
+    "id": "queue-medium-q7",
+    "type": "code-completion",
+    "question": "Complete the dequeue operation for queue using stacks:",
+    "code": "def dequeue(self):\n    if not self.stack2:\n        while self.stack1:\n            self.stack2._____(self.stack1._____)\n    if self.stack2:\n        return self.stack2._____\n    return None",
+    "blanks": ["append", "pop()", "pop()"],
+    "explanation": "Transfer from stack1 to stack2, then pop from stack2."
+  },
+  {
+    "id": "queue-medium-q8",
+    "type": "multiple-choice",
+    "question": "What happens in a priority queue?",
+    "options": [
+      "Elements are served based on priority",
+      "Elements are served in FIFO order",
+      "Elements are served in LIFO order",
+      "Elements are served randomly"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Priority queue serves elements based on their priority."
+  },
+  {
+    "id": "queue-medium-q9",
+    "type": "fill-blank",
+    "question": "The double-ended queue that allows insertion and deletion at both ends is called _____.",
+    "correctAnswer": "deque",
+    "explanation": "Deque (double-ended queue) allows operations at both ends."
+  },
+  {
+    "id": "queue-medium-q10",
+    "type": "multiple-choice",
+    "question": "In which algorithm is queue primarily used?",
+    "options": [
+      "Breadth-First Search",
+      "Depth-First Search",
+      "Binary Search",
+      "Quick Sort"
+    ],
+    "correctAnswer": 0,
+    "explanation": "BFS algorithm primarily uses queue data structure."
+  },
+  {
+    "id": "queue-hard-q1",
+    "type": "code-completion",
+    "question": "Implement sliding window maximum using deque:",
+    "code": "def sliding_window_max(arr, k):\n    dq = deque()\n    result = []\n    for i in range(len(arr)):\n        while dq and dq[0] <= i - k:\n            dq._____\n        while dq and arr[dq[-1]] <= arr[i]:\n            dq._____\n        dq._____(i)\n        if i >= k - 1:\n            result.append(arr[dq[0]])\n    return result",
+    "blanks": ["popleft()", "pop()", "append"],
+    "explanation": "Use deque to maintain window maximum efficiently."
+  },
+  {
+    "id": "queue-hard-q2",
+    "type": "multiple-choice",
+    "question": "What is the time complexity of finding minimum in a queue of size n?",
+    "options": [
+      "O(n)",
+      "O(1)",
+      "O(log n)",
+      "O(n log n)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Need to examine all elements to find minimum."
+  },
+  {
+    "id": "queue-hard-q3",
+    "type": "fill-blank",
+    "question": "The _____ pattern uses queue to process elements level by level in tree traversal.",
+    "correctAnswer": "level-order",
+    "explanation": "Level-order traversal uses queue for level-by-level processing."
+  },
+  {
+    "id": "queue-hard-q4",
+    "type": "drag-drop",
+    "question": "Arrange steps to reverse first K elements of a queue:",
+    "items": ["Dequeue K elements to stack", "Pop stack to auxiliary queue", "Dequeue remaining to auxiliary", "Transfer back to original"],
+    "correctOrder": [0, 1, 2, 3],
+    "explanation": "Use stack to reverse first K elements."
+  },
+  {
+    "id": "queue-hard-q5",
+    "type": "multiple-choice",
+    "question": "Which data structure is best for implementing LRU cache?",
+    "options": [
+      "Doubly linked list + Hash map",
+      "Queue + Stack",
+      "Array + Queue",
+      "Tree + Queue"
+    ],
+    "correctAnswer": 0,
+    "explanation": "LRU cache uses doubly linked list with hash map."
+  },
+  {
+    "id": "queue-hard-q6",
+    "type": "code-completion",
+    "question": "Complete the function to generate binary numbers from 1 to n using queue:",
+    "code": "def generate_binary(n):\n    queue = deque(['1'])\n    result = []\n    for i in range(n):\n        binary = queue._____\n        result.append(binary)\n        queue._____(binary + '0')\n        queue._____(binary + '1')\n    return result",
+    "blanks": ["popleft()", "append", "append"],
+    "explanation": "Generate binary numbers by appending 0 and 1 to queue elements."
+  },
+  {
+    "id": "queue-hard-q7",
+    "type": "multiple-choice",
+    "question": "What is the space complexity of implementing queue using linked list?",
+    "options": [
+      "O(n)",
+      "O(1)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Linked list queue needs O(n) space for n elements."
+  },
+  {
+    "id": "queue-hard-q8",
+    "type": "fill-blank",
+    "question": "In the _____ problem, we use queue to find the shortest path in an unweighted graph.",
+    "correctAnswer": "shortest path",
+    "explanation": "BFS using queue finds shortest path in unweighted graphs."
+  },
+  {
+    "id": "queue-hard-q9",
+    "type": "multiple-choice",
+    "question": "Which approach efficiently implements a queue that supports getMin() in O(1)?",
+    "options": [
+      "Auxiliary min queue",
+      "Sorting the queue",
+      "Using priority queue",
+      "Linear search"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Auxiliary queue tracks minimum elements."
+  },
+  {
+    "id": "queue-hard-q10",
+    "type": "code-completion",
+    "question": "Implement queue using single stack - complete the dequeue operation:",
+    "code": "def dequeue(self):\n    if len(self.stack) == 1:\n        return self.stack._____\n    item = self.stack.pop()\n    result = self._____\n    self.stack._____(item)\n    return result",
+    "blanks": ["pop()", "dequeue()", "append"],
+    "explanation": "Use recursion with single stack to implement queue."
+  }
+]
